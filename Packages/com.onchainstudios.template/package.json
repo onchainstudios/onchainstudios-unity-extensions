@@ -1,0 +1,21 @@
+{
+  "name": "com.onchainstudios.template",
+  "version": "1.0.0",
+  "displayName": "Template",
+  "description": "This is a description.",
+  "unity": "2020.3",
+  "documentationUrl": "",
+  "changelogUrl": "",
+  "licensesUrl": "",
+  "keywords": [
+    "keyword1",
+    "keyword2",
+    "keyword3"
+  ],
+  "author": {
+    "name": "OnChainStudios",
+    "email": "",
+    "url": ""
+  },
+  "type": "library"
+}
