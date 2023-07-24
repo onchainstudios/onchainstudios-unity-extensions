@@ -1,7 +1,7 @@
 {
-  "name": "com.onchainstudios.template",
+  "name": "com.onchainstudios.onchainuitoolkit",
   "version": "1.0.0",
-  "displayName": "Template",
+  "displayName": "OnChainUIToolKit",
   "description": "This is a description.",
   "unity": "2020.3",
   "documentationUrl": "",
