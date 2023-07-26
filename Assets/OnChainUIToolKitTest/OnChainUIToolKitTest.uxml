@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <GradientView color1="#FF0404FF" color1-percentage="50" color2="#067DF3FF" color2-percentage="15" color3-percentage="15" color3="#E911E0FF" color4="#E5FF00FF" color4-percentage="20" color5="#0E0E0EFF" style="width: 100%; height: 100%;" />
+</ui:UXML>
