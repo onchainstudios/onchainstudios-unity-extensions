@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.onchainstudios.onchainuitoolkit": {
-      "version": "file:com.onchainstudios.onchainuitoolkit",
+      "version": "file:com.onchainstudios.uitoolkitextensions",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}

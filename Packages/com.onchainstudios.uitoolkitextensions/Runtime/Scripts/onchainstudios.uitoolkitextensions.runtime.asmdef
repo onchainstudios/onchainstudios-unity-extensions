@@ -1,5 +1,5 @@
 {
-    "name": "onchainstudios.onchainuitoolkit.runtime",
+    "name": "onchainstudios.uitoolkitextensions.runtime",
     "rootNamespace": "",
     "references": [
         "UnityEngine.UI"
