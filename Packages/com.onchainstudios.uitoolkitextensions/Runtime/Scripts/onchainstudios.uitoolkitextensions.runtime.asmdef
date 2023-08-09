@@ -2,7 +2,10 @@
     "name": "onchainstudios.uitoolkitextensions.runtime",
     "rootNamespace": "",
     "references": [
-        "UnityEngine.UI"
+        "UnityEngine.UI",
+        "Unity.VisualScripting.Core",
+        "Unity.VisualScripting.Flow",
+        "Unity.VisualScripting.State"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
