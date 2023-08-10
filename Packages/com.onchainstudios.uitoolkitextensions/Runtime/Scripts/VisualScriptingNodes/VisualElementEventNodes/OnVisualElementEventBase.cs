@@ -40,7 +40,7 @@ namespace OnChainStudios.UIToolkitExtensions
             base.Definition();
             
             // Adding value inputs.
-            VisualElementName = ValueInput<string>(nameof(VisualElementName));
+            VisualElementName = ValueInput<string>(nameof(VisualElementName), string.Empty);
             
             // Adding value outputs.
             VisualElement = ValueOutput<VisualElement>(nameof(VisualElement));
