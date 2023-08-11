@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:editor="UnityEditor.UIElements" xmlns:engine="UnityEngine.UIElements" xmlns="UnityEditor.Overlays" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="UnityEngine.UIElements.xsd" namespace="UnityEngine.UIElements" />
-  <xs:simpleType name="GradientView_direction_Type">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Horizontal" />
-      <xs:enumeration value="Vertical" />
-      <xs:enumeration value="Diagonal" />
-    </xs:restriction>
-  </xs:simpleType>
   <xs:complexType name="GradientViewType">
     <xs:complexContent mixed="false">
       <xs:restriction base="engine:VisualElementType">
@@ -25,10 +18,14 @@
         <xs:attribute default="" name="content-container" type="xs:string" use="optional" />
         <xs:attribute default="" name="style" type="xs:string" use="optional" />
         <xs:attribute default="RGBA(0.000, 0.000, 0.000, 0.000)" name="color1" type="xs:string" use="optional" />
+        <xs:attribute default="0" name="color1-percentage" type="xs:float" use="optional" />
         <xs:attribute default="RGBA(0.000, 0.000, 0.000, 0.000)" name="color2" type="xs:string" use="optional" />
+        <xs:attribute default="0" name="color2-percentage" type="xs:float" use="optional" />
         <xs:attribute default="RGBA(0.000, 0.000, 0.000, 0.000)" name="color3" type="xs:string" use="optional" />
+        <xs:attribute default="0" name="color3-percentage" type="xs:float" use="optional" />
         <xs:attribute default="RGBA(0.000, 0.000, 0.000, 0.000)" name="color4" type="xs:string" use="optional" />
-        <xs:attribute default="Horizontal" name="direction" type="GradientView_direction_Type" use="optional" />
+        <xs:attribute default="0" name="color4-percentage" type="xs:float" use="optional" />
+        <xs:attribute default="RGBA(0.000, 0.000, 0.000, 0.000)" name="color5" type="xs:string" use="optional" />
         <xs:anyAttribute processContents="lax" />
       </xs:restriction>
     </xs:complexContent>

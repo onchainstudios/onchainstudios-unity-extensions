@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; background-color: rgb(149, 149, 149);">
+        <ui:Slider picking-mode="Ignore" label="Slider1" value="42" high-value="100" name="Slider1" />
+        <ui:Slider picking-mode="Ignore" label="Slider2" value="42" high-value="100" name="Slider2" />
+        <ui:SliderInt picking-mode="Ignore" label="SliderInt1" value="42" high-value="100" name="SliderInt1" />
+        <ui:SliderInt picking-mode="Ignore" label="SliderInt2" value="42" high-value="100" name="SliderInt2" />
+        <ui:Button text="Button1" display-tooltip-when-elided="true" />
+        <ui:Button text="Button2" display-tooltip-when-elided="true" />
+        <ui:TextField picking-mode="Ignore" label="TextField1" value="filler text" text="filler text" />
+        <ui:TextField picking-mode="Ignore" label="TextField2" value="filler text" text="filler text" />
+        <ui:Toggle label="CommonToggle1" name="CommonToggle1" />
+        <ui:Toggle label="CommonToggle2" name="CommonToggle2" />
+        <ui:Toggle label="EpicToggle1" name="EpicToggle1" />
+        <ui:Toggle label="EpicToggle2" name="EpicToggle2" />
+        <ui:Toggle label="LegendaryToggle1" class="legendary" />
+        <ui:Toggle label="LegendaryToggle2" class="legendary" />
+    </ui:VisualElement>
+</ui:UXML>
