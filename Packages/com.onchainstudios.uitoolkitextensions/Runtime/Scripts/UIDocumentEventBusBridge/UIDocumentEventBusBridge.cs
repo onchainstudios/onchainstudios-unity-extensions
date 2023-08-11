@@ -64,7 +64,6 @@ namespace OnChainStudios.UIToolkitExtensions
         {
             foreach (var childVisualElement in visualElement.Children())
             {
-                // Register the click event.
                 childVisualElement.RegisterCallback<ClickEvent>(clickEvent => OnClickEvent(childVisualElement, clickEvent));
                 childVisualElement.RegisterCallback<ChangeEvent<bool>>(changeEvent => OnChangeEvent(childVisualElement, changeEvent));
                 childVisualElement.RegisterCallback<ChangeEvent<int>>(changeEvent => OnChangeEvent(childVisualElement, changeEvent));

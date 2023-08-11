@@ -13,11 +13,37 @@ namespace OnChainStudios.UIToolkitExtensions
     /// </summary>
     public abstract class OnVisualElementEventBase : EventUnit<VisualElement>
     {
+        public enum MatchRules
+        {
+            VisualElementNameExact,
+            VisualElementNameContains,
+            HasClass,
+            Type
+        };
+        
         /// <summary>
         /// The visual element name that should trigger the event.
         /// </summary>
         [DoNotSerialize]
-        public ValueInput VisualElementName { get; private set; }
+        public ValueInput MatchRule { get; private set; }
+        
+        /// <summary>
+        /// The visual element name that should trigger the event.
+        /// </summary>
+        [DoNotSerialize]
+        public ValueInput Name { get; private set; }
+
+        /// <summary>
+        /// The visual element name that should trigger the event.
+        /// </summary>
+        [DoNotSerialize]
+        public ValueInput Class { get; private set; }
+        
+        /// <summary>
+        /// The visual element name that should trigger the event.
+        /// </summary>
+        [DoNotSerialize]
+        public ValueInput Type { get; private set; }
         
         /// <summary>
         /// The visual element that triggered the event.
@@ -31,7 +57,28 @@ namespace OnChainStudios.UIToolkitExtensions
         /// <inheritdoc/>
         protected override bool ShouldTrigger(Flow flow, VisualElement args)
         {
-            return args.name == flow.GetValue<string>(VisualElementName);
+            var nameValue = flow.GetValue<string>(Name);
+            var classValue = flow.GetValue<string>(Class);
+            var typeValue = flow.GetValue<System.Type>(Type);
+            
+            var exactNameMatch = args.name == nameValue;
+            var nameContainsMatch = args.name.Contains(nameValue);
+            var hasClassMatch = args.ClassListContains(classValue);
+            var typeMatch = args.GetType() == typeValue;
+            
+            switch (flow.GetValue<MatchRules>(MatchRule))
+            {
+                case MatchRules.VisualElementNameExact:
+                    return exactNameMatch;
+                case MatchRules.VisualElementNameContains:
+                    return nameContainsMatch;
+                case MatchRules.HasClass:
+                    return hasClassMatch;
+                case MatchRules.Type:
+                    return typeMatch;
+                default:
+                    return false;
+            }
         }
         
         /// <inheritdoc/>
@@ -40,7 +87,10 @@ namespace OnChainStudios.UIToolkitExtensions
             base.Definition();
             
             // Adding value inputs.
-            VisualElementName = ValueInput<string>(nameof(VisualElementName), string.Empty);
+            MatchRule = ValueInput<MatchRules>(nameof(MatchRule), MatchRules.VisualElementNameExact);
+            Name = ValueInput<string>(nameof(Name), string.Empty);
+            Class = ValueInput<string>(nameof(Class), string.Empty);
+            Type = ValueInput<System.Type>(nameof(Type), null);
             
             // Adding value outputs.
             VisualElement = ValueOutput<VisualElement>(nameof(VisualElement));
