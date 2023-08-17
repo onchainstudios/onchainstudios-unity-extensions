@@ -64,11 +64,57 @@ namespace OnChainStudios.UIToolkitExtensions
         private VisualElement root;
 
         /// <summary>
+        /// Cached <see cref="color1"/>
+        /// </summary>
+        private Color previousColor1;
+        
+        /// <summary>
+        /// Cached <see cref="color1Percentage"/>
+        /// </summary>
+        private float previousColor1Percentage;
+        
+        /// <summary>
+        /// Cached <see cref="previousColor2"/>
+        /// </summary>
+        private Color previousColor2;
+        
+        /// <summary>
+        /// Cached <see cref="previousColor2Percentage"/>
+        /// </summary>
+        private float previousColor2Percentage;
+        
+        /// <summary>
+        /// Cached <see cref="previousColor3"/>
+        /// </summary>
+        private Color previousColor3;
+        
+        /// <summary>
+        /// Cached <see cref="previousColor3Percentage"/>
+        /// </summary>
+        private float previousColor3Percentage;
+        
+        /// <summary>
+        /// Cached <see cref="previousColor4"/>
+        /// </summary>
+        private Color previousColor4;
+        
+        /// <summary>
+        /// Cached <see cref="previousColor4Percentage"/>
+        /// </summary>
+        private float previousColor4Percentage;
+        
+        /// <summary>
+        /// Cached <see cref="previousColor5"/>
+        /// </summary>
+        private Color previousColor5;
+        
+        /// <summary>
         /// An event that updates the gradient when the view has changed or updated.
         /// </summary>
         /// <param name="evt">Event arguments to provide details on the new layout and view.</param>
         private void UpdateGradient(GeometryChangedEvent evt)
         {
+            HasColorChanged();
             FillGradients();
         }
 
@@ -82,14 +128,22 @@ namespace OnChainStudios.UIToolkitExtensions
 
             if (width > 0 && height > 0)
             {
-                root.style.backgroundImage.value.texture.Reinitialize((int)width, (int)height);
+                var texture = root.style.backgroundImage.value.texture;
 
-                int end = 0;
+                if (HasGradientElementChanged(texture, width, height))
+                {
+                    UpdateCachedValues();
+                    
+                    root.style.backgroundImage.value.texture.Reinitialize((int)width, (int)height);
 
-                FillGradient(color1, color2, width, height, 0, color1Percentage, out end);
-                FillGradient(color2, color3, width, height, end, color2Percentage, out end);
-                FillGradient(color3, color4, width, height, end, color3Percentage, out end);
-                FillGradient(color4, color5, width, height, end, color4Percentage, out end);
+                    int end = 0;
+
+                    FillGradient(color1, color2, width, height, 0, color1Percentage, out end);
+                    FillGradient(color2, color3, width, height, end, color2Percentage, out end);
+                    FillGradient(color3, color4, width, height, end, color3Percentage, out end);
+                    FillGradient(color4, color5, width, height, end, color4Percentage, out end);
+                }
+                
             }
         }
 
@@ -128,6 +182,70 @@ namespace OnChainStudios.UIToolkitExtensions
             }
 
             root.style.backgroundImage.value.texture.Apply();
+        }
+
+        /// <summary>
+        /// Updates the cached values.
+        /// </summary>
+        private void UpdateCachedValues()
+        {
+            previousColor1 = color1;
+            previousColor1Percentage = color1Percentage;
+            previousColor2 = color2;
+            previousColor2Percentage = color2Percentage;
+            previousColor3 = color3;
+            previousColor3Percentage = color3Percentage;
+            previousColor4 = color4;
+            previousColor4Percentage = color4Percentage;
+            previousColor5 = color5;
+        }
+        
+        /// <summary>
+        /// Indicates if the gradient element's gradient has changed.
+        /// </summary>
+        /// <param name="texture">The current texture on the gradient.</param>
+        /// <param name="newWidth">The new height of the gradient.</param>
+        /// <param name="newHeight">The new width of the gradient.</param>
+        /// <returns>True, if the gradient element has changed. False, if it has not changed.</returns>
+        private bool HasGradientElementChanged(Texture2D texture, int newWidth, int newHeight)
+        {
+            Debug.Log(texture.height != newHeight || texture.width != newWidth || HasColorChanged());
+            return texture.height != newHeight || texture.width != newWidth || HasColorChanged();
+        }
+        
+        /// <summary>
+        /// Indicates if the gradient element's cached colors and lengths is different from the current element's colors and lengths.
+        /// </summary>
+        /// <returns>True, if one or more of the colors and lengths have changed. False, otherwise.</returns>
+        private bool HasColorChanged()
+        {
+            var texture = root.style.backgroundImage.value.texture;
+
+            bool result = false; 
+            
+            
+            if (color1 != previousColor1 || color1Percentage != previousColor1Percentage)
+            {
+                result = true;
+            }
+            else if (color2 != previousColor2 || color2Percentage != previousColor2Percentage)
+            {
+                result = true;
+            }
+            else if (color3 != previousColor3 || color3Percentage != previousColor3Percentage)
+            {
+                result = true;
+            }
+            else if (color4 != previousColor4 || color4Percentage != previousColor4Percentage)
+            {
+                result = true;
+            }
+            else if (color5 != previousColor5)
+            {
+                result = true;
+            }
+
+            return result;
         }
 
         /// <summary>
