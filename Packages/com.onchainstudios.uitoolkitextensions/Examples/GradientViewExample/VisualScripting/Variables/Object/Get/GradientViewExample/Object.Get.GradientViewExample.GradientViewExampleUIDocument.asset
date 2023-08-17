@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: Object.Get.GradientViewExample.GradientViewExampleUIDocument
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[{"_type":"UnityEngine.UIElements.UIDocument","key":"Value","label":null,"summary":null,"hideLabel":true}],"title":null,"summary":null,"pan":{"x":820.0,"y":41.0},"zoom":1.0,"elements":[{"nest":{"source":"Macro","macro":0,"embed":null},"defaultValues":{},"position":{"x":-304.0,"y":-146.0},"guid":"a241669d-8a3b-453f-9f35-a9b9ce4c9c51","$version":"A","$type":"Unity.VisualScripting.SubgraphUnit","$id":"10"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"","$type":"System.String"},"object":null},"position":{"x":547.0,"y":-151.0},"guid":"3e4d18ee-d05c-4df7-b415-6455c233892b","$version":"A","$type":"Unity.VisualScripting.GetVariable","$id":"13"},{"defaultValues":{},"position":{"x":882.0,"y":-146.0},"guid":"cb94c1d2-d9da-4778-abb1-ebf8d3c26364","$version":"A","$type":"Unity.VisualScripting.GraphOutput","$id":"15"},{"sourceUnit":{"$ref":"10"},"sourceKey":"Value","destinationUnit":{"$ref":"13"},"destinationKey":"name","guid":"1525ad1b-05b8-43c4-abbc-279814588f0f","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"13"},"sourceKey":"value","destinationUnit":{"$ref":"15"},"destinationKey":"Value","guid":"b8394ca4-456b-4c77-88b9-e10e326605bc","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: 434a0eda1986649b9b5b8c7c2604a66e, type: 2}
