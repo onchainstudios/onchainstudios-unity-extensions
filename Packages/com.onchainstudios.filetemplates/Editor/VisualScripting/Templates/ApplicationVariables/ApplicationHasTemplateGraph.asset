@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: ApplicationHasTemplateGraph
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[{"_type":"System.Boolean","key":"Value","label":null,"summary":null,"hideLabel":true}],"title":null,"summary":null,"pan":{"x":0.0,"y":0.0},"zoom":1.0,"elements":[{"kind":"Application","defaultValues":{"name":{"$content":"","$type":"System.String"}},"position":{"x":-194.0,"y":-83.0},"guid":"90cb6c0e-8d15-4ac2-a744-2ed5f974c437","$version":"A","$type":"Unity.VisualScripting.IsVariableDefined","$id":"10"},{"defaultValues":{},"position":{"x":44.0,"y":-83.0},"guid":"f1a666ca-2b6c-4d3c-910c-2fad7a036fc9","$version":"A","$type":"Unity.VisualScripting.GraphOutput","$id":"12"},{"sourceUnit":{"$ref":"10"},"sourceKey":"isDefined","destinationUnit":{"$ref":"12"},"destinationKey":"Value","guid":"c946611f-ceb2-44f2-bc66-5fb0cac447f5","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}'
+    _objectReferences: []
