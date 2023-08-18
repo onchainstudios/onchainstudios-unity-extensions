@@ -13,6 +13,8 @@ namespace OnChainStudios.UIToolkitExtensions
     /// </summary>
     public class GradientView : VisualElement
     {
+        public bool allowUpdatesInEditor { get; set; }
+        
         /// <summary>
         /// The initial color of the gradient. 
         /// </summary>
@@ -114,8 +116,10 @@ namespace OnChainStudios.UIToolkitExtensions
         /// <param name="evt">Event arguments to provide details on the new layout and view.</param>
         private void UpdateGradient(GeometryChangedEvent evt)
         {
-            HasColorChanged();
-            FillGradients();
+            if (Application.isPlaying || allowUpdatesInEditor || !Application.isEditor)
+            {
+                FillGradients();
+            }
         }
 
         /// <summary>
@@ -218,8 +222,6 @@ namespace OnChainStudios.UIToolkitExtensions
         /// <returns>True, if one or more of the colors and lengths have changed. False, otherwise.</returns>
         private bool HasColorChanged()
         {
-            var texture = root.style.backgroundImage.value.texture;
-
             bool result = false; 
             
             
@@ -259,6 +261,9 @@ namespace OnChainStudios.UIToolkitExtensions
         /// </summary>
         public new class UxmlTraits : VisualElement.UxmlTraits
         {
+            private UxmlBoolAttributeDescription m_allowUpdatesInEditor =
+                new UxmlBoolAttributeDescription() { name = "allow-updates-in-editor", defaultValue = false };
+            
             /// <summary>
             /// The attribute that correlates with <seealso cref="GradientView.color1"/>/>
             /// </summary>
@@ -320,6 +325,8 @@ namespace OnChainStudios.UIToolkitExtensions
 
                 var element = ve as GradientView;
 
+                element.allowUpdatesInEditor = m_allowUpdatesInEditor.GetValueFromBag(bag, cc);
+                
                 element.color1 = m_color1.GetValueFromBag(bag, cc);
                 element.color1Percentage = m_color1Percentage.GetValueFromBag(bag, cc);
 
