@@ -209,7 +209,6 @@ namespace OnChainStudios.UIToolkitExtensions
         /// <returns>True, if the gradient element has changed. False, if it has not changed.</returns>
         private bool HasGradientElementChanged(Texture2D texture, int newWidth, int newHeight)
         {
-            Debug.Log(texture.height != newHeight || texture.width != newWidth || HasColorChanged());
             return texture.height != newHeight || texture.width != newWidth || HasColorChanged();
         }
         
