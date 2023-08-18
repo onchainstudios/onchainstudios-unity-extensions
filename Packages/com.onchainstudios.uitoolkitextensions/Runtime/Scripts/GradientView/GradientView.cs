@@ -13,6 +13,9 @@ namespace OnChainStudios.UIToolkitExtensions
     /// </summary>
     public class GradientView : VisualElement
     {
+        /// <summary>
+        /// Indicates if the gradient view is allowed changes in editor.
+        /// </summary>
         public bool allowUpdatesInEditor { get; set; }
         
         /// <summary>
@@ -261,6 +264,9 @@ namespace OnChainStudios.UIToolkitExtensions
         /// </summary>
         public new class UxmlTraits : VisualElement.UxmlTraits
         {
+            /// <summary>
+            /// The attribute that correlates with <seealso cref="GradientView.allowUpdatesInEditor"/>
+            /// </summary>
             private UxmlBoolAttributeDescription m_allowUpdatesInEditor =
                 new UxmlBoolAttributeDescription() { name = "allow-updates-in-editor", defaultValue = false };
             
