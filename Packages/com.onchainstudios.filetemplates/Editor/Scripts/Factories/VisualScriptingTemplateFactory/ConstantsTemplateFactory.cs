@@ -14,127 +14,151 @@ namespace OnChainStudios.FileTemplates
         ///xml documentation in the main <see cref="VisualScriptingTemplateFactory"/> file.
         public partial class TypeIdentifiers
         {
-            /// <summary>
-            /// Type identifier for a <see cref="float"/> script graph.
-            /// </summary>
-            public const string Float = nameof(Float);
+            public partial class Variables
+            {
+                public class Constants
+                {
+                    /// <summary>
+                    /// Type identifier for a <see cref="float"/> script graph.
+                    /// </summary>
+                    public const string Float = nameof(Float);
 
-            /// <summary>
-            /// Type identifier for a <see cref="int"/> script graph.
-            /// </summary>
-            public const string Int = nameof(Int);
+                    /// <summary>
+                    /// Type identifier for a <see cref="int"/> script graph.
+                    /// </summary>
+                    public const string Int = nameof(Int);
 
-            /// <summary>
-            /// Type identifier for a <see cref="string"/> script graph.
-            /// </summary>
-            public const string String = nameof(String);
-            
-            /// <summary>
-            /// Type identifier for a <see cref="UnityEngine.Vector2"/> script graph.
-            /// </summary>
-            public const string Vector2 = nameof(Vector2);
-            
-            /// <summary>
-            /// Type identifier for a <see cref="UnityEngine.Vector3"/> script graph.
-            /// </summary>
-            public const string Vector3 = nameof(Vector3);
+                    /// <summary>
+                    /// Type identifier for a <see cref="string"/> script graph.
+                    /// </summary>
+                    public const string String = nameof(String);
+
+                    /// <summary>
+                    /// Type identifier for a <see cref="UnityEngine.Vector2"/> script graph.
+                    /// </summary>
+                    public const string Vector2 = nameof(Vector2);
+
+                    /// <summary>
+                    /// Type identifier for a <see cref="UnityEngine.Vector3"/> script graph.
+                    /// </summary>
+                    public const string Vector3 = nameof(Vector3);
+                }
+            }
         }
 
         ///xml documentation in the main <see cref="VisualScriptingTemplateFactory"/> file.
         public partial class TemplateAssetPaths
         {
-            /// <summary>
-            /// File name for the Float template.
-            /// </summary>
-            public static string Float => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Float + _fileNameSuffix);
-            
-            /// <summary>
-            /// File name for the Int template.
-            /// </summary>
-            public static string Int => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Int + _fileNameSuffix);
-            
-            /// <summary>
-            /// File name for the String template.
-            /// </summary>
-            public static string String => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.String + _fileNameSuffix);
-            
-            /// <summary>
-            /// File name for the Vector2 template.
-            /// </summary>
-            public static string Vector2 => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Vector2 + _fileNameSuffix);
-            
-            /// <summary>
-            /// File name for the Vector3 template.
-            /// </summary>
-            public static string Vector3 => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Vector3 + _fileNameSuffix);
+            public partial class Variables
+            {
+                public class Constants
+                {
+                    /// <summary>
+                    /// File name for the Float template.
+                    /// </summary>
+                    public static string Float => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Variables.Constants.Float + _fileNameSuffix);
+
+                    /// <summary>
+                    /// File name for the Int template.
+                    /// </summary>
+                    public static string Int => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Variables.Constants.Int + _fileNameSuffix);
+
+                    /// <summary>
+                    /// File name for the String template.
+                    /// </summary>
+                    public static string String => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Variables.Constants.String + _fileNameSuffix);
+
+                    /// <summary>
+                    /// File name for the Vector2 template.
+                    /// </summary>
+                    public static string Vector2 => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Variables.Constants.Vector2 + _fileNameSuffix);
+
+                    /// <summary>
+                    /// File name for the Vector3 template.
+                    /// </summary>
+                    public static string Vector3 => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Variables.Constants.Vector3 + _fileNameSuffix);
+                }
+            }
         }
         
         ///xml documentation in the main <see cref="VisualScriptingTemplateFactory"/> file.
         public partial class MenuItemPaths
         {
-            /// <summary>
-            /// Base path for behaviour script graphs.
-            /// </summary>
-            public const string Constants = Variables + _delimiter + nameof(Constants) + _delimiter;
+            public partial class Variables
+            {
+                public class Constants
+                {
+                    /// <summary>
+                    /// Base path for behaviour script graphs.
+                    /// </summary>
+                    private const string _constantsBasePath = nameof(Variables) + _delimiter + nameof(Constants) + _delimiter;
 
-            /// <summary>
-            /// Menu item path to create a new Float script graph.
-            /// </summary>
-            public const string Float = Constants + TypeIdentifiers.Float;
-            
-            /// <summary>
-            /// Menu item path to create a new Int script graph.
-            /// </summary>
-            public const string Int = Constants + TypeIdentifiers.Int;
+                    /// <summary>
+                    /// Menu item path to create a new Float script graph.
+                    /// </summary>
+                    public const string Float = _constantsBasePath + TypeIdentifiers.Variables.Constants.Float;
 
-            /// <summary>
-            /// Menu item path to create a new Vector2 script graph.
-            /// </summary>
-            public const string Vector2 = Constants + TypeIdentifiers.Vector2;
-                        
-            /// <summary>
-            /// Menu item path to create a new String script graph.
-            /// </summary>
-            public const string String = Constants + TypeIdentifiers.String;
-            
-            /// <summary>
-            /// Menu item path to create a new Vector3 script graph.
-            /// </summary>
-            public const string Vector3 = Constants + TypeIdentifiers.Vector3;
+                    /// <summary>
+                    /// Menu item path to create a new Int script graph.
+                    /// </summary>
+                    public const string Int = _constantsBasePath + TypeIdentifiers.Variables.Constants.Int;
+
+                    /// <summary>
+                    /// Menu item path to create a new Vector2 script graph.
+                    /// </summary>
+                    public const string Vector2 = _constantsBasePath + TypeIdentifiers.Variables.Constants.Vector2;
+
+                    /// <summary>
+                    /// Menu item path to create a new String script graph.
+                    /// </summary>
+                    public const string String = _constantsBasePath + TypeIdentifiers.Variables.Constants.String;
+
+                    /// <summary>
+                    /// Menu item path to create a new Vector3 script graph.
+                    /// </summary>
+                    public const string Vector3 = _constantsBasePath + TypeIdentifiers.Variables.Constants.Vector3;
+                }
+            }
         }
 
         ///xml documentation in the main <see cref="VisualScriptingTemplateFactory"/> file.
         public partial class SubFolderPaths
         {
-            /// <summary>
-            /// Name of the subfolder for Constants script graphs.
-            /// </summary>
-            public static string Constants => nameof(Constants);
+            public partial class Variables
+            {
+                public class Constants
+                {
+                    /// <summary>
+                    /// Name of the subfolder for Constants script graphs.
+                    /// </summary>
+                    public static string _constants => nameof(Constants);
 
-            /// <summary>
-            /// Name of the subfolder for Floats script graphs.
-            /// </summary>
-            public static string Floats => Path.Combine(Variables, Constants, nameof(Floats));
-            
-            /// <summary>
-            /// Name of the subfolder for Ints script graphs.
-            /// </summary>
-            public static string Ints => Path.Combine(Variables, Constants, nameof(Ints));
-            
-            /// <summary>
-            /// Name of the subfolder for Strings script graphs.
-            /// </summary>
-            public static string Strings => Path.Combine(Variables, Constants, nameof(Strings));
-            
-            /// <summary>
-            /// Name of the subfolder for Vector2s script graphs.
-            /// </summary>
-            public static string Vector2s => Path.Combine(Variables, Constants, nameof(Vector2s));
-            
-            /// <summary>
-            /// Name of the subfolder for Vector3s script graphs.
-            /// </summary>
-            public static string Vector3s => Path.Combine(Variables, Constants, nameof(Vector3s));
+                    /// <summary>
+                    /// Name of the subfolder for Floats script graphs.
+                    /// </summary>
+                    public static string Floats => Path.Combine(Variables, Constants, nameof(Floats));
+
+                    /// <summary>
+                    /// Name of the subfolder for Ints script graphs.
+                    /// </summary>
+                    public static string Ints => Path.Combine(Variables, Constants, nameof(Ints));
+
+                    /// <summary>
+                    /// Name of the subfolder for Strings script graphs.
+                    /// </summary>
+                    public static string Strings => Path.Combine(Variables, Constants, nameof(Strings));
+
+                    /// <summary>
+                    /// Name of the subfolder for Vector2s script graphs.
+                    /// </summary>
+                    public static string Vector2s => Path.Combine(Variables, Constants, nameof(Vector2s));
+
+                    /// <summary>
+                    /// Name of the subfolder for Vector3s script graphs.
+                    /// </summary>
+                    public static string Vector3s => Path.Combine(Variables, Constants, nameof(Vector3s));
+                }
+            }
         }
 
         /// <summary>

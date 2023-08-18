@@ -15,113 +15,125 @@ namespace OnChainStudios.FileTemplates
         public partial class FileNameSuffixes
         {
             /// <summary>
-            /// File suffix for a object variable.
+            /// File suffix for a EventListener.
             /// </summary>
-            public static string EventListener => "[TriggerGameObjectName]" + _delimiter + NewFileSuffix;
+            public static string EventListener => _delimiter + "[TriggerGameObjectName]" + NewFileSuffix;
         }
         
         ///xml documentation in the main <see cref="VisualScriptingTemplateFactory"/> file.
         public partial class TypeIdentifiers
         {
-            /// <summary>
-            /// Type identifier for a EventListener script graph.
-            /// </summary>
-            public const string EventListener = nameof(EventListener);
-            
-            /// <summary>
-            /// Type identifier for a EventTrigger script graph.
-            /// </summary>
-            public const string EventName = nameof(EventName);
-            
-            /// <summary>
-            /// Type identifier for a EventTrigger script graph.
-            /// </summary>
-            public const string EventTrigger = nameof(EventTrigger);
+            public class Event
+            {
+                /// <summary>
+                /// Type identifier for a EventListener script graph.
+                /// </summary>
+                public const string Listener = nameof(Event) + _delimiter + nameof(Listener);
+
+                /// <summary>
+                /// Type identifier for a EventName script graph.
+                /// </summary>
+                public const string Name = nameof(Event) + _delimiter + nameof(Name);
+
+                /// <summary>
+                /// Type identifier for a EventTrigger script graph.
+                /// </summary>
+                public const string Trigger = nameof(Event) + _delimiter + nameof(Trigger);
+            }
         }
 
         ///xml documentation in the main <see cref="VisualScriptingTemplateFactory"/> file.
         public partial class TemplateAssetPaths
         {
-            /// <summary>
-            /// File name for the EventListener template.
-            /// </summary>
-            public static string EventListener => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.EventListener + _fileNameSuffix);
-            
-            /// <summary>
-            /// File name for the EventName template.
-            /// </summary>
-            public static string EventName => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.EventName + _fileNameSuffix);
-            
-            /// <summary>
-            /// File name for the EventTrigger template.
-            /// </summary>
-            public static string EventTrigger => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.EventTrigger + _fileNameSuffix);
+            public class Event
+            {
+                /// <summary>
+                /// File name for the EventListener template.
+                /// </summary>
+                public static string Listener => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Event.Listener + _fileNameSuffix);
+
+                /// <summary>
+                /// File name for the EventName template.
+                /// </summary>
+                public static string Name => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Event.Name + _fileNameSuffix);
+
+                /// <summary>
+                /// File name for the EventTrigger template.
+                /// </summary>
+                public static string Trigger => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Event.Trigger + _fileNameSuffix);
+            }
         }
         
         ///xml documentation in the main <see cref="VisualScriptingTemplateFactory"/> file.
         public partial class MenuItemPaths
         {
-            /// <summary>
-            /// Base path for Event script graphs.
-            /// </summary>
-            private const string Events = _basePath + nameof(Events) + _delimiter;
-            
-            /// <summary>
-            /// Menu item path to create a new EventListener script graph.
-            /// </summary>
-            public const string EventListener = Events + TypeIdentifiers.EventListener;
+            public static class Event
+            {
+                /// <summary>
+                /// Base path for Event script graphs.
+                /// </summary>
+                private const string _eventsBasePath = _basePath + nameof(Event) + _delimiter;
 
-            /// <summary>
-            /// Menu item path to create a new EventName script graph.
-            /// </summary>
-            public const string EventName = Events + TypeIdentifiers.EventName;
+                /// <summary>
+                /// Menu item path to create a new EventListener script graph.
+                /// </summary>
+                public const string Listener = _eventsBasePath + nameof(Listener);
 
-            /// <summary>
-            /// Menu item path to create a new EventTrigger script graph.
-            /// </summary>
-            public const string EventTrigger = Events + TypeIdentifiers.EventTrigger;
+                /// <summary>
+                /// Menu item path to create a new EventName script graph.
+                /// </summary>
+                public const string Name = _eventsBasePath + nameof(Name);
+
+                /// <summary>
+                /// Menu item path to create a new EventTrigger script graph.
+                /// </summary>
+                public const string Trigger = _eventsBasePath + nameof(Trigger);
+            }
         }
 
         ///xml documentation in the main <see cref="VisualScriptingTemplateFactory"/> file.
         public partial class SubFolderPaths
         {
-            /// <summary>
-            /// Name of the subfolder for EventListener script graphs.
-            /// </summary>
-            public static string Events => nameof(Events);
-            
-            /// <summary>
-            /// Name of the subfolder for EventListener script graphs.
-            /// </summary>
-            public static string EventListeners => Path.Combine(Events, nameof(EventListeners));
-            
-            /// <summary>
-            /// Name of the subfolder for EventListener script graphs.
-            /// </summary>
-            public static string EventNames => Path.Combine(Events, nameof(EventNames));
-            
-            /// <summary>
-            /// Name of the subfolder for EventListener script graphs.
-            /// </summary>
-            public static string EventTriggers => Path.Combine(Events, nameof(EventTriggers));
+            public partial class Events
+            {
+                /// <summary>
+                /// Base subfolder path for events variables.
+                /// </summary>
+                private static string _eventsBasePath = nameof(Events);
+
+                /// <summary>
+                /// Name of the subfolder for EventListener script graphs.
+                /// </summary>
+                public static string Listeners => Path.Combine(_eventsBasePath, nameof(Listeners));
+
+                /// <summary>
+                /// Name of the subfolder for EventName script graphs.
+                /// </summary>
+                public static string Names => Path.Combine(_eventsBasePath, nameof(Names));
+
+                /// <summary>
+                /// Name of the subfolder for EventTrigger script graphs.
+                /// </summary>
+                public static string Triggers => Path.Combine(_eventsBasePath, nameof(Triggers));
+            }
         }
 
         /// <summary>
         /// Creates a EventListener script graph.
         /// </summary>
-        [MenuItem(MenuItemPaths.EventListener)]
-        public static void CreateEventListener() => CreateVisualScriptingAsset(TemplateAssetPaths.EventListener, SubFolderPaths.EventListeners, TypeIdentifiers.EventListener, FileNameSuffixes.EventListener, true);
+        [MenuItem(MenuItemPaths.Event.Listener)]
+        public static void CreateEventListener() => CreateVisualScriptingAsset(TemplateAssetPaths.Event.Listener, SubFolderPaths.Events.Listeners, TypeIdentifiers.Event.Listener, FileNameSuffixes.EventListener, true);
 
         /// <summary>
         /// Creates a EventName script graph.
         /// </summary>
-        [MenuItem(MenuItemPaths.EventName)]
-        public static void CreateEventName() => CreateVisualScriptingAsset(TemplateAssetPaths.EventName, SubFolderPaths.EventNames, TypeIdentifiers.EventName, FileNameSuffixes.NewFileSuffix, true);
+        [MenuItem(MenuItemPaths.Event.Name)]
+        public static void CreateEventName() => CreateVisualScriptingAsset(TemplateAssetPaths.Event.Name, SubFolderPaths.Events.Names, TypeIdentifiers.Event.Name, FileNameSuffixes.NewFileSuffix, true);
         
         /// <summary>
         /// Creates a EventTrigger script graph.
         /// </summary>
-        [MenuItem(MenuItemPaths.EventTrigger)]
-        public static void CreateEventTrigger() => CreateVisualScriptingAsset(TemplateAssetPaths.EventTrigger, SubFolderPaths.EventTriggers, TypeIdentifiers.EventTrigger, FileNameSuffixes.NewFileSuffix, true);
+        [MenuItem(MenuItemPaths.Event.Trigger)]
+        public static void CreateEventTrigger() => CreateVisualScriptingAsset(TemplateAssetPaths.Event.Trigger, SubFolderPaths.Events.Triggers, TypeIdentifiers.Event.Trigger, FileNameSuffixes.NewFileSuffix, true);
     }
 }

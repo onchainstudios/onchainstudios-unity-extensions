@@ -3,11 +3,11 @@
 // Copyright: OnChain Studios, 2023
 //*****************************************************************************
 
-using System.IO;
-using Unity.VisualScripting;
-
 namespace OnChainStudios.FileTemplates
 {
+    using System.IO;
+    using System.Text;
+    using Unity.VisualScripting;
     using UnityEditor;
     using UnityEngine;
     
@@ -22,10 +22,21 @@ namespace OnChainStudios.FileTemplates
             if (importedAssets.Length == 1 && movedAssets.Length == 0 && deletedAssets.Length == 0 && movedFromAssetPaths.Length == 0)
             {
                 var importedAsset = importedAssets[0];
-                if (importedAsset.Contains("Object.Get.") || importedAsset.Contains("EventListener."))
+                var objectGetPrefix = "Object.Get";
+                var eventListenerPrefix = "EventListener.";
+                var containsObjectGetPrefix = importedAsset.Contains(objectGetPrefix);
+                var containsEventListenerPrefix = importedAsset.Contains(eventListenerPrefix);
+                if ( containsObjectGetPrefix || containsEventListenerPrefix)
                 {
+                    var prefix = containsObjectGetPrefix ? objectGetPrefix : eventListenerPrefix;
                     var asset = AssetDatabase.LoadAssetAtPath<ScriptableObject>(importedAsset);
-                    Debug.LogWarning($"MAKE SURE YOU PUT THIS FILE IN THE RIGHT SUBFOLDER: " + Path.GetFileName(importedAsset));
+                    var splitAssetNames = asset.name.Split(".");
+                    var targetObjectName = splitAssetNames[^2];
+                    var targetFolderName = Directory.GetParent(importedAsset).Name;
+                    if (targetObjectName != targetFolderName)
+                    {
+                        Debug.LogWarning($"Incorrect File Location: {Path.GetFileName(importedAsset)}. Refer to visual scripting coding standards for proper {prefix} location.");
+                    }
                 }
             }
         }

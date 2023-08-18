@@ -28,7 +28,7 @@ namespace OnChainStudios.FileTemplates
             /// <summary>
             /// The suffix for a new file.
             /// </summary>
-            public static string NewFileSuffix => "New";
+            public static string NewFileSuffix => _delimiter + "New";
         }
 
         /// <summary>
@@ -45,6 +45,7 @@ namespace OnChainStudios.FileTemplates
         public partial class TemplateAssetPaths
         {
             private const string _delimiter = ".";
+            
             private const string _fileNameSuffix = _delimiter + "TemplateGraph";
         }
         
@@ -67,10 +68,6 @@ namespace OnChainStudios.FileTemplates
         /// </summary>
         public partial class SubFolderPaths
         {
-            /// <summary>
-            /// Name of the subfolder for Constants script graphs.
-            /// </summary>
-            public static string Variables => nameof(Variables);
         }
 
         /// <summary>
@@ -80,12 +77,12 @@ namespace OnChainStudios.FileTemplates
         /// <param name="subFolderPath">The sub folder path to place the file in.</param>
         /// <param name="fileNamePrefix"></param>
         /// <param name="fileNameSuffix"></param>
-        public static void CreateVisualScriptingAsset(string templateAssetPath, string subFolderPath, string fileNamePrefix, string fileNameSuffix = null, bool includeMainFolder = false)
+        public static void CreateVisualScriptingAsset(string templateAssetPath, string subFolderPath, string fileNamePrefix, string fileNameSuffix = null, bool appendMainFolder = false)
         {
             var selectedFolderPath = AssetDatabase.GetAssetPath(Selection.activeObject);
 
             var folderPath = Path.Combine(selectedFolderPath, subFolderPath);
-            if (includeMainFolder)
+            if (appendMainFolder)
             {
                 folderPath = Path.Combine(folderPath, Path.GetFileName(selectedFolderPath));
             }
@@ -119,7 +116,7 @@ namespace OnChainStudios.FileTemplates
                 
             }
 
-            fileNameSuffix = fileNameSuffix == null ? string.Empty : $".{fileNameSuffix}";
+            fileNameSuffix = fileNameSuffix == null ? string.Empty : fileNameSuffix;
             var fileName = $"{fileNamePrefix}{locationPath}{fileNameSuffix}.asset";
             
             var assetPath = Path.Combine(folderPath, fileName);

@@ -13,10 +13,10 @@ namespace OnChainStudios.FileTemplates
         ///xml documentation in the main <see cref="VisualScriptingTemplateFactory"/> file.
         public partial class TypeIdentifiers
         {
-            /// <summary>
-            /// Type identifier for a <see cref="Behaviour"/> style script graph.
-            /// </summary>
-            public const string Behaviour = nameof(Behaviour);
+                /// <summary>
+                /// Type identifier for a <see cref="Behaviour"/> style script graph.
+                /// </summary>
+                public const string Behaviour = nameof(Behaviour);
         }
 
         ///xml documentation in the main <see cref="VisualScriptingTemplateFactory"/> file.
