@@ -36,6 +36,11 @@ namespace OnChainStudios.FileTemplates
                     /// Type identifier for a Saved set script graph.
                     /// </summary>
                     public const string Set = nameof(Saved) + _delimiter + nameof(Set);
+
+                    /// <summary>
+                    /// Type identifier for a Saved VariableName script graph.
+                    /// </summary>
+                    public const string VariableName = nameof(Saved) + _delimiter + nameof(VariableName);
                 }
             }
         }
@@ -65,6 +70,11 @@ namespace OnChainStudios.FileTemplates
                     /// File name for the Saved set template.
                     /// </summary>
                     public static string Set => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Variables.Saved.Set + _fileNameSuffix);
+
+                    /// <summary>
+                    /// File name for the Saved VariableName template.
+                    /// </summary>
+                    public static string VariableName => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Variables.Saved.VariableName + _fileNameSuffix);
                 }
             }
         }
@@ -99,6 +109,11 @@ namespace OnChainStudios.FileTemplates
                     /// Menu Item Path for a Saved has variable.
                     /// </summary>
                     public const string Set = _savedBasePath + nameof(Set);
+
+                    /// <summary>
+                    /// Menu Item Path for a Saved VariableName variable.
+                    /// </summary>
+                    public const string VariableName = _savedBasePath + nameof(VariableName);
                 }
             }
         }
@@ -133,6 +148,11 @@ namespace OnChainStudios.FileTemplates
                     /// Sub folder path for Saved set.
                     /// </summary>
                     public static string Set => Path.Combine(_savedVariablesBasePath, nameof(Set));
+
+                    /// <summary>
+                    /// Sub folder path for Saved VariableName.
+                    /// </summary>
+                    public static string VariableName => Path.Combine(_savedVariablesBasePath, nameof(VariableName));
                 }
             }
         }
@@ -154,5 +174,11 @@ namespace OnChainStudios.FileTemplates
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Saved.Set)]
         public static void CreateSavedSet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Saved.Set, SubFolderPaths.Variables.Saved.Set, TypeIdentifiers.Variables.Saved.Set, FileNameSuffixes.NewFileSuffix, true);
+
+        /// <summary>
+        /// Creates a Saved Set Variable script graph.
+        /// </summary>
+        [MenuItem(MenuItemPaths.Variables.Saved.VariableName)]
+        public static void CreateSavedVariableName() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Saved.VariableName, SubFolderPaths.Variables.Saved.VariableName, TypeIdentifiers.Variables.Saved.VariableName, FileNameSuffixes.NewFileSuffix, true);
     }
 }

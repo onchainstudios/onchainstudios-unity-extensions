@@ -51,6 +51,11 @@ namespace OnChainStudios.FileTemplates
                     /// Type identifier for a object set script graph.
                     /// </summary>
                     public const string Set = nameof(Object) + _delimiter + nameof(Set);
+
+                    /// <summary>
+                    /// Type identifier for a object VariableName script graph.
+                    /// </summary>
+                    public const string VariableName = nameof(Object) + _delimiter + nameof(VariableName);
                 }
             }
         }
@@ -80,6 +85,11 @@ namespace OnChainStudios.FileTemplates
                     /// File name for the object set template.
                     /// </summary>
                     public static string Set => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Variables.Object.Set + _fileNameSuffix);
+
+                    /// <summary>
+                    /// File name for the object VariableName template.
+                    /// </summary>
+                    public static string VariableName => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Variables.Object.VariableName + _fileNameSuffix);
                 }
             }
         }
@@ -114,6 +124,11 @@ namespace OnChainStudios.FileTemplates
                     /// Menu Item Path for a object has variable.
                     /// </summary>
                     public const string Set = _objectVariablesBasePath + nameof(Set);
+
+                    /// <summary>
+                    /// Menu Item Path for a object VariableName variable.
+                    /// </summary>
+                    public const string VariableName = _objectVariablesBasePath + nameof(VariableName);
                 }
             }
         }
@@ -148,6 +163,11 @@ namespace OnChainStudios.FileTemplates
                     /// Sub folder path for object set.
                     /// </summary>
                     public static string Set => Path.Combine(_objectVariablesBasePath, nameof(Set));
+
+                    /// <summary>
+                    /// Sub folder path for object VariableName.
+                    /// </summary>
+                    public static string VariableName => Path.Combine(_objectVariablesBasePath, nameof(VariableName));
                 }
             }
         }
@@ -169,5 +189,11 @@ namespace OnChainStudios.FileTemplates
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Object.Set)]
         public static void CreateObjectSet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Object.Set, SubFolderPaths.Variables.Object.Set, TypeIdentifiers.Variables.Object.Set, FileNameSuffixes.Variables.Object, true);
+
+        /// <summary>
+        /// Creates a Object VariableName Variable script graph.
+        /// </summary>
+        [MenuItem(MenuItemPaths.Variables.Object.VariableName)]
+        public static void CreateObjectVariableName() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Object.VariableName, SubFolderPaths.Variables.Object.VariableName, TypeIdentifiers.Variables.Object.VariableName, FileNameSuffixes.Variables.Object, true);
     }
 }

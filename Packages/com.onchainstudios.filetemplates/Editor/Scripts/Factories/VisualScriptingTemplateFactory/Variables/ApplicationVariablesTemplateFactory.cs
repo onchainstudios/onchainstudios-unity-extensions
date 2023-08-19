@@ -36,6 +36,11 @@ namespace OnChainStudios.FileTemplates
                     /// Type identifier for a Application set script graph.
                     /// </summary>
                     public const string Set = nameof(Application) + _delimiter + nameof(Set);
+
+                    /// <summary>
+                    /// Type identifier for a Application VariableName script graph.
+                    /// </summary>
+                    public const string VariableName = nameof(Application) + _delimiter + nameof(VariableName);
                 }
             }
         }
@@ -65,6 +70,11 @@ namespace OnChainStudios.FileTemplates
                     /// File name for the Application set template.
                     /// </summary>
                     public static string Set => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Variables.Application.Set + _fileNameSuffix);
+
+                    /// <summary>
+                    /// File name for the Application set template.
+                    /// </summary>
+                    public static string VariableName => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Variables.Application.VariableName + _fileNameSuffix);
                 }
             }
         }
@@ -99,6 +109,11 @@ namespace OnChainStudios.FileTemplates
                     /// Menu Item Path for a Application has variable.
                     /// </summary>
                     public const string Set = _applicationVariablesBasePath + nameof(Set);
+
+                    /// <summary>
+                    /// Menu Item Path for a Application VariableName variable.
+                    /// </summary>
+                    public const string VariableName = _applicationVariablesBasePath + nameof(VariableName);
                 }
             }
         }
@@ -133,6 +148,11 @@ namespace OnChainStudios.FileTemplates
                     /// Sub folder path for Application set.
                     /// </summary>
                     public static string Set => Path.Combine(_applicationVariablesBasePath, nameof(Set));
+
+                    /// <summary>
+                    /// Sub folder path for Application set.
+                    /// </summary>
+                    public static string VariableName => Path.Combine(_applicationVariablesBasePath, nameof(VariableName));
                 }
             }
         }
@@ -154,5 +174,11 @@ namespace OnChainStudios.FileTemplates
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Application.Set)]
         public static void CreateApplicationSet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Application.Set, SubFolderPaths.Variables.Application.Set, TypeIdentifiers.Variables.Application.Set, FileNameSuffixes.NewFileSuffix, true);
+
+        /// <summary>
+        /// Creates a Application VariableName Variable script graph.
+        /// </summary>
+        [MenuItem(MenuItemPaths.Variables.Application.VariableName)]
+        public static void CreateApplicationVariableName() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Application.VariableName, SubFolderPaths.Variables.Application.VariableName, TypeIdentifiers.Variables.Application.VariableName, FileNameSuffixes.NewFileSuffix, true);
     }
 }

@@ -36,6 +36,11 @@ namespace OnChainStudios.FileTemplates
                     /// Type identifier for a Scene set script graph.
                     /// </summary>
                     public const string Set = nameof(Scene) + _delimiter + nameof(Set);
+
+                    /// <summary>
+                    /// Type identifier for a Scene VariableName script graph.
+                    /// </summary>
+                    public const string VariableName = nameof(Scene) + _delimiter + nameof(VariableName);
                 }
             }
         }
@@ -65,6 +70,11 @@ namespace OnChainStudios.FileTemplates
                     /// File name for the Scene set template.
                     /// </summary>
                     public static string Set => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Variables.Scene.Set + _fileNameSuffix);
+
+                    /// <summary>
+                    /// File name for the Scene VariableName template.
+                    /// </summary>
+                    public static string VariableName => FileTemplateHelper.GetProjectRelativeFilePath(TypeIdentifiers.Variables.Scene.VariableName + _fileNameSuffix);
                 }
             }
         }
@@ -99,6 +109,11 @@ namespace OnChainStudios.FileTemplates
                     /// Menu Item Path for a Scene has variable.
                     /// </summary>
                     public const string Set = _sceneBasePath + nameof(Set);
+
+                    /// <summary>
+                    /// Menu Item Path for a Scene has variable.
+                    /// </summary>
+                    public const string VariableName = _sceneBasePath + nameof(VariableName);
                 }
             }
         }
@@ -133,6 +148,11 @@ namespace OnChainStudios.FileTemplates
                     /// Sub folder path for Scene set.
                     /// </summary>
                     public static string Set => Path.Combine(_sceneVariablesBasePath, nameof(Set));
+
+                    /// <summary>
+                    /// Sub folder path for Scene set.
+                    /// </summary>
+                    public static string VariableName => Path.Combine(_sceneVariablesBasePath, nameof(VariableName));
                 }
             }
         }
@@ -154,5 +174,11 @@ namespace OnChainStudios.FileTemplates
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Scene.Set)]
         public static void CreateSceneSet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Scene.Set, SubFolderPaths.Variables.Scene.Set, TypeIdentifiers.Variables.Scene.Set, FileNameSuffixes.NewFileSuffix, true);
+
+        /// <summary>
+        /// Creates a Scene Set Variable script graph.
+        /// </summary>
+        [MenuItem(MenuItemPaths.Variables.Scene.VariableName)]
+        public static void CreateSceneVariableName() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Scene.VariableName, SubFolderPaths.Variables.Scene.VariableName, TypeIdentifiers.Variables.Scene.VariableName, FileNameSuffixes.NewFileSuffix, true);
     }
 }
