@@ -91,11 +91,6 @@ namespace OnChainStudios.FileTemplates
             public static partial class Variables
             {
                 /// <summary>
-                /// Base path for all variables.
-                /// </summary>
-                private const string _variablesBasePath = _basePath + nameof(Variables) + _delimiter;
-
-                /// <summary>
                 /// Menu Item Paths for Object Variables.
                 /// </summary>
                 public static class Object
@@ -103,22 +98,22 @@ namespace OnChainStudios.FileTemplates
                     /// <summary>
                     /// Base path for all object variables.
                     /// </summary>
-                    private const string _objectBasePath = _variablesBasePath + nameof(Object) + _delimiter;
+                    private const string _objectVariablesBasePath = _variablesBasePath + nameof(Object) + _delimiter;
 
                     /// <summary>
                     /// Menu Item Path for a object get variable.
                     /// </summary>
-                    public const string Get = _objectBasePath + nameof(Get);
+                    public const string Get = _objectVariablesBasePath + nameof(Get);
 
                     /// <summary>
                     /// Menu Item Path for a object has variable.
                     /// </summary>
-                    public const string Has = _objectBasePath + nameof(Has);
+                    public const string Has = _objectVariablesBasePath + nameof(Has);
 
                     /// <summary>
                     /// Menu Item Path for a object has variable.
                     /// </summary>
-                    public const string Set = _objectBasePath + nameof(Set);
+                    public const string Set = _objectVariablesBasePath + nameof(Set);
                 }
             }
         }

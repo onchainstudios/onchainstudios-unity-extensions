@@ -122,6 +122,11 @@ namespace OnChainStudios.FileTemplates
             public static partial class Variables
             {
                 /// <summary>
+                /// Base path for all variables.
+                /// </summary>
+                private const string _variablesBasePath = _basePath + nameof(Variables) + _delimiter;
+
+                /// <summary>
                 /// Menu item paths for all constants.
                 /// </summary>
                 public static class Constants
@@ -129,42 +134,42 @@ namespace OnChainStudios.FileTemplates
                     /// <summary>
                     /// Base path for behaviour script graphs.
                     /// </summary>
-                    private const string _constantsBasePath = _variablesBasePath + nameof(Constants) + _delimiter;
+                    private const string _constantVariablesBasePath = _variablesBasePath + nameof(Constants) + _delimiter;
 
                     /// <summary>
                     /// Menu item path to create a new Float script graph.
                     /// </summary>
-                    public const string Float = _constantsBasePath + nameof(Float);
+                    public const string Float = _constantVariablesBasePath + nameof(Float);
 
                     /// <summary>
                     /// Menu item path to create a new Int script graph.
                     /// </summary>
-                    public const string Int = _constantsBasePath + nameof(Int);
+                    public const string Int = _constantVariablesBasePath + nameof(Int);
 
                     /// <summary>
                     /// Menu item path to create a new Vector2 script graph.
                     /// </summary>
-                    public const string Vector2 = _constantsBasePath + nameof(Vector2);
+                    public const string Vector2 = _constantVariablesBasePath + nameof(Vector2);
 
                     /// <summary>
                     /// Menu item path to create a new String script graph.
                     /// </summary>
-                    public const string String = _constantsBasePath + nameof(String);
+                    public const string String = _constantVariablesBasePath + nameof(String);
 
                     /// <summary>
                     /// Menu item path to create a new Vector3 script graph.
                     /// </summary>
-                    public const string Vector3 = _constantsBasePath + nameof(Vector3);
+                    public const string Vector3 = _constantVariablesBasePath + nameof(Vector3);
 
                     /// <summary>
                     /// Menu item path to create a new LayerIndex script graph.
                     /// </summary>
-                    public const string LayerIndex = _constantsBasePath + nameof(LayerIndex);
+                    public const string LayerIndex = _constantVariablesBasePath + nameof(LayerIndex);
 
                     /// <summary>
                     /// Menu item path to create a new Tag script graph.
                     /// </summary>
-                    public const string Tag = _constantsBasePath + nameof(Tag);
+                    public const string Tag = _constantVariablesBasePath + nameof(Tag);
                 }
             }
         }
@@ -185,42 +190,42 @@ namespace OnChainStudios.FileTemplates
                     /// <summary>
                     /// Name of the subfolder for Constants script graphs.
                     /// </summary>
-                    private static string _constantsBasePath => Path.Combine(nameof(Variables), nameof(Constants));
+                    private static string _constantVariablesBasePath => Path.Combine(nameof(Variables), nameof(Constants));
 
                     /// <summary>
                     /// Name of the subfolder for Float script graphs.
                     /// </summary>
-                    public static string Floats => Path.Combine(_constantsBasePath, nameof(Floats));
+                    public static string Floats => Path.Combine(_constantVariablesBasePath, nameof(Floats));
 
                     /// <summary>
                     /// Name of the subfolder for Int script graphs.
                     /// </summary>
-                    public static string Ints => Path.Combine(_constantsBasePath, nameof(Ints));
+                    public static string Ints => Path.Combine(_constantVariablesBasePath, nameof(Ints));
 
                     /// <summary>
                     /// Name of the subfolder for String script graphs.
                     /// </summary>
-                    public static string Strings => Path.Combine(_constantsBasePath, nameof(Strings));
+                    public static string Strings => Path.Combine(_constantVariablesBasePath, nameof(Strings));
 
                     /// <summary>
                     /// Name of the subfolder for Vector2 script graphs.
                     /// </summary>
-                    public static string Vector2s => Path.Combine(_constantsBasePath, nameof(Vector2s));
+                    public static string Vector2s => Path.Combine(_constantVariablesBasePath, nameof(Vector2s));
 
                     /// <summary>
                     /// Name of the subfolder for Vector3 script graphs.
                     /// </summary>
-                    public static string Vector3s => Path.Combine(_constantsBasePath, nameof(Vector3s));
+                    public static string Vector3s => Path.Combine(_constantVariablesBasePath, nameof(Vector3s));
 
                     /// <summary>
                     /// Name of the subfolder for LayerIndices script graphs.
                     /// </summary>
-                    public static string LayerIndices => Path.Combine(_constantsBasePath, nameof(LayerIndices));
+                    public static string LayerIndices => Path.Combine(_constantVariablesBasePath, nameof(LayerIndices));
 
                     /// <summary>
                     /// Name of the subfolder for Tags script graphs.
                     /// </summary>
-                    public static string Tags => Path.Combine(_constantsBasePath, nameof(Tags));
+                    public static string Tags => Path.Combine(_constantVariablesBasePath, nameof(Tags));
                 }
             }
         }
