@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Event.Name.TemplateGraph
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":0.0,"y":0.0},"zoom":1.0,"elements":[],"$version":"A"}}'
-    _objectReferences: []
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[{"_type":"System.String","key":"Value","label":null,"summary":null,"hideLabel":true}],"title":null,"summary":null,"pan":{"x":0.0,"y":0.0},"zoom":1.0,"elements":[{"type":"Unity.VisualScripting.ScriptGraphAsset","instance":true,"static":true,"defaultValues":{"target":{"$content":0,"$type":"UnityEngine.Object"}},"position":{"x":-496.0,"y":-302.0},"guid":"1d3ec7ad-9bcd-4685-ab32-fb96e76c7142","$version":"A","$type":"Unity.VisualScripting.Expose","$id":"10"},{"defaultValues":{},"position":{"x":84.0,"y":-219.0},"guid":"3c95a472-1d98-4baa-b1f4-7c9f0670e41e","$version":"A","$type":"Unity.VisualScripting.GraphOutput","$id":"12"},{"sourceUnit":{"$ref":"10"},"sourceKey":"name","destinationUnit":{"$ref":"12"},"destinationKey":"Value","guid":"f9d8cd07-0fbf-4328-8959-785e474c0bf5","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}'
+    _objectReferences:
+    - {fileID: 11400000}

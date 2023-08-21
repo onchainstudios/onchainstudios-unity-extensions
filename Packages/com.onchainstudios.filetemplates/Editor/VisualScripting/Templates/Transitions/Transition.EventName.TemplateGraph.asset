@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Transition.EventName.TemplateGraph
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":32.74597,"y":-2.249298},"zoom":1.0,"elements":[{"defaultValues":{},"position":{"x":-18.0,"y":-65.0},"guid":"b1dd8e9e-84d9-44ba-a9c3-c4978de0977c","$version":"A","$type":"Unity.VisualScripting.TriggerStateTransition"}],"$version":"A"}}'
-    _objectReferences: []
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[{"_type":"System.String","key":"Value","label":null,"summary":null,"hideLabel":true}],"title":null,"summary":null,"pan":{"x":104.2461,"y":83.75073},"zoom":1.0,"elements":[{"type":"Unity.VisualScripting.ScriptGraphAsset","instance":true,"static":true,"defaultValues":{"target":{"$content":0,"$type":"UnityEngine.Object"}},"position":{"x":-496.0,"y":-302.0},"guid":"652c0fb9-8730-499c-b7c7-a607a055bf88","$version":"A","$type":"Unity.VisualScripting.Expose","$id":"10"},{"defaultValues":{},"position":{"x":84.0,"y":-219.0},"guid":"2221984c-837d-45cb-9dc2-ee9bf1710393","$version":"A","$type":"Unity.VisualScripting.GraphOutput","$id":"12"},{"sourceUnit":{"$ref":"10"},"sourceKey":"name","destinationUnit":{"$ref":"12"},"destinationKey":"Value","guid":"9975b492-c553-45b1-bc54-38a97695a030","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}'
+    _objectReferences:
+    - {fileID: 11400000}
