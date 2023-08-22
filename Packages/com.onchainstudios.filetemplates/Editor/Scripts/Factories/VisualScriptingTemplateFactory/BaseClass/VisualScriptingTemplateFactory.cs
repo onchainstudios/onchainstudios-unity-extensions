@@ -138,7 +138,7 @@ namespace OnChainStudios.FileTemplates
             {
                 if (Directory.GetParent(path)?.Name == "SuperStates")
                 {
-                    return $"{GetFileNamePath(Directory.GetParent(path).Parent.FullName)}.{Path.GetFileName(path)}";
+                    return $"{GetFileNamePath(Directory.GetParent(path).Parent.Parent.FullName)}.{Path.GetFileName(path)}";
                 }
                 else
                 {
