@@ -3,6 +3,8 @@
 // Copyright: OnChain Studios, 2023
 //*****************************************************************************
 
+using System.Linq;
+
 namespace OnChainStudios.FileTemplates
 {
     using System.IO;
@@ -95,7 +97,13 @@ namespace OnChainStudios.FileTemplates
         /// <param name="appendMainFolder">If set to true, appends the main folder where this file was generated.</param>
         private static void CreateVisualScriptingAsset(string templateAssetPath, string subFolderPath, string fileNamePrefix, string fileNameSuffix = null, bool appendMainFolder = false)
         {
-            var selectedFolderPath = AssetDatabase.GetAssetPath(Selection.activeObject);
+            var selectedAssets = Selection.GetFiltered<Object>(SelectionMode.Assets);
+            var selectedFolderPath = AssetDatabase.GetAssetPath(Selection.GetFiltered<Object>(SelectionMode.Assets).First());
+            if (selectedAssets.Length > 1 || Path.GetExtension(selectedFolderPath) != string.Empty)
+            {
+                Debug.LogError($"A single folder must be selected to create new visual scripting asset using FileTemplates. See FileTemplates package readme for usage.");
+                return;
+            }
 
             var folderPath = Path.Combine(selectedFolderPath, subFolderPath);
             folderPath = appendMainFolder ? Path.Combine(folderPath, Path.GetFileName(selectedFolderPath)) : folderPath;

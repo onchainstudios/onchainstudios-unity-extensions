@@ -51,7 +51,7 @@ namespace OnChainStudios.FileTemplates
         /// </summary>
         /// <param name="fileNameWithoutExtension">The name of the file without its extension.</param>
         /// <returns>The relative file path of the file.</returns>
-        public static string GetProjectRelativeFilePath(string fileNameWithoutExtension) => GetFilePath(fileNameWithoutExtension).Replace($"{Directory.GetParent(Application.dataPath).FullName}/", "");
+        public static string GetProjectRelativeFilePath(string fileNameWithoutExtension) => GetFilePath(fileNameWithoutExtension).Replace($"{Directory.GetParent(Application.dataPath).FullName}{Path.DirectorySeparatorChar}", "");
 
         /// <summary>
         /// Cleans up the common file data for a newly created file.
@@ -80,31 +80,16 @@ namespace OnChainStudios.FileTemplates
             var fileData = File.ReadAllText(FileTemplateHelper.GetFilePath(templateClassName));
             fileData = FileTemplateHelper.CleanupCSharpFileData(fileData, templateClassName);
             var newFileName = $"New{templateClassName.Replace("Template", "")}";
-            
-            var tempDirectory = $"{Directory.GetParent(Application.dataPath)}/Temp";
+
+            var tempDirectory = $"{Directory.GetParent(Application.dataPath)}{Path.DirectorySeparatorChar}Temp";
             if (!Directory.Exists(tempDirectory))
             {
                 Directory.CreateDirectory(tempDirectory);
             }
-            var tempTemplateFilePath = $"{tempDirectory}/onchainFileTemplateData.txt";
+            var tempTemplateFilePath = Path.Combine(tempDirectory, "onchainFileTemplateData.txt");
             File.WriteAllText(tempTemplateFilePath, fileData);
 
             ProjectWindowUtil.CreateScriptAssetFromTemplateFile(tempTemplateFilePath, $"{newFileName}{Extension}");
-        }
-        
-        /// <summary>
-        /// Creates the visual scripting asset based on the template needed and its proposed name. 
-        /// </summary>
-        /// <param name="newFileName"The name of the new visual scripting asset. ></param>
-        /// <param name="templateAssetPath">The path for the graph template. </param>
-        public static void CreateVisualScriptingAsset(string newFileName, string templateAssetPath)
-        {
-            var graphPrefab = AssetDatabase.LoadAssetAtPath<ScriptGraphAsset>(templateAssetPath);
-            var newGraph = UnityEngine.Object.Instantiate(graphPrefab);
-            var parentFolder = AssetDatabase.GetAssetPath(Selection.activeObject);
-            var assetPath = $"{parentFolder}/{newFileName}.asset";
-            string assetName = Path.GetFileName(assetPath);
-            ProjectWindowUtil.CreateAsset(newGraph, assetName);
         }
     }
 }
