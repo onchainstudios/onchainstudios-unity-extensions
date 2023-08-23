@@ -3,12 +3,11 @@
 // Copyright: OnChain Studios, 2023
 //*****************************************************************************
 
-using System.Collections.Generic;
-
 namespace OnChainStudios.UIToolkitExtensions
 {
     using UnityEngine;
     using UnityEngine.UIElements;
+    using System.Collections.Generic;
 
     /// <summary>
     /// A custom visual element that acts similarly to the CSS Linear Gradient.
@@ -20,6 +19,9 @@ namespace OnChainStudios.UIToolkitExtensions
         /// </summary>
         public bool allowUpdatesInEditor { get; set; }
         
+        /// <summary>
+        /// The angle of the gradient.
+        /// </summary>
         public float angle { get; set; }
         
         /// <summary>
@@ -158,12 +160,12 @@ namespace OnChainStudios.UIToolkitExtensions
                     texture.Reinitialize((int)width, (int)height);
 
 
-                    var stops = new List<GradientColorPositions>();
-                    stops.Add(new GradientColorPositions() {color = color1, position = color1Position});
-                    stops.Add(new GradientColorPositions() {color = color2, position = color2Position});
-                    stops.Add(new GradientColorPositions() {color = color3, position = color3Position});
-                    stops.Add(new GradientColorPositions() {color = color4, position = color4Position});
-                    stops.Add(new GradientColorPositions() {color = color5, position = color5Position});
+                    var stops = new List<GradientColorPosition>();
+                    stops.Add(new GradientColorPosition() {Color = color1, Position = color1Position});
+                    stops.Add(new GradientColorPosition() {Color = color2, Position = color2Position});
+                    stops.Add(new GradientColorPosition() {Color = color3, Position = color3Position});
+                    stops.Add(new GradientColorPosition() {Color = color4, Position = color4Position});
+                    stops.Add(new GradientColorPosition() {Color = color5, Position = color5Position});
                     
                     GenerateGradientTexture(texture, width, height, angle, stops);
                 }
@@ -171,7 +173,15 @@ namespace OnChainStudios.UIToolkitExtensions
             }
         }
 
-        public void GenerateGradientTexture(Texture2D texture, int width, int height, float degrees, List<GradientColorPositions> colorPositions)
+        /// <summary>
+        /// Generates a gradient texture.
+        /// </summary>
+        /// <param name="texture">The texture to apply a gradient to.</param>
+        /// <param name="width">The width of the texture.</param>
+        /// <param name="height">The height of the texture.</param>
+        /// <param name="degrees">The angle of the gradient.</param>
+        /// <param name="colorPositions">The gradient color position.</param>
+        public void GenerateGradientTexture(Texture2D texture, int width, int height, float degrees, List<GradientColorPosition> colorPositions)
         {
             Vector2 gradientDirection = Quaternion.Euler(0, 0, degrees) * Vector2.right;
 
@@ -184,11 +194,11 @@ namespace OnChainStudios.UIToolkitExtensions
                     Vector2 currentPixel = new Vector2(x, y);
                     float positionAlongGradient = Vector2.Dot(currentPixel, gradientDirection);
 
-                    float t = isHorizontalGradient ?
+                    float position = isHorizontalGradient ?
                         Mathf.InverseLerp(0, width - 1, positionAlongGradient) :
                         Mathf.InverseLerp(0, height - 1, positionAlongGradient);
 
-                    Color interpolatedColor = InterpolateColors(t, colorPositions);
+                    Color interpolatedColor = InterpolateColors(position, colorPositions);
                     texture.SetPixel(x, y, interpolatedColor);
                 }
             }
@@ -196,7 +206,13 @@ namespace OnChainStudios.UIToolkitExtensions
             texture.Apply();
         }
 
-        private Color InterpolateColors(float t, List<GradientColorPositions> colorPositions)
+        /// <summary>
+        /// Interpolates between color positions <see cref="GradientColorPosition"/>
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="colorPositions"></param>
+        /// <returns></returns>
+        private Color InterpolateColors(float position, List<GradientColorPosition> colorPositions)
         {
             if (colorPositions.Count == 0)
                 return Color.white;
@@ -206,7 +222,7 @@ namespace OnChainStudios.UIToolkitExtensions
 
             for (int i = 0; i < colorPositions.Count - 1; i++)
             {
-                if (t < colorPositions[i + 1].position)
+                if (position < colorPositions[i + 1].Position)
                 {
                     startIndex = i;
                     endIndex = i + 1;
@@ -214,16 +230,8 @@ namespace OnChainStudios.UIToolkitExtensions
                 }
             }
 
-            float tInRange = Mathf.InverseLerp(colorPositions[startIndex].position, colorPositions[endIndex].position, t);
-            return Color.Lerp(colorPositions[startIndex].color, colorPositions[endIndex].color, tInRange);
-        }
-        
-        [System.Serializable]
-        public struct GradientColorPositions
-        {
-            public Color color;
-            [Range(0f, 1f)]
-            public float position;
+            float tInRange = Mathf.InverseLerp(colorPositions[startIndex].Position, colorPositions[endIndex].Position, position);
+            return Color.Lerp(colorPositions[startIndex].Color, colorPositions[endIndex].Color, tInRange);
         }
 
         /// <summary>
@@ -280,7 +288,7 @@ namespace OnChainStudios.UIToolkitExtensions
             {
                 result = true;
             }
-            else if (color5 != previousColor5)
+            else if (color5 != previousColor5 || color5Position != previousColor5Position)
             {
                 result = true;
             }
