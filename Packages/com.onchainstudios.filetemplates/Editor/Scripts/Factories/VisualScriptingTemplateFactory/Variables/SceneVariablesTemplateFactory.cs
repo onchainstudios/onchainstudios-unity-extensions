@@ -161,24 +161,24 @@ namespace OnChainStudios.FileTemplates
         /// Creates a Scene Get Variable script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Scene.Get)]
-        public static void CreateSceneGet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Scene.Get, SubFolderPaths.Variables.Scene.Get, TypeIdentifiers.Variables.Scene.Get, FileNameSuffixes.NewFileSuffix, true);
+        public static void CreateSceneGet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Scene.Get, SubFolderPaths.Variables.Scene.Get, TypeIdentifiers.Variables.Scene.Get, FileNameSuffixes.NewFileSuffix);
 
         /// <summary>
         /// Creates a Scene Has Variable script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Scene.Has)]
-        public static void CreateSceneHas() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Scene.Has, SubFolderPaths.Variables.Scene.Has, TypeIdentifiers.Variables.Scene.Has, FileNameSuffixes.NewFileSuffix, true);
+        public static void CreateSceneHas() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Scene.Has, SubFolderPaths.Variables.Scene.Has, TypeIdentifiers.Variables.Scene.Has, FileNameSuffixes.NewFileSuffix);
 
         /// <summary>
         /// Creates a Scene Set Variable script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Scene.Set)]
-        public static void CreateSceneSet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Scene.Set, SubFolderPaths.Variables.Scene.Set, TypeIdentifiers.Variables.Scene.Set, FileNameSuffixes.NewFileSuffix, true);
+        public static void CreateSceneSet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Scene.Set, SubFolderPaths.Variables.Scene.Set, TypeIdentifiers.Variables.Scene.Set, FileNameSuffixes.NewFileSuffix);
 
         /// <summary>
         /// Creates a Scene Set Variable script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Scene.VariableName)]
-        public static void CreateSceneVariableName() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Scene.VariableName, SubFolderPaths.Variables.Scene.VariableName, TypeIdentifiers.Variables.Scene.VariableName, FileNameSuffixes.NewFileSuffix, true);
+        public static void CreateSceneVariableName() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Scene.VariableName, SubFolderPaths.Variables.Scene.VariableName, TypeIdentifiers.Variables.Scene.VariableName, FileNameSuffixes.NewFileSuffix);
     }
 }
