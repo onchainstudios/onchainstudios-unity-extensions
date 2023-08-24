@@ -13,6 +13,9 @@ namespace OnChainStudios.UIToolkitExtensions
     /// </summary>
     public abstract class OnListViewEventBase : EventUnit<ListViewEventArgs>
     {
+        /// <summary>
+        /// The set of match rules that will trigger the <see cref="ListView"/>
+        /// </summary>
         public enum MatchRules
         {
             VisualElementNameExact,
@@ -22,7 +25,7 @@ namespace OnChainStudios.UIToolkitExtensions
         };
         
         /// <summary>
-        /// The visual element name that should trigger the event.
+        /// The visual element match rules that should trigger the event.
         /// </summary>
         [DoNotSerialize]
         public ValueInput MatchRule { get; private set; }
@@ -34,31 +37,31 @@ namespace OnChainStudios.UIToolkitExtensions
         public ValueInput Name { get; private set; }
 
         /// <summary>
-        /// The visual element name that should trigger the event.
+        /// The visual element class that should trigger the event.
         /// </summary>
         [DoNotSerialize]
         public ValueInput Class { get; private set; }
         
         /// <summary>
-        /// The visual element name that should trigger the event.
+        /// The visual element type that should trigger the event.
         /// </summary>
         [DoNotSerialize]
         public ValueInput Type { get; private set; }
         
         /// <summary>
-        /// The event output data to return when the event is triggered.
+        /// The event output data for the <see cref="ListView"/>
         /// </summary>
         [DoNotSerialize]
         public ValueOutput ListView { get; private set; }
         
         /// <summary>
-        /// The event output data to return when the event is triggered.
+        /// The event output data for the <see cref="Item"/> in the <see cref="ListView"/>
         /// </summary>
         [DoNotSerialize]
         public ValueOutput Item { get; private set; }
         
         /// <summary>
-        /// The event output data to return when the event is triggered.
+        /// The event output data for the index of the <see cref="Item"/> in the <see cref="ListView"/>
         /// </summary>
         [DoNotSerialize]
         public ValueOutput Index { get; private set; }

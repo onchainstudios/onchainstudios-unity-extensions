@@ -3,14 +3,12 @@
 // Copyright: OnChain Studios, 2023
 //*****************************************************************************
 
-using UnityEngine.UIElements;
-
 namespace OnChainStudios.UIToolkitExtensions
 {
     using Unity.VisualScripting;
 
     /// <summary>
-    /// [INSERT CLASS COMMENT HERE]
+    /// Event node for when the <see cref="ListViewEventBusBridge.BindItemEvent"/> is posted to the <see cref="EventBus"/>.
     /// </summary>
     [UnitCategory("Events\\UIToolkit")]
     public class OnListViewUnbindItem : OnListViewEventBase

@@ -3,17 +3,14 @@
 // Copyright: cryptoys, 2023
 //*****************************************************************************
 
-using Unity.VisualScripting;
-using UnityEngine.UIElements;
-
 namespace OnChainStudios.UIToolkitExtensions
 {
-    using System.Collections;
-    using System.Collections.Generic;
+    using Unity.VisualScripting;
+    using UnityEngine.UIElements;
     using UnityEngine;
 
     /// <summary>
-    /// [INSERT CLASS COMMENT HERE]
+    /// Listens to events on a ListView and forwards them the event bus. 
     /// </summary>
     public class ListViewEventBusBridge : MonoBehaviour
     {
