@@ -132,7 +132,7 @@ namespace OnChainStudios.FileTemplates
                 public static class Constants
                 {
                     /// <summary>
-                    /// Base path for behaviour script graphs.
+                    /// Base path for constant script graphs.
                     /// </summary>
                     private const string _constantVariablesBasePath = _variablesBasePath + nameof(Constants) + _delimiter;
 
