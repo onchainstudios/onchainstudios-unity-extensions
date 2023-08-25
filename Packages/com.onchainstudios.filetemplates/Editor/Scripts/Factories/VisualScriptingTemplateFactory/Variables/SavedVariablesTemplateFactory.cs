@@ -161,24 +161,24 @@ namespace OnChainStudios.FileTemplates
         /// Creates a Saved Get Variable script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Saved.Get)]
-        public static void CreateSavedGet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Saved.Get, SubFolderPaths.Variables.Saved.Get, TypeIdentifiers.Variables.Saved.Get, FileNameSuffixes.NewFileSuffix);
+        public static void CreateSavedGet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Saved.Get, SubFolderPaths.Variables.Saved.Get, TypeIdentifiers.Variables.Saved.Get, FileNameSuffixes.NewFileSuffix, false, false);
 
         /// <summary>
         /// Creates a Saved Has Variable script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Saved.Has)]
-        public static void CreateSavedHas() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Saved.Has, SubFolderPaths.Variables.Saved.Has, TypeIdentifiers.Variables.Saved.Has, FileNameSuffixes.NewFileSuffix);
+        public static void CreateSavedHas() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Saved.Has, SubFolderPaths.Variables.Saved.Has, TypeIdentifiers.Variables.Saved.Has, FileNameSuffixes.NewFileSuffix, false, false);
 
         /// <summary>
         /// Creates a Saved Set Variable script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Saved.Set)]
-        public static void CreateSavedSet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Saved.Set, SubFolderPaths.Variables.Saved.Set, TypeIdentifiers.Variables.Saved.Set, FileNameSuffixes.NewFileSuffix);
+        public static void CreateSavedSet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Saved.Set, SubFolderPaths.Variables.Saved.Set, TypeIdentifiers.Variables.Saved.Set, FileNameSuffixes.NewFileSuffix, false, false);
 
         /// <summary>
         /// Creates a Saved Set Variable script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Saved.VariableName)]
-        public static void CreateSavedVariableName() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Saved.VariableName, SubFolderPaths.Variables.Saved.VariableName, TypeIdentifiers.Variables.Saved.VariableName, FileNameSuffixes.NewFileSuffix);
+        public static void CreateSavedVariableName() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Saved.VariableName, SubFolderPaths.Variables.Saved.VariableName, TypeIdentifiers.Variables.Saved.VariableName, FileNameSuffixes.NewFileSuffix, false, false);
     }
 }

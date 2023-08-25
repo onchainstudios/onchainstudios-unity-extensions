@@ -161,24 +161,24 @@ namespace OnChainStudios.FileTemplates
         /// Creates a Application Get Variable script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Application.Get)]
-        public static void CreateApplicationGet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Application.Get, SubFolderPaths.Variables.Application.Get, TypeIdentifiers.Variables.Application.Get, FileNameSuffixes.NewFileSuffix);
+        public static void CreateApplicationGet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Application.Get, SubFolderPaths.Variables.Application.Get, TypeIdentifiers.Variables.Application.Get, FileNameSuffixes.NewFileSuffix, false, false);
 
         /// <summary>
         /// Creates a Application Has Variable script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Application.Has)]
-        public static void CreateApplicationHas() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Application.Has, SubFolderPaths.Variables.Application.Has, TypeIdentifiers.Variables.Application.Has, FileNameSuffixes.NewFileSuffix);
+        public static void CreateApplicationHas() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Application.Has, SubFolderPaths.Variables.Application.Has, TypeIdentifiers.Variables.Application.Has, FileNameSuffixes.NewFileSuffix, false, false);
 
         /// <summary>
         /// Creates a Application Set Variable script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Application.Set)]
-        public static void CreateApplicationSet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Application.Set, SubFolderPaths.Variables.Application.Set, TypeIdentifiers.Variables.Application.Set, FileNameSuffixes.NewFileSuffix);
+        public static void CreateApplicationSet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Application.Set, SubFolderPaths.Variables.Application.Set, TypeIdentifiers.Variables.Application.Set, FileNameSuffixes.NewFileSuffix, false, false);
 
         /// <summary>
         /// Creates a Application VariableName Variable script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Application.VariableName)]
-        public static void CreateApplicationVariableName() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Application.VariableName, SubFolderPaths.Variables.Application.VariableName, TypeIdentifiers.Variables.Application.VariableName, FileNameSuffixes.NewFileSuffix);
+        public static void CreateApplicationVariableName() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Application.VariableName, SubFolderPaths.Variables.Application.VariableName, TypeIdentifiers.Variables.Application.VariableName, FileNameSuffixes.NewFileSuffix, false, false);
     }
 }

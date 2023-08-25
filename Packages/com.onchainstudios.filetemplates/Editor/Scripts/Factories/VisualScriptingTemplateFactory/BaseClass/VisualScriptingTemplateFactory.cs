@@ -95,7 +95,7 @@ namespace OnChainStudios.FileTemplates
         /// <param name="fileNamePrefix">The file name prefix for the asset.</param>
         /// <param name="fileNameSuffix">The file name suffix for the asset.</param>
         /// <param name="appendMainFolder">If set to true, appends the main folder where this file was generated.</param>
-        private static void CreateVisualScriptingAsset(string templateAssetPath, string subFolderPath, string fileNamePrefix, string fileNameSuffix = null, bool appendMainFolder = false)
+        private static void CreateVisualScriptingAsset(string templateAssetPath, string subFolderPath, string fileNamePrefix, string fileNameSuffix = null, bool appendMainFolder = false, bool includeMainFolderInFileName = true)
         {
             var selectedAssets = Selection.GetFiltered<Object>(SelectionMode.Assets);
             var selectedFolderPath = AssetDatabase.GetAssetPath(Selection.GetFiltered<Object>(SelectionMode.Assets).First());
@@ -113,7 +113,7 @@ namespace OnChainStudios.FileTemplates
             var scriptGraphAsset = AssetDatabase.LoadAssetAtPath<ScriptableObject>(templateAssetPath);
             if (scriptGraphAsset != null)
             {
-                var locationPath = GetFileNamePath(selectedFolderPath);
+                var locationPath = includeMainFolderInFileName ? GetFileNamePath(selectedFolderPath) : string.Empty;
                 fileNameSuffix ??= string.Empty;
                 var fileName = $"{fileNamePrefix}{locationPath}{fileNameSuffix}.asset";
                 var assetPath = Path.Combine(folderPath, fileName);

@@ -12,21 +12,6 @@ namespace OnChainStudios.FileTemplates
     public static  partial class VisualScriptingTemplateFactory
     {
         //xml documentation in the file VisualScriptingTemplateFactory.
-        public static partial class FileNameSuffixes
-        {
-            /// <summary>
-            /// File name suffixes for all variables.
-            /// </summary>
-            public static partial class Variables
-            {
-                /// <summary>
-                /// File name suffix for object variable variables.
-                /// </summary>
-                public static string Object => _delimiter + "[TargetGameObjectName]" + NewFileSuffix;
-            }
-        }
-
-        //xml documentation in the file VisualScriptingTemplateFactory.
         public static partial class TypeIdentifiers
         {
             //xml documentation in the file ConstantsTemplateFactory.
@@ -176,24 +161,24 @@ namespace OnChainStudios.FileTemplates
         /// Creates a Object Get Variable script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Object.Get)]
-        public static void CreateObjectGet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Object.Get, SubFolderPaths.Variables.Object.Get, TypeIdentifiers.Variables.Object.Get, FileNameSuffixes.Variables.Object, true);
+        public static void CreateObjectGet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Object.Get, SubFolderPaths.Variables.Object.Get, TypeIdentifiers.Variables.Object.Get, FileNameSuffixes.NewFileSuffix);
 
         /// <summary>
         /// Creates a Object Has Variable script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Object.Has)]
-        public static void CreateObjectHas() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Object.Has, SubFolderPaths.Variables.Object.Has, TypeIdentifiers.Variables.Object.Has, FileNameSuffixes.Variables.Object, true);
+        public static void CreateObjectHas() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Object.Has, SubFolderPaths.Variables.Object.Has, TypeIdentifiers.Variables.Object.Has, FileNameSuffixes.NewFileSuffix);
 
         /// <summary>
         /// Creates a Object Set Variable script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Object.Set)]
-        public static void CreateObjectSet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Object.Set, SubFolderPaths.Variables.Object.Set, TypeIdentifiers.Variables.Object.Set, FileNameSuffixes.Variables.Object, true);
+        public static void CreateObjectSet() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Object.Set, SubFolderPaths.Variables.Object.Set, TypeIdentifiers.Variables.Object.Set, FileNameSuffixes.NewFileSuffix);
 
         /// <summary>
         /// Creates a Object VariableName Variable script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Variables.Object.VariableName)]
-        public static void CreateObjectVariableName() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Object.VariableName, SubFolderPaths.Variables.Object.VariableName, TypeIdentifiers.Variables.Object.VariableName, FileNameSuffixes.Variables.Object, true);
+        public static void CreateObjectVariableName() => CreateVisualScriptingAsset(TemplateAssetPaths.Variables.Object.VariableName, SubFolderPaths.Variables.Object.VariableName, TypeIdentifiers.Variables.Object.VariableName, FileNameSuffixes.NewFileSuffix);
     }
 }
