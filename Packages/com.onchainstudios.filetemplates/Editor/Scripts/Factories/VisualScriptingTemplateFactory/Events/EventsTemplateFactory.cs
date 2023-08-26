@@ -12,21 +12,6 @@ namespace OnChainStudios.FileTemplates
     public static partial class VisualScriptingTemplateFactory
     {
         //xml documentation in the file VisualScriptingTemplateFactory.
-        public static partial class FileNameSuffixes
-        {
-            /// <summary>
-            /// File name sufixes for all events.
-            /// </summary>
-            public static class Event
-            {
-                /// <summary>
-                /// File suffix for a EventListener.
-                /// </summary>
-                public static string Listener => _delimiter + "[TriggerGameObjectName]" + NewFileSuffix;
-            }
-        }
-
-        //xml documentation in the file VisualScriptingTemplateFactory.
         public static partial class TypeIdentifiers
         {
             /// <summary>
@@ -140,7 +125,7 @@ namespace OnChainStudios.FileTemplates
         /// Creates a EventListener script graph.
         /// </summary>
         [MenuItem(MenuItemPaths.Event.Listener)]
-        public static void CreateEventListener() => CreateVisualScriptingAsset(TemplateAssetPaths.Event.Listener, SubFolderPaths.Events.Listeners, TypeIdentifiers.Event.Listener, FileNameSuffixes.Event.Listener, true);
+        public static void CreateEventListener() => CreateVisualScriptingAsset(TemplateAssetPaths.Event.Listener, SubFolderPaths.Events.Listeners, TypeIdentifiers.Event.Listener, FileNameSuffixes.NewFileSuffix, true);
 
         /// <summary>
         /// Creates a EventName script graph.
