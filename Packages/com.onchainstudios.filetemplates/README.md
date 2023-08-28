@@ -1,8 +1,23 @@
-# File Templates
+# File Templates (com.onchainstudios.filetemplates)
 
 # Overview
 
-File templates is a project to allow the user to rapidly generate highly readable visual scripting code within a given set of coding standards.
+File templates is a project to allow the user to rapidly generate highly readable c# and visual scripting code within a given set of coding standards.
+
+# Installation
+
+1. Add the package to your unity project using the Unity Package Manager
+    
+    ```html
+    git+ssh://git@github.com/onchainstudios/onchainstudios-unity-extensions.git?path=/Packages/com.onchainstudios.filetemplates
+    ```
+    
+2. To pull the versioned package based on a tag, append the tag to the end of the URL like this
+    
+    ```html
+    git+ssh://git@github.com/onchainstudios/onchainstudios-unity-extensions.git?path=/Packages/com.onchainstudios.filetemplates#v0.7.0-preview.5
+    ```
+    
 
 # How to Use C# Templates
 
