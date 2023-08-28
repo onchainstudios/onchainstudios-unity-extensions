@@ -4,7 +4,7 @@
 
 File templates is a project to allow the user to rapidly generate highly readable visual scripting code within a given set of coding standards.
 
-# How to Use C# Template
+# How to Use C# Templates
 
 1. Set the Company Name in the player settings
     
