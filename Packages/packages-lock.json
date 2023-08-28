@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.onchainstudios.filetemplates": {
+      "version": "file:com.onchainstudios.filetemplates",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.onchainstudios.onchainuitoolkit": {
       "version": "file:com.onchainstudios.uitoolkitextensions",
       "depth": 0,
