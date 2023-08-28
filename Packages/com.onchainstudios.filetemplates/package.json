@@ -1,0 +1,21 @@
+{
+  "name": "com.onchainstudios.filetemplates",
+  "version": "4.0.0",
+  "displayName": "FileTemplates",
+  "description": "Custom template files to help with consistency and to make it easier to upgrade unity projects.",
+  "unity": "2021.3",
+  "documentationUrl": "",
+  "changelogUrl": "",
+  "licensesUrl": "",
+  "keywords": [
+    "keyword1",
+    "keyword2",
+    "keyword3"
+  ],
+  "author": {
+    "name": "OnChainStudios",
+    "email": "",
+    "url": ""
+  },
+  "type": "library"
+}
