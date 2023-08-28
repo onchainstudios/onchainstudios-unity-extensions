@@ -4,6 +4,10 @@
 
 File templates is a project to allow the user to rapidly generate highly readable c# and visual scripting code within a given set of coding standards.
 
+# Required Software
+
+Unity 2022.3 or greater.
+
 # Installation
 
 1. Add the package to your unity project using the Unity Package Manager
@@ -17,7 +21,6 @@ File templates is a project to allow the user to rapidly generate highly readabl
     ```html
     git+ssh://git@github.com/onchainstudios/onchainstudios-unity-extensions.git?path=/Packages/com.onchainstudios.filetemplates#v0.7.0-preview.5
     ```
-    
 
 # How to Use C# Templates
 
