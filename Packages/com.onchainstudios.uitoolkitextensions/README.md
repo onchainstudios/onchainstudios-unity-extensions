@@ -1,16 +1,26 @@
 # UI Toolkit Extensions (com.onchainstudios.uitoolkitextensions)
 
-UI Toolkit Extensions extends the Unity UI Toolkit to add functionalities that currently do not exist in Unity.
+# Overview
 
-GradientView is a UI Toolkit component that allows you to create responsive gradients inside of UI Toolkit.
-
-UIDocumentEventBusBridge forwards events from a UIDocument to the event bus to allow easier use of events from UIToolkit.
-
-VisualScriptingNodes gives a library of new nodes for visual scripting that listen in to the UIDocumentEventBusBridge to allow easy communications between UIDocuments and Visual Scripting.
+UIToolkitExtensions is a Unity package that extends the functionality of the Unity UI Toolkit. It includes GradientView, UIDocumentEventBusBridge, and VisualScriptingNodes. These components add features that do not currently exist in Unity and make communication between UIDocuments and Visual Scripting more seamless. Install by following the instructions in the documentation.
 
 # Required Software
 
 Unity: Supported versions include 2022.3
+
+# Installation
+
+1. Add the package to your unity project using the Unity Package Manager
+
+    ```html
+    git+ssh://git@github.com/onchainstudios/onchainstudios-unity-extensions.git?path=/Packages/com.onchainstudios.uitoolkitextensions
+    ```
+
+2. To pull the versioned package based on a tag, append the tag to the end of the URL like this
+
+    ```html
+    git+ssh://git@github.com/onchainstudios/onchainstudios-unity-extensions.git?path=/Packages/com.onchainstudios.uitoolkitextensions#v0.7.0-preview.5
+    ```
 
 # Gradient View
 
