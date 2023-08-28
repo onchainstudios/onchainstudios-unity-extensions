@@ -4,10 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Packages/com.onchainstudios.onchainuitoolkit/Examples/VisualScriptingExample/Scenes/Scene.VisualScriptingExample.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+  m_Scenes: []
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 55fa5518db1474d14bdf1d77e4f01276,
       type: 2}
