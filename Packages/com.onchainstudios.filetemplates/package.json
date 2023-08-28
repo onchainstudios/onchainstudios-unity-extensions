@@ -1,6 +1,6 @@
 {
   "name": "com.onchainstudios.filetemplates",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "displayName": "FileTemplates",
   "description": "Custom template files to help with consistency and to make it easier to upgrade unity projects.",
   "unity": "2021.3",
