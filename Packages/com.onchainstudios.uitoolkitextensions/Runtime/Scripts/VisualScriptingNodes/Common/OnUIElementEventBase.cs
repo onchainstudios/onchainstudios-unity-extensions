@@ -12,6 +12,9 @@ namespace OnChainStudios.UIToolkitExtensions
     /// </summary>
     public abstract class OnUIElementEventBase<T> : EventUnit<T>
     {
+        /// <summary>
+        /// Determines what criteria for the flow to execute.
+        /// </summary>
         public enum MatchRules
         {
             VisualElementNameExact,
