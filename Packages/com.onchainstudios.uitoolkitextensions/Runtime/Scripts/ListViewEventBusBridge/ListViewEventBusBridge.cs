@@ -69,12 +69,12 @@ namespace OnChainStudios.UIToolkitExtensions
 
             listView.bindItem = (item, index) =>
             {
-                EventBus.Trigger(BindItemEvent, new ListViewBindItemEventArgs(listView, item, index));
+                EventBus.Trigger(BindItemEvent, new ListViewBindItemEventArgsBase(listView, item, index));
             };
             
             listView.unbindItem = (item, index) =>
             {
-                EventBus.Trigger(UnbindItemEvent, new ListViewUnbindItemEventArgs(listView, item, index));
+                EventBus.Trigger(UnbindItemEvent, new ListViewUnbindItemEventArgsBase(listView, item, index));
             };
         }
     }

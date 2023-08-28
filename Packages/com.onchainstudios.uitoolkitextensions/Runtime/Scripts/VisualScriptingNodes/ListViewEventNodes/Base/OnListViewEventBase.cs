@@ -11,7 +11,7 @@ namespace OnChainStudios.UIToolkitExtensions
     /// <summary>
     /// Base class for when an event is posted from the <see cref="UIDocumentEventBusBridge"/>.
     /// </summary>
-    public abstract class OnListViewEventBase : OnUIElementEventBase<ListViewEventArgs>
+    public abstract class OnListViewEventBase : OnVisualElementEventBase<ListViewEventArgsBase>
     {
         /// <summary>
         /// The event output data for the <see cref="ListView"/>
@@ -32,33 +32,6 @@ namespace OnChainStudios.UIToolkitExtensions
         public ValueOutput Index { get; private set; }
 
         /// <inheritdoc/>
-        protected override bool ShouldTrigger(Flow flow, ListViewEventArgs args)
-        {
-            var nameValue = flow.GetValue<string>(Name);
-            var classValue = flow.GetValue<string>(Class);
-            var typeValue = flow.GetValue<System.Type>(Type);
-            
-            var exactNameMatch = args.ListView.name == nameValue;
-            var nameContainsMatch = args.ListView.name.Contains(nameValue);
-            var hasClassMatch = args.ListView.ClassListContains(classValue);
-            var typeMatch = args.GetType() == typeValue;
-            
-            switch (flow.GetValue<MatchRules>(MatchRule))
-            {
-                case MatchRules.VisualElementNameExact:
-                    return exactNameMatch;
-                case MatchRules.VisualElementNameContains:
-                    return nameContainsMatch;
-                case MatchRules.HasClass:
-                    return hasClassMatch;
-                case MatchRules.Type:
-                    return typeMatch;
-                default:
-                    return false;
-            }
-        }
-        
-        /// <inheritdoc/>
         protected override void Definition()
         {
             base.Definition();
@@ -70,9 +43,9 @@ namespace OnChainStudios.UIToolkitExtensions
         }
 
         /// <inheritdoc/>
-        protected override void AssignArguments(Flow flow, ListViewEventArgs data)
+        protected override void AssignArguments(Flow flow, ListViewEventArgsBase data)
         {
-            flow.SetValue(ListView, data.ListView);
+            flow.SetValue(ListView, data.VisualElement as ListView);
             flow.SetValue(Item, data.Item);
             flow.SetValue(Index, data.Index);
         }
