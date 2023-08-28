@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: Configuraton.ListViewExample.VisualElementIdentifiers
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[{"_type":"System.String","key":"ListViewName","label":null,"summary":null,"hideLabel":false},{"_type":"System.String","key":"ListItemLabelClass","label":null,"summary":null,"hideLabel":false}],"title":null,"summary":null,"pan":{"x":-84.0,"y":73.0},"zoom":1.0,"elements":[{"defaultValues":{},"position":{"x":-84.0,"y":-20.0},"guid":"b5a7f351-c747-417c-912e-1388db802039","$version":"A","$type":"Unity.VisualScripting.GraphOutput","$id":"11"},{"type":"System.String","value":{"$content":"list-view-example","$type":"System.String"},"defaultValues":{},"position":{"x":-365.0,"y":-20.0},"guid":"7c6377ec-da30-43ae-bc8c-5a6fd2aa6e9e","$version":"A","$type":"Unity.VisualScripting.Literal","$id":"13"},{"type":"System.String","value":{"$content":"list-item-label","$type":"System.String"},"defaultValues":{},"position":{"x":-346.0,"y":88.0},"guid":"3a24f303-4205-47ea-920c-5e13b0ef502b","$version":"A","$type":"Unity.VisualScripting.Literal","$id":"15"},{"sourceUnit":{"$ref":"13"},"sourceKey":"output","destinationUnit":{"$ref":"11"},"destinationKey":"ListViewName","guid":"70a1b806-5830-40ac-b37e-7fc9654051a6","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"15"},"sourceKey":"output","destinationUnit":{"$ref":"11"},"destinationKey":"ListItemLabelClass","guid":"e93c4a38-13ec-4ece-915c-54be9583590a","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}'
+    _objectReferences: []

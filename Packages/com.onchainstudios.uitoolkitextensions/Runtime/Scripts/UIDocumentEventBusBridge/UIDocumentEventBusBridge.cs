@@ -98,7 +98,8 @@ namespace OnChainStudios.UIToolkitExtensions
         protected void OnClickEvent(VisualElement visualElement, ClickEvent clickEvent)
         {
             visualElement.userData = clickEvent;
-            EventBus.Trigger(ClickEvent, visualElement);
+            
+            EventBus.Trigger(ClickEvent, new VisualElementClickEventArgs(visualElement));
         }
         
         /// <summary>
@@ -109,7 +110,7 @@ namespace OnChainStudios.UIToolkitExtensions
         protected void OnChangeEvent<T>(VisualElement visualElement, ChangeEvent<T> changeEvent)
         {
             visualElement.userData = changeEvent;
-            EventBus.Trigger(ChangeEvent<T>(), visualElement);
+            EventBus.Trigger(ChangeEvent<T>(), new VisualElementChangeEventArgs(visualElement));
         }
     }
 }

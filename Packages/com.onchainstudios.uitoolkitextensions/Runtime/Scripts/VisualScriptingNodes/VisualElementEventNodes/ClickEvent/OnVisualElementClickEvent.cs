@@ -11,7 +11,7 @@ namespace OnChainStudios.UIToolkitExtensions
     /// Event node for when the <see cref="UIDocumentEventBusBridge.ClickEvent"/> is posted to the <see cref="EventBus"/>.
     /// </summary>
     [UnitCategory("Events\\UIToolkit")]
-    public class OnVisualElementClickEvent : OnVisualElementEventBase
+    public class OnVisualElementClickEvent : OnVisualElementEventBase<VisualElementClickEventArgs>
     {
         /// <inheritdoc/>
         public override EventHook GetHook(GraphReference reference)

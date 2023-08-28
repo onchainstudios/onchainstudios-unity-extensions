@@ -11,8 +11,11 @@ namespace OnChainStudios.UIToolkitExtensions
     /// <summary>
     /// Base class for when an event is posted from the <see cref="UIDocumentEventBusBridge"/>.
     /// </summary>
-    public abstract class OnVisualElementEventBase : EventUnit<VisualElement>
+    public abstract class OnVisualElementEventBase<T> : EventUnit<T> where T: VisualElementEventArgsBase
     {
+        /// <summary>
+        /// Determines what criteria for the flow to execute.
+        /// </summary>
         public enum MatchRules
         {
             VisualElementNameExact,
@@ -50,20 +53,20 @@ namespace OnChainStudios.UIToolkitExtensions
         /// </summary>
         [DoNotSerialize]
         public ValueOutput VisualElement { get; private set; }
-
+        
         /// <inheritdoc/>
         protected override bool register => true;
 
         /// <inheritdoc/>
-        protected override bool ShouldTrigger(Flow flow, VisualElement args)
+        protected override bool ShouldTrigger(Flow flow, T args)
         {
             var nameValue = flow.GetValue<string>(Name);
             var classValue = flow.GetValue<string>(Class);
             var typeValue = flow.GetValue<System.Type>(Type);
             
-            var exactNameMatch = args.name == nameValue;
-            var nameContainsMatch = args.name.Contains(nameValue);
-            var hasClassMatch = args.ClassListContains(classValue);
+            var exactNameMatch = args.VisualElement.name == nameValue;
+            var nameContainsMatch = args.VisualElement.name.Contains(nameValue);
+            var hasClassMatch = args.VisualElement.ClassListContains(classValue);
             var typeMatch = args.GetType() == typeValue;
             
             switch (flow.GetValue<MatchRules>(MatchRule))
@@ -80,7 +83,7 @@ namespace OnChainStudios.UIToolkitExtensions
                     return false;
             }
         }
-        
+
         /// <inheritdoc/>
         protected override void Definition()
         {
@@ -97,9 +100,9 @@ namespace OnChainStudios.UIToolkitExtensions
         }
 
         /// <inheritdoc/>
-        protected override void AssignArguments(Flow flow, VisualElement data)
+        protected override void AssignArguments(Flow flow, T data)
         {
-            flow.SetValue(VisualElement, data);
+            flow.SetValue(VisualElement, data.VisualElement);
         }
     }
 }
