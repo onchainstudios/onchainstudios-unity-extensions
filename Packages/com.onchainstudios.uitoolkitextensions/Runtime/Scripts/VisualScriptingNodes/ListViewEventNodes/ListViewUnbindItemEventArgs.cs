@@ -19,7 +19,7 @@ namespace OnChainStudios.UIToolkitExtensions
         /// <param name="listview">The <see cref="ListView"/>.</param>
         /// <param name="item">The item inside of the <see cref="ListView"/></param>
         /// <param name="index">The index of the item inside of the <see cref="ListView"/></param>
-        public ListViewUnbindItemEventArgs(VisualElement listView, VisualElement item, int index) : base(listView, item, index)
+        public ListViewUnbindItemEventArgs(ListView listView, VisualElement item, int index) : base(listView, item, index)
         {
         }
     }

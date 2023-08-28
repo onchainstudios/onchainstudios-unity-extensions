@@ -11,48 +11,13 @@ namespace OnChainStudios.UIToolkitExtensions
     /// <summary>
     /// Base class for when an event is posted from the <see cref="UIDocumentEventBusBridge"/>.
     /// </summary>
-    public abstract class OnVisualElementEventBase : EventUnit<VisualElement>
+    public abstract class OnVisualElementEventBase : OnUIElementEventBase<VisualElement>
     {
-        public enum MatchRules
-        {
-            VisualElementNameExact,
-            VisualElementNameContains,
-            HasClass,
-            Type
-        };
-        
-        /// <summary>
-        /// The visual element name that should trigger the event.
-        /// </summary>
-        [DoNotSerialize]
-        public ValueInput MatchRule { get; private set; }
-        
-        /// <summary>
-        /// The visual element name that should trigger the event.
-        /// </summary>
-        [DoNotSerialize]
-        public ValueInput Name { get; private set; }
-
-        /// <summary>
-        /// The visual element name that should trigger the event.
-        /// </summary>
-        [DoNotSerialize]
-        public ValueInput Class { get; private set; }
-        
-        /// <summary>
-        /// The visual element name that should trigger the event.
-        /// </summary>
-        [DoNotSerialize]
-        public ValueInput Type { get; private set; }
-        
         /// <summary>
         /// The visual element that triggered the event.
         /// </summary>
         [DoNotSerialize]
         public ValueOutput VisualElement { get; private set; }
-
-        /// <inheritdoc/>
-        protected override bool register => true;
 
         /// <inheritdoc/>
         protected override bool ShouldTrigger(Flow flow, VisualElement args)
@@ -85,12 +50,6 @@ namespace OnChainStudios.UIToolkitExtensions
         protected override void Definition()
         {
             base.Definition();
-            
-            // Adding value inputs.
-            MatchRule = ValueInput<MatchRules>(nameof(MatchRule), MatchRules.VisualElementNameExact);
-            Name = ValueInput<string>(nameof(Name), string.Empty);
-            Class = ValueInput<string>(nameof(Class), string.Empty);
-            Type = ValueInput<System.Type>(nameof(Type), null);
             
             // Adding value outputs.
             VisualElement = ValueOutput<VisualElement>(nameof(VisualElement));

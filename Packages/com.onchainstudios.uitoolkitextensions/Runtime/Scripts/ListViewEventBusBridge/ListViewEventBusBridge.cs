@@ -24,8 +24,14 @@ namespace OnChainStudios.UIToolkitExtensions
         /// </summary>
         public static string UnbindItemEvent => $"{typeof(ListViewEventBusBridge).FullName}.{nameof(UnbindItemEvent)}";
         
+        /// <summary>
+        /// Name of the <see cref="ListView"/>
+        /// </summary>
         public string VisualElementName;
 
+        /// <summary>
+        /// The reference to the item that is populated in the <see cref="ListView"/>
+        /// </summary>
         public VisualTreeAsset VisualTreeAsset;
 
         /// <summary>

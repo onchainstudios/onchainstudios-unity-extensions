@@ -11,43 +11,8 @@ namespace OnChainStudios.UIToolkitExtensions
     /// <summary>
     /// Base class for when an event is posted from the <see cref="UIDocumentEventBusBridge"/>.
     /// </summary>
-    public abstract class OnListViewEventBase : EventUnit<ListViewEventArgs>
+    public abstract class OnListViewEventBase : OnUIElementEventBase<ListViewEventArgs>
     {
-        /// <summary>
-        /// The set of match rules that will trigger the <see cref="ListView"/>
-        /// </summary>
-        public enum MatchRules
-        {
-            VisualElementNameExact,
-            VisualElementNameContains,
-            HasClass,
-            Type
-        };
-        
-        /// <summary>
-        /// The visual element match rules that should trigger the event.
-        /// </summary>
-        [DoNotSerialize]
-        public ValueInput MatchRule { get; private set; }
-        
-        /// <summary>
-        /// The visual element name that should trigger the event.
-        /// </summary>
-        [DoNotSerialize]
-        public ValueInput Name { get; private set; }
-
-        /// <summary>
-        /// The visual element class that should trigger the event.
-        /// </summary>
-        [DoNotSerialize]
-        public ValueInput Class { get; private set; }
-        
-        /// <summary>
-        /// The visual element type that should trigger the event.
-        /// </summary>
-        [DoNotSerialize]
-        public ValueInput Type { get; private set; }
-        
         /// <summary>
         /// The event output data for the <see cref="ListView"/>
         /// </summary>
@@ -65,9 +30,6 @@ namespace OnChainStudios.UIToolkitExtensions
         /// </summary>
         [DoNotSerialize]
         public ValueOutput Index { get; private set; }
-
-        /// <inheritdoc/>
-        protected override bool register => true;
 
         /// <inheritdoc/>
         protected override bool ShouldTrigger(Flow flow, ListViewEventArgs args)
@@ -100,12 +62,6 @@ namespace OnChainStudios.UIToolkitExtensions
         protected override void Definition()
         {
             base.Definition();
-            
-            // Adding value inputs.
-            MatchRule = ValueInput<MatchRules>(nameof(MatchRule), MatchRules.VisualElementNameExact);
-            Name = ValueInput<string>(nameof(Name), string.Empty);
-            Class = ValueInput<string>(nameof(Class), string.Empty);
-            Type = ValueInput<System.Type>(nameof(Type), null);
             
             // Adding value outputs.
             ListView = ValueOutput<VisualElement>(nameof(ListView));

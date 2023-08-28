@@ -15,7 +15,7 @@ namespace OnChainStudios.UIToolkitExtensions
         /// <summary>
         /// Reference to the <see cref="ListView"/>
         /// </summary>
-        public VisualElement ListView { get; set; }
+        public ListView ListView { get; set; }
         
         /// <summary>
         /// Reference to the item in the <see cref="ListView"/>
@@ -33,7 +33,7 @@ namespace OnChainStudios.UIToolkitExtensions
         /// <param name="listview">The <see cref="ListView"/>.</param>
         /// <param name="item">The item inside of the <see cref="ListView"/></param>
         /// <param name="index">The index of the item inside of the <see cref="ListView"/></param>
-        public ListViewEventArgs(VisualElement listView, VisualElement item, int index)
+        public ListViewEventArgs(ListView listView, VisualElement item, int index)
         {
             ListView = listView;
             Item = item;
