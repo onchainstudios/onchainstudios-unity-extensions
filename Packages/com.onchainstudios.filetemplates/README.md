@@ -1,14 +1,29 @@
-# File Templates (com.onchainstudios.filetemplates)
-
-# Required Software
-
-Unity: Supported versions include 2022.3
+# File Templates
 
 # Overview
 
 File templates is a project to allow the user to rapidly generate highly readable visual scripting code within a given set of coding standards.
 
-# How to Use
+# How to Use C# Template
+
+1. Set the Company Name in the player settings
+    
+    ![Untitled](README/Untitled.png)
+    
+2. Navigate to the preferences and set your Author and Namespace
+    
+    ![Untitled](README/Untitled%201.png)
+    
+3. Right click a folder and navigate to the C# script you would like to create.
+    
+    ![Untitled](README/Untitled%202.png)
+    
+4. The new C# script will be created with the company name, author and namespace you have set above.
+    
+    ![Untitled](README/Untitled%203.png)
+    
+
+# How to Use Visual Scripting Templates
 
 ## Main Visual Scripting Folder
 
@@ -16,7 +31,7 @@ File templates is a project to allow the user to rapidly generate highly readabl
 
 Create a main folder for all your visual scripting assets called VisualScripting
 
-![Untitled](README/Untitled.png)
+![Untitled](README/Untitled%204.png)
 
 ## Finite State Machine
 
@@ -26,24 +41,24 @@ State machines are the main flow of your program.
 
 1. Create a game object in your scene and attach the State Machine component to it.
     
-    ![Untitled](README/Untitled%201.png)
+    ![Untitled](README/Untitled%205.png)
     
 2. Create a [GameObjectName] folder in your VisualScripting folder with the same name as the game object.
     
-    ![Untitled](README/Untitled%202.png)
+    ![Untitled](README/Untitled%206.png)
     
 3. Right click the folder and navigate to the StateMachine template to create.
     
-    ![Untitled](README/Untitled%203.png)
+    ![Untitled](README/Untitled%207.png)
     
 4. The new asset with the correct name will show up in the VisualScripting→[GameObjectName]→FiniteStateMachine→StateMachine→
     StateMachine.[GameObjectName]
     
-    ![Untitled](README/Untitled%204.png)
+    ![Untitled](README/Untitled%208.png)
     
 5. Attach the StateMachine state graph to the game object.
     
-    ![Untitled](README/Untitled%205.png)
+    ![Untitled](README/Untitled%209.png)
     
 
 ### States
@@ -52,21 +67,21 @@ States are the individual parts of the state machine handling method calls and w
 
 1. Right click the [GameObjectFolder] or super state folder and navigate to the State template to create.
     
-    ![Untitled](README/Untitled%206.png)
+    ![Untitled](README/Untitled%2010.png)
     
 2. The new state script graph asset with the correct name will show up in the VisualScripting→[GameObjectName]→FiniteStateMachine→States→
     State.[GameObjectName].New
 Name the state Appropriately.
     
-    ![Untitled](README/Untitled%207.png)
+    ![Untitled](README/Untitled%2011.png)
     
 3. Drag the state into the state machine.
     
-    ![Untitled](README/Untitled%208.png)
+    ![Untitled](README/Untitled%2012.png)
     
 4. Toggle start state if this is the state you want to start in when the game object loads in.
     
-    ![Untitled](README/Untitled%209.png)
+    ![Untitled](README/Untitled%2013.png)
     
 
 ### Transitions
@@ -75,39 +90,39 @@ Transitions are comprised of 3 parts. A listener, a trigger and a state. They ar
 
 1. Right click the [GameObjectName] and navigate to the Transition templates to create all 3 of the transition templates EventName, State and Trigger.
     
-    ![Untitled](README/Untitled%2010.png)
+    ![Untitled](README/Untitled%2014.png)
     
 2. The new transition script graph assets with the correct name will show up in the VisualScripting→[GameObjectName]→FiniteStateMachine→Transitions→[TransitionType]
     Transition.[TransitionType].[GameObjectName].New
 Name the files appropriately.
     
-    ![Untitled](README/Untitled%2011.png)
+    ![Untitled](README/Untitled%2015.png)
     
 3. Select the state and the trigger and hook up the event name.
     
-    ![Untitled](README/Untitled%2012.png)
-    
-    ![Untitled](README/Untitled%2013.png)
-    
-4. Right click the state you are transitioning from and make a transition to the state you are moving to.
-    
-    ![Untitled](README/Untitled%2014.png)
-    
-5. Switch the graph to use Graph.
-    
-    ![Untitled](README/Untitled%2015.png)
-    
-6. Click switch to finalize the switch.
-    
     ![Untitled](README/Untitled%2016.png)
-    
-7. Select the transition state graph you created.
     
     ![Untitled](README/Untitled%2017.png)
     
-8. Hook the Transition.Trigger up to the event you would like to trigger the event with.
+4. Right click the state you are transitioning from and make a transition to the state you are moving to.
     
     ![Untitled](README/Untitled%2018.png)
+    
+5. Switch the graph to use Graph.
+    
+    ![Untitled](README/Untitled%2019.png)
+    
+6. Click switch to finalize the switch.
+    
+    ![Untitled](README/Untitled%2020.png)
+    
+7. Select the transition state graph you created.
+    
+    ![Untitled](README/Untitled%2021.png)
+    
+8. Hook the Transition.Trigger up to the event you would like to trigger the event with.
+    
+    ![Untitled](README/Untitled%2022.png)
     
 
 ### Super States
@@ -116,26 +131,26 @@ Super states are state machines within state machines that can transition to oth
 
 1. Create a super states folder inside of the VisualScripting→[GameObjectName]→FiniteStateMachine folder.
     
-    ![Untitled](README/Untitled%2019.png)
+    ![Untitled](README/Untitled%2023.png)
     
 2. Create a [SuperStateName] folder inside of the VisualScripting→[GameObjectName]→FiniteStateMachine→SuperStates folder.
     - NOTE: When making states or transitions within the super state, use the [SuperStateName] Folder instead of the [GameObjectName] folder when creating from the template files.
     
-    ![Untitled](README/Untitled%2020.png)
+    ![Untitled](README/Untitled%2024.png)
     
 3. Right click the [SuperStateName] folder and navigate to the SuperState template to create.
     
-    ![Untitled](README/Untitled%2021.png)
+    ![Untitled](README/Untitled%2025.png)
     
 4. The new asset with the correct name will show up in the VisualScripting→[GameObjectName]→FiniteStateMachine→SuperStates→
     [SuperStateName]→FiniteStateMachine→StateMachine→
     SuperState.[GameObjectName].[SuperStateName]
     
-    ![Untitled](README/Untitled%2022.png)
+    ![Untitled](README/Untitled%2026.png)
     
 5. Drag the SuperState into the State Machine.
     
-    ![Untitled](README/Untitled%2023.png)
+    ![Untitled](README/Untitled%2027.png)
     
 
 ## Behaviours
@@ -146,23 +161,23 @@ Behaviours are visual scripting asset representing a monobehavior.
 
 1. Create a Game object in your scene and attach the Script Machine component.
     
-    ![Untitled](README/Untitled%2024.png)
+    ![Untitled](README/Untitled%2028.png)
     
 2. Create a [GameObjectName] folder in your VisualScripting folder with the same name as the game object.
     
-    ![Untitled](README/Untitled%2025.png)
+    ![Untitled](README/Untitled%2029.png)
     
 3. Right click the [GameObjectName] folder and navigate to the Behaviour template to create.
     
-    ![Untitled](README/Untitled%2026.png)
+    ![Untitled](README/Untitled%2030.png)
     
 4. The new behaviour script graph asset with the correct name will show up in the VisualScripting→[GameObjectName]→Behaviour→Behaviour.[GameObjectName]
     
-    ![Untitled](README/Untitled%2027.png)
+    ![Untitled](README/Untitled%2031.png)
     
 5. Attach the behaviour script graph to the game object.
     
-    ![Untitled](README/Untitled%2028.png)
+    ![Untitled](README/Untitled%2032.png)
     
 
 ## Methods
@@ -173,20 +188,20 @@ Methods are visual scripting asset representing a method you might make in c#. T
 
 1. Right click the folder and navigate to the Method template to create.
     
-    ![Untitled](README/Untitled%2029.png)
+    ![Untitled](README/Untitled%2033.png)
     
 2. The new method script graph asset with the correct name will show up in the VisualScripting→[GameObjectName]→Methods→Method.[GameObjectName].New
 Name the method appropriately.
     
-    ![Untitled](README/Untitled%2030.png)
+    ![Untitled](README/Untitled%2034.png)
     
 3. Fill out the Method
     
-    ![Untitled](README/Untitled%2031.png)
+    ![Untitled](README/Untitled%2035.png)
     
 4. Drag the method into a state to use it.
     
-    ![Untitled](README/Untitled%2032.png)
+    ![Untitled](README/Untitled%2036.png)
     
 
 ## Variables
@@ -197,17 +212,17 @@ Constants are representations of c# const values that are not used by the design
 
 1. Right click the folder and navigate to the Constants template to create.
     
-    ![Untitled](README/Untitled%2033.png)
+    ![Untitled](README/Untitled%2037.png)
     
 2. The new constant script graph asset with the name will show up in the VisualScripting→[GameObjectName]→Variables→Constants→[ConstantType]→
     [ConstantType].[GameObjectName].New
 Name the file and set the output value appropriately
     
-    ![Untitled](README/Untitled%2034.png)
+    ![Untitled](README/Untitled%2038.png)
     
 3. Drag the constant into the script graph that is using it and hook it up.
     
-    ![Untitled](README/Untitled%2035.png)
+    ![Untitled](README/Untitled%2039.png)
     
 
 ### Configurations
@@ -216,220 +231,216 @@ Configurations are script graphs you store data in that may change throughout th
 
 1. Right click the folder and navigate to the Configurations template to create.
     
-    ![Untitled](README/Untitled%2036.png)
+    ![Untitled](README/Untitled%2040.png)
     
 2. The new configuration script graph asset with the name will show up in the VisualScripting→[GameObjectName]→Variables→Configurations→
     Configuration.[GameObjectName].New
 Name the file appropriately.
     
-    ![Untitled](README/Untitled%2037.png)
+    ![Untitled](README/Untitled%2041.png)
     
 3. Add the output values you need.
     
-    ![Untitled](README/Untitled%2038.png)
+    ![Untitled](README/Untitled%2042.png)
     
 4. Drag the configuration into a script graph that is using it and hook it up.
     
-    ![Untitled](README/Untitled%2039.png)
+    ![Untitled](README/Untitled%2043.png)
     
 
 ### Saved Variables
 
 1. Select one of your script machines and navigate to the Saved tab on the Blackboard. Add the saved variable to the initial tab.
     
-    ![Untitled](README/Untitled%2040.png)
+    ![Untitled](README/Untitled%2044.png)
     
 2. Right click on the main VisualScripting folder and navigate to the Saved Variables template. Create the VariableName and the necessary Get/Has/Set [GraphType]’s as needed.
     
-    ![Untitled](README/Untitled%2041.png)
+    ![Untitled](README/Untitled%2045.png)
     
 3. The new Application Variable script graph assets with their names will show up as VisualScripting→Variables→Saved→[GraphType]→
     Saved.[GraphType].New
 Name the files appropriately
     
-    ![Untitled](README/Untitled%2042.png)
+    ![Untitled](README/Untitled%2046.png)
     
 4. Set the output value of the VariableName subgraph to the name of the variable.
     
-    ![Untitled](README/Untitled%2043.png)
+    ![Untitled](README/Untitled%2047.png)
     
 5. Hook up the variable name to the Get/Set/Has graphs.
     
-    ![Untitled](README/Untitled%2044.png)
-    
-    ![Untitled](README/Untitled%2045.png)
-    
-    ![Untitled](README/Untitled%2046.png)
-    
-6. Update the Get Data Output and the Set Data Input to the correct type if needed.
-    
-    ![Untitled](README/Untitled%2047.png)
-    
     ![Untitled](README/Untitled%2048.png)
-    
-7. Use the Get/Set/Has as needed within your project.
     
     ![Untitled](README/Untitled%2049.png)
     
     ![Untitled](README/Untitled%2050.png)
+    
+6. Update the Get Data Output and the Set Data Input to the correct type if needed.
+    
+    ![Untitled](README/Untitled%2051.png)
+    
+    ![Untitled](README/Untitled%2052.png)
+    
+7. Use the Get/Set/Has as needed within your project.
+    
+    ![Untitled](README/Untitled%2053.png)
+    
+    ![Untitled](README/Untitled%2054.png)
     
 
 ### Application Variables
 
 1. Select the application variables asset and add the variable to the application variables.
     
-    ![Untitled](README/Untitled%2051.png)
+    ![Untitled](README/Untitled%2055.png)
     
 2. Right click on the main VisualScripting folder and navigate to the Application Variables template. Create the VariableName and the necessary Get/Has/Set [GraphType]’s as needed.
     
-    ![Untitled](README/Untitled%2052.png)
+    ![Untitled](README/Untitled%2056.png)
     
 3. The new Application Variable script graph assets with their names will show up as VisualScripting→Variables→Application→[GraphType]→
     Application.[GraphType].New
 Name the files appropriately
     
-    ![Untitled](README/Untitled%2053.png)
+    ![Untitled](README/Untitled%2057.png)
     
 4. Set the output value of the VariableName subgraph to the name of the variable.
     
-    ![Untitled](README/Untitled%2054.png)
+    ![Untitled](README/Untitled%2058.png)
     
 5. Hook up the variable name to the Get/Set/Has graphs.
     
-    ![Untitled](README/Untitled%2055.png)
+    ![Untitled](README/Untitled%2059.png)
     
-    ![Untitled](README/Untitled%2056.png)
+    ![Untitled](README/Untitled%2060.png)
     
-    ![Untitled](README/Untitled%2057.png)
+    ![Untitled](README/Untitled%2061.png)
     
 6. Update the Get Data Output and the Set Data Input to the correct type if needed.
     
-    ![Untitled](README/Untitled%2058.png)
+    ![Untitled](README/Untitled%2062.png)
     
-    ![Untitled](README/Untitled%2059.png)
+    ![Untitled](README/Untitled%2063.png)
     
 7. Use the Get/Set/Has as needed within your project.
     
-    ![Untitled](README/Untitled%2060.png)
+    ![Untitled](README/Untitled%2064.png)
     
 
 ### Scene Variables
 
-1. Rename the VisualScripting SceneVariables game object to the name of the scene and make it the root container for all objects.
-    
-    ![Untitled](README/Untitled%2061.png)
-    
-2. Add a new variable to the Variables component of the game object that has the SceneVariables component and set it.
-    
-    ![Untitled](README/Untitled%2062.png)
-    
-3. Create a folder under the VisualScripting folder named the same as your scene.
-    
-    ![Untitled](README/Untitled%2063.png)
-    
-4. Right click the folder and navigate to the Scene Variables template. Create the VariableName and the necessary Get/Has/Set [GraphType]’s as needed.
-    
-    ![Untitled](README/Untitled%2064.png)
-    
-5. The new Scene Variable script graph assets with their names will show up as VisualScripting→[SceneName]→Variables→Scene→[GraphType]→
-    Scene.[GraphType].[SceneName].New
-Name the files appropriately
+1. Add a new variable to the VisualScripting SceneVariables game object.
     
     ![Untitled](README/Untitled%2065.png)
     
-6. Set the output value of the VariableName subgraph to the name of the variable.
+2. Create a folder under the VisualScripting folder named the same as your scene.
     
     ![Untitled](README/Untitled%2066.png)
     
-7. Hook up the variable name to the Get/Set/Has graphs.
+3. Right click the folder and navigate to the Scene Variables template. Create the VariableName and the necessary Get/Has/Set [GraphType]’s as needed.
     
     ![Untitled](README/Untitled%2067.png)
     
+4. The new Scene Variable script graph assets with their names will show up as VisualScripting→[SceneName]→Variables→Scene→[GraphType]→
+    Scene.[GraphType].[SceneName].New
+Name the files appropriately
+    
     ![Untitled](README/Untitled%2068.png)
+    
+5. Set the output value of the VariableName subgraph to the name of the variable.
     
     ![Untitled](README/Untitled%2069.png)
     
-8. Update the Get Data Output and the Set Data Input to the correct type if needed.
+6. Hook up the variable name to the Get/Set/Has graphs.
     
     ![Untitled](README/Untitled%2070.png)
     
     ![Untitled](README/Untitled%2071.png)
     
-9. Use the Get/Set/Has as needed within your project.
-    
     ![Untitled](README/Untitled%2072.png)
+    
+7. Update the Get Data Output and the Set Data Input to the correct type if needed.
+    
+    ![Untitled](README/Untitled%2073.png)
+    
+    ![Untitled](README/Untitled%2074.png)
+    
+8. Use the Get/Set/Has as needed within your project.
+    
+    ![Untitled](README/Untitled%2075.png)
     
 
 ### Object Variables
 
 1. Navigate to the GameObject you want to place an object variable on and add the object variable to the variables component on the object.
     
-    ![Untitled](README/Untitled%2073.png)
+    ![Untitled](README/Untitled%2076.png)
     
-2. Right click the folder and navigate to the Object Variables template. Create the VariableName and the necessary Get/Has/Set script graphs as needed.
+2. Right click the folder and navigate to the Object Variables template and create the VariableName and the necessary Get/Has/Set script graphs as needed.
     
-    ![Untitled](README/Untitled%2064.png)
+    ![Untitled](README/Untitled%2067.png)
     
 3. The new Object variable script graph assets with their names will show up as VisualScripting→[GameObjectName]→Variables→Object→[GraphType]→
     Object.[GraphType].[GameObjectName].New
 Name the files appropriately
     
-    ![Untitled](README/Untitled%2074.png)
+    ![Untitled](README/Untitled%2077.png)
     
 4. Set the output value of the VariableName subgraph to the name of the variable.
     
-    ![Untitled](README/Untitled%2075.png)
-    
-5. Drag the variable name into the get/set/has methods and hook it up.
-    
-    ![Untitled](README/Untitled%2076.png)
-    
-    ![Untitled](README/Untitled%2077.png)
-    
     ![Untitled](README/Untitled%2078.png)
     
-6. Update the Get Data Output and the Set Data Input to the correct type if needed.
+5. Drag the variable name into the get/set/has methods and hook it up.
     
     ![Untitled](README/Untitled%2079.png)
     
     ![Untitled](README/Untitled%2080.png)
     
-7. Setup a Scene Variable to hold the handle of the GameObject you are grabbing from even if it is instantiated dynamically. Hook up the scene variable get to the get/set/has object input.
-    
     ![Untitled](README/Untitled%2081.png)
+    
+6. Update the Get Data Output and the Set Data Input to the correct type if needed.
     
     ![Untitled](README/Untitled%2082.png)
     
     ![Untitled](README/Untitled%2083.png)
     
-8. Use the get/has/set script graphs as you need to use them.
+7. Setup a Scene Variable to hold the handle of the GameObject you are grabbing from even if it is instantiated dynamically. Hook up the scene variable get to the get/set/has object input.
     
     ![Untitled](README/Untitled%2084.png)
     
     ![Untitled](README/Untitled%2085.png)
+    
+    ![Untitled](README/Untitled%2086.png)
+    
+8. Use the get/has/set script graphs as you need to use them.
+    
+    ![Untitled](README/Untitled%2087.png)
+    
+    ![Untitled](README/Untitled%2088.png)
     
 
 ### Renaming Object/Scene/Application/Saved Variables.
 
 1. Rename the variable.
     
-    ![Untitled](README/Untitled%2086.png)
+    ![Untitled](README/Untitled%2089.png)
     
 2. Rename The Get/Has/Set/VariableName script graph assets.
     
-    ![Untitled](README/Untitled%2087.png)
+    ![Untitled](README/Untitled%2090.png)
     
 3. Set the return value in the VariableName subgraph to the variable name.
     
-    ![Untitled](README/Untitled%2088.png)
+    ![Untitled](README/Untitled%2091.png)
     
 4. Realign the VariableName subgraph in the get/has/set graphs.
     
-    ![Untitled](README/Untitled%2089.png)
+    ![Untitled](README/Untitled%2092.png)
     
-    ![Untitled](README/Untitled%2090.png)
+    ![Untitled](README/Untitled%2093.png)
     
-    ![Untitled](README/Untitled%2091.png)
+    ![Untitled](README/Untitled%2094.png)
     
 
 ## Events
@@ -440,28 +451,28 @@ Events are used to communicate from StateMachines or Behaviours to Behaviors.
 
 1. Right click the [GameObjectName] folder who will listen to the event. Navigate to the event templates to create all 3 of the event templates Name, Listener and Trigger.
     
-    ![Untitled](README/Untitled%2092.png)
+    ![Untitled](README/Untitled%2095.png)
     
 2. The new event script graph assets with the correct name will show up in the VisualScripting→[GameObjectName]→Events→[EventType]→
     Event.[EventType].[GameObjectName].New
 Name the files appropriately.
     
-    ![Untitled](README/Untitled%2093.png)
+    ![Untitled](README/Untitled%2096.png)
     
 3. Drag the name script graph into the trigger and listener script graphs and hook it up.
     
-    ![Untitled](README/Untitled%2094.png)
+    ![Untitled](README/Untitled%2097.png)
     
-    ![Untitled](README/Untitled%2095.png)
+    ![Untitled](README/Untitled%2098.png)
     
 4. If the game object is not dynamically instantiated, you can remove the GameObject input date and hook up a scene variable getter in the trigger.
     
-    ![Untitled](README/Untitled%2096.png)
+    ![Untitled](README/Untitled%2099.png)
     
 5. Add the listener to the behavior.
     
-    ![Untitled](README/Untitled%2097.png)
+    ![Untitled](README/Untitled%20100.png)
     
 6. Post the event trigger inside another behaviour or state machine.
     
-    ![Untitled](README/Untitled%2098.png)
+    ![Untitled](README/Untitled%20101.png)
