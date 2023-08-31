@@ -165,8 +165,6 @@ Super states are state machines within state machines that can transition to oth
 
 ## Behaviours
 
-### Behaviours
-
 Behaviours are visual scripting asset representing a Monobehavior.
 
 1. Create a Game object in your scene and attach the Script Machine component.
@@ -190,8 +188,6 @@ Behaviours are visual scripting asset representing a Monobehavior.
     ![Behaviours05](Images/Behaviours05.png)
 
 ## Methods
-
-### Methods
 
 Methods are visual scripting asset representing a method you might make in c#. They can have inputs and outputs just like a method in c# can have parameters and return values.
 
