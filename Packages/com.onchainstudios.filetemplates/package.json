@@ -2,7 +2,7 @@
   "name": "com.onchainstudios.filetemplates",
   "version": "4.0.2",
   "displayName": "FileTemplates",
-  "description": "Custom template files to help with consistency and to make it easier to upgrade unity projects.",
+  "description": "Custom file templates files to help with consistency across c# and visual scripting.",
   "unity": "2021.3",
   "documentationUrl": "",
   "changelogUrl": "",
@@ -13,9 +13,9 @@
     "keyword3"
   ],
   "author": {
-    "name": "OnChainStudios",
+    "name": "OnChain Studios - Unity Extensions",
     "email": "",
-    "url": ""
+    "url": "https://www.OnChainStudios.com"
   },
   "type": "library"
 }
