@@ -2,7 +2,7 @@
 
 # Overview
 
-UIToolkitExtensions is a Unity package that extends the functionality of the Unity UI Toolkit. It includes GradientView, UIDocumentEventBusBridge, and VisualScriptingNodes. These components add features that do not currently exist in Unity and make communication between UIDocuments and Visual Scripting more seamless. Install by following the instructions in the documentation.
+UIToolkitExtensions is a Unity package that extends the functionality of the Unity UI Toolkit. It includes GradientView, UIDocumentEventBusBridge, and VisualScriptingNodes. These components add features that do not currently exist in Unity and make communication between UIDocuments and Visual Scripting more seamless.
 
 # Required Software
 
@@ -99,7 +99,7 @@ There are several key components to the example.
 
 # List View Event Bus Bridge
 
-The `ListViewEventBusBridge` is a tool that listens to events on a specified `ListView` within a `UIDocument` and forwards them to the event bus. This allows for seamless integration between the `ListView` and `VisualScripting`. It serves as a bridge to close the gap between these two elements.
+The `ListViewEventBusBridge` is a component that listens to events on a specified `ListView` within a `UIDocument` and forwards them to the event bus. This allows for seamless integration between the `ListView` and `VisualScripting`. It serves as a bridge to provide communication between these two tools.
 
 ## Example
 
@@ -107,7 +107,7 @@ An example for the `ListViewEventBusBridge` can be found at **Examples**→**Lis
 
 ![ListViewEventBusBridgeExample](Images/ListViewEventBusBridgeExample.png)
 
-There are several key components to the example.
+There are several key parts to the example.
 
 ******************Scene.ListViewExample:****************** A scene that contains a `UIDocument` and `ScriptGraph` to demonstrate the usage of the `ListViewEventBusBridge`.
 
