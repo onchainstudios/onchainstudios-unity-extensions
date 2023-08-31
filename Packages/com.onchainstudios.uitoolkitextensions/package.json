@@ -1,8 +1,8 @@
 {
   "name": "com.onchainstudios.onchainuitoolkit",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "displayName": "UIToolkitExtensions",
-  "description": "This is a description.",
+  "description": "UIToolkitExtensions is a Unity package that extends the functionality of the Unity UI Toolkit. It includes GradientView, UIDocumentEventBusBridge, and VisualScriptingNodes. These components add features that do not currently exist in Unity and make communication between UIDocuments and Visual Scripting more seamless. Install by following the instructions in the documentation.",
   "unity": "2022.3",
   "documentationUrl": "",
   "changelogUrl": "",
@@ -13,9 +13,9 @@
     "keyword3"
   ],
   "author": {
-    "name": "OnChainStudios",
+    "name": "OnChain Studios - Unity Extensions",
     "email": "",
-    "url": ""
+    "url": "https://www.OnChainStudios.com/"
   },
   "type": "library"
 }
