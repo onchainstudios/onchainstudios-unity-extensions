@@ -1,5 +1,23 @@
 # UI Toolkit Extensions (com.onchainstudios.uitoolkitextensions)
 
+# Table of Contents
+- [Overview](#overview)
+- [Required Software](#required-software)
+- [Installation](#installation)
+- [Gradient View](#gradient-view)
+  - [Example](#example)
+  - [Using the `GradientView` Visual Element](#using-the-gradientview-visual-element)
+- [List View Event Bus Bridge](#list-view-event-bus-bridge)
+  - [Example](#example-1)
+  - [Using the `ListViewEventBusBridge`](#using-the-listvieweventbusbridge)
+    - [OnListViewBindItem](#onlistviewbinditem)
+    - [OnListViewUnbindItem](#onlistviewunbinditem)
+- [UI Document Event Bus Bridge](#ui-document-event-bus-bridge)
+  - [Example](#example-2)
+  - [Using the `UIDocumentEventBusBridge` Visual Element](#using-the-uidocumenteventbusbridge-visual-element)
+    - [OnVisualElementChangeEvent](#onvisualelementchangeevent)
+    - [OnVisualElementClickEvent](#onvisualelementclickevent)
+
 # Overview
 
 UIToolkitExtensions is a Unity package that extends the functionality of the Unity UI Toolkit. It includes GradientView, UIDocumentEventBusBridge, and VisualScriptingNodes. These components add features that do not currently exist in Unity and make communication between UIDocuments and Visual Scripting more seamless.
