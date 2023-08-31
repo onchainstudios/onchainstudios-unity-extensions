@@ -1,5 +1,30 @@
 # File Templates (com.onchainstudios.filetemplates)
 
+# Table Of Contents
+
+- [Overview](#overview)
+- [Required Software](#required-software)
+- [Installation](#installation)
+- [How to Use C# Templates](#how-to-use-c-templates)
+- [How to Use Visual Scripting Templates](#how-to-use-visual-scripting-templates)
+  - [Create the Main Visual Scripting Folder](#create-the-main-visual-scripting-folder)
+  - [Finite State Machine](#finite-state-machine)
+    - [State Machines](#state-machines)
+    - [States](#states)
+    - [Transitions](#transitions)
+    - [Super States](#super-states)
+  - [Behaviours](#behaviours)
+  - [Methods](#methods)
+  - [Variables](#variables)
+    - [Constants](#constants)
+    - [Configurations](#configurations)
+    - [Saved Variables](#saved-variables)
+    - [Application Variables](#application-variables)
+    - [Scene Variables](#scene-variables)
+    - [Object Variables](#object-variables)
+    - [Renaming Variables](#renaming-variables)
+  - [Events](#events)
+
 # Overview
 
 File templates is a project to allow the user to rapidly generate highly readable c# and visual scripting code within a given set of coding standards.
@@ -41,9 +66,7 @@ Unity 2022.3 or greater.
 
 # How to Use Visual Scripting Templates
 
-## Main Visual Scripting Folder
-
-### Create the Main Visual Scripting Folder
+## Create the Main Visual Scripting Folder
 
 1. Create a main folder for all your visual scripting assets called VisualScripting
 
@@ -139,7 +162,7 @@ Transitions are comprised of 3 parts. A listener, a trigger and a state. They ar
 
 ### Super States
 
-Super states are state machines within state machines that can transition to other states in the main state machine they live in from any state within them.
+Super states are state machines within state machines. The Superstate can transition inside itself along it's state flow and also exit from the entire flow by using transitions in the state machine above it.
 
 1. Create a super states folder inside of the VisualScripting→[GameObjectName]→FiniteStateMachine folder.
 
@@ -442,8 +465,6 @@ Configurations are script graphs you store data in that may change throughout th
     ![RenamingVariables04c](Images/RenamingVariables04c.png)
 
 ## Events
-
-### Events
 
 Events are used to communicate from StateMachines or Behaviours to Behaviors.
 
