@@ -26,13 +26,13 @@ Unity: Supported versions include 2022.3
 
 The `GradientView` is a custom visual element that creates a gradient with up to five colors.
 
-![Untitled](README/Untitled.png)
+![GradientView](Images/GradientView.png)
 
 ## Example
 
 An example for the `GradientView` can be found at **Examples**→**GradientView**→**Scene**.**GradientViewExample**
 
-![Untitled](README/Untitled%201.png)
+![GradientViewExample](Images/GradientViewExample.png)
 
 There are several key components to the example.
 
@@ -46,43 +46,43 @@ There are several key components to the example.
 
 1. Create a `UIDocument`.
 
-   ![Untitled](README/Untitled%202.png)
+   ![UsingTheGradientViewVisualElement00](Images/UsingTheGradientViewVisualElement00.png)
 
-2. Under **Library**, click the **************Project************** tab.
+2. Under **Library**, click the **Project** tab.
 
-   ![Untitled](README/Untitled%203.png)
+   ![UsingTheGradientViewVisualElement01](Images/UsingTheGradientViewVisualElement01.png)
 
-   Now a section for ******************************Custom Controls****************************** will exist.
+   Now a section for **Custom Controls** will exist.
 
-3. Navigate to ****************************OnChainStudios****************************→**************************************UIToolkitExtensions**************************************→************************GradientView************************
+3. Navigate to **OnChainStudios****→****UIToolkitExtensions**→**GradientView**
 
-   ![Untitled](README/Untitled%204.png)
+   ![UsingTheGradientViewVisualElement02](Images/UsingTheGradientViewVisualElement02.png)
 
    The `GradientView` is the custom visual element and behaves like any other `VIsualElement`.
 
 4. Drag the `GradientView` into the ********************UI Builder******************** ******************Hierarchy******************.
 
-   ![Untitled](README/Untitled%205.png)
+   ![UsingTheGradientViewVisualElement03](Images/UsingTheGradientViewVisualElement03.png)
 
 5. Adjust the `GradientView` within the ******************Hierarchy****************** to the preferred size. In the example below, ******Grow****** is set to **1**, so that it takes the entire space.
 
-   ![Untitled](README/Untitled%206.png)
+   ![UsingTheGradientViewVisualElement04](Images/UsingTheGradientViewVisualElement04.png)
 
 6. Understand the properties of the `GradientView` to perform simple gradients.
 
-   ![Untitled](README/Untitled%207.png)
+   ![UsingTheGradientViewVisualElement05a](Images/UsingTheGradientViewVisualElement05a.png)
 
    The `GradientView` has twelve properties.
 
-   **********************************************Allow Updates In Editor**********************************************: The `GradientView` has a property called `Allow Updates In Editor`, which determines whether the gradient texture should be rebuilt while in-editor. When the `GradientView` creates a `Texture2D` and sets the color to be a gradient, this process consumes significant processing power, especially when actively making changes. Therefore, it is recommended to only enable this property when you are ready to regenerate the gradient. This information is relevant for developers using the `GradientView` in their code.
+   **Allow Updates In Editor**: The `GradientView` has a property called `Allow Updates In Editor`, which determines whether the gradient texture should be rebuilt while in-editor. When the `GradientView` creates a `Texture2D` and sets the color to be a gradient, this process consumes significant processing power, especially when actively making changes. Therefore, it is recommended to only enable this property when you are ready to regenerate the gradient. This information is relevant for developers using the `GradientView` in their code.
 
-   **************Angle:************** The angle of the gradient. For example, 0 degrees means left to right, while 90 degrees means top to bottom.
+   **Angle:** The angle of the gradient. For example, 0 degrees means left to right, while 90 degrees means top to bottom.
 
-   ******************Color [Number] & Color [Number] Position:****************** The `GradientView` allows for up to five color options, with the gradient transitioning to the indicated color at the `Color [Number] Position`, which can range from 0 to 1.
+   **Color [Number] & Color [Number] Position:** The `GradientView` allows for up to five color options, with the gradient transitioning to the indicated color at the `Color [Number] Position`, which can range from 0 to 1.
 
    For example, to create a red-green-blue gradient, set the following properties:
 
-   ![Untitled](README/Untitled%208.png)
+   ![UsingTheGradientViewVisualElement05b](Images/UsingTheGradientViewVisualElement05b.png)
 
     ```
     Angle: 0
@@ -105,7 +105,7 @@ The `ListViewEventBusBridge` is a tool that listens to events on a specified `Li
 
 An example for the `ListViewEventBusBridge` can be found at **Examples**→**ListViewExample**→**Scene**.**ListViewExample**
 
-![Untitled](README/Untitled%209.png)
+![ListViewEventBusBridgeExample](Images/ListViewEventBusBridgeExample.png)
 
 There are several key components to the example.
 
@@ -117,25 +117,25 @@ There are several key components to the example.
 
 **Behaviour.ListViewExample:** A behaviour `ScriptMachine` that example demonstrates how a `ScriptMachine` can receive events from a `ListView` via the `ListViewEventBusBridge`.
 
-## Using the `ListViewEventBusBridge` Visual Element
+## Using the `ListViewEventBusBridge`
 
 1. Create a `UIDocument` with a `ListView`. In the example, the ******UIDocument.ListViewExample****** has ******Grow****** set to **1**, so that it takes the entire space. Remember to also set the ******************************FixedItemHeight****************************** property to an appropriate value.
 
-   ![Untitled](README/Untitled%2010.png)
+   ![UsingTheListViewEventBusBridge00](Images/UsingTheListViewEventBusBridge00.png)
 
 2. Create a template item for a `ListView` .
 
    In the example, **UIDocument.ListViewExample.ListItem** serves as a blueprint for each item in the `ListView` within ******UIDocument.ListViewExample******.
 
-   ![Untitled](README/Untitled%2011.png)
+   ![UsingTheListViewEventBusBridge01](Images/UsingTheListViewEventBusBridge01.png)
 
 3. In a scene, create an empty game object with a `UIDocument` and `ListViewEventBusBridge` .
 
-   ![Untitled](README/Untitled%2012.png)
+   ![UsingTheListViewEventBusBridge02](Images/UsingTheListViewEventBusBridge02.png)
 
 4. Attach PanelSettings and the `UIDocument` with the `ListView`.
 
-   ![Untitled](README/Untitled%2013.png)
+   ![UsingTheListViewEventBusBridge03](Images/UsingTheListViewEventBusBridge03.png)
 
 5. Now that the `UIDocument` is setup. The `ListViewEventBusBridge` requires two properties, the **************************************Visual Element Name************************************** and the **********************************Visual Tree Asset**********************************.
 
@@ -143,19 +143,19 @@ There are several key components to the example.
 
    **********************************Visual Tree Asset********************************** is the template item for the `ListView` .
 
-   ![Untitled](README/Untitled%2014.png)
+   ![UsingTheListViewEventBusBridge04](Images/UsingTheListViewEventBusBridge04.png)
 
    Great! This is everything you need to begin listening to events from the `ListView` within UVS (Unity Visual Scripting).
 
 6. Create a `ScriptMachine` (or a `StateMachine`) and add it to a game object in the scene.
 
-   ![Untitled](README/Untitled%2015.png)
+   ![UsingTheListViewEventBusBridge05](Images/UsingTheListViewEventBusBridge05.png)
 
 7. Set the `ListView.itemsSource` on the specified `ListView` .
 
    In the example, an object variable called `UIDocument` was created and set to the `UIDocument` inside the `ListViewExampleUIDocument` game object. Then, a list of integers ranging from 0 to 100 was created and supplied to the `ListView`.
 
-   ![Untitled](README/Untitled%2016.png)
+   ![UsingTheListViewEventBusBridge06](Images/UsingTheListViewEventBusBridge06.png)
 
 8. Now that the `ListView` has been provided an item source, we can listen to two of the key events, `ListView.BindItem` and `ListView.UnbindItem`.
 
@@ -163,17 +163,17 @@ There are several key components to the example.
 
    The `ListViewEventBusBridge` registers the `ListView.BindItem` event and forwards it through the `EventBus`. The `OnListViewBindItem` event node listens for the event on the `EventBus`.
 
-   ![Untitled](README/Untitled%2017.png)
+   ![UsingTheListViewEventBusBridge08a](Images/UsingTheListViewEventBusBridge08a.png)
 
-   ![Untitled](README/Untitled%2018.png)
+   ![UsingTheListViewEventBusBridge08b](Images/UsingTheListViewEventBusBridge08b.png)
 
    In order to determine whether the flow should execute for the `OnListViewBindItem` event node, it is necessary to evaluate whether the `ListView` name, class, and type properties match with the `MatchRule`. This event node can occur with all `ListView.BindItem` events that are registered through a `ListViewEventBusBridge`. The `MatchRule` is used to specify the criteria for determining whether the flow should execute.
 
-   ![Untitled](README/Untitled%2019.png)
+   ![UsingTheListViewEventBusBridge08c](Images/UsingTheListViewEventBusBridge08c.png)
 
    In the example, the `OnListViewBindItem` event node will trigger if the ****************************List View Name**************************** matches the “exact” ************name of the `ListView` that triggered the event via the `ListViewEventBusBridge` .
 
-   ![Untitled](README/Untitled%2020.png)
+   ![UsingTheListViewEventBusBridge08d](Images/UsingTheListViewEventBusBridge08d.png)
 
    If the flow is executed, the `OnListViewBindItem` event node will return three properties.
 
@@ -183,19 +183,19 @@ There are several key components to the example.
 
    **********Index**********: The index parameter that is provided by `ListView.BindItem` . This is the index of the item that is being bound by the `ListView`.
 
-   ![Untitled](README/Untitled%2021.png)
+   ![UsingTheListViewEventBusBridge08e](Images/UsingTheListViewEventBusBridge08e.png)
 
    ### OnListViewUnbindItem
 
    The `ListViewEventBusBridge` registers the `ListView.UnbindItem` event and forwards it through the `EventBus`. The `OnListViewUnbindItem` event node listens for the event on the `EventBus`.
 
-   ![Untitled](README/Untitled%2022.png)
+   ![UsingTheListViewEventBusBridge08f](Images/UsingTheListViewEventBusBridge08f.png)
 
-   ![Untitled](README/Untitled%2023.png)
+   ![UsingTheListViewEventBusBridge08g](Images/UsingTheListViewEventBusBridge08g.png)
 
    The `OnListViewUnbindItem` event node is triggered by all `ListView.UnbindItem` events registered through a `ListViewEventBusBridge`. This event node has the same input and output parameters as the `OnListViewBindItem` event node and evaluates whether the flow should execute using the same `MatchRule`.
 
-   ![Untitled](README/Untitled%2024.png)
+   ![UsingTheListViewEventBusBridge08h](Images/UsingTheListViewEventBusBridge08h.png)
 
    If the flow is executed, the `OnListViewUnbindItem` event node will return three properties.
 
@@ -205,7 +205,7 @@ There are several key components to the example.
 
    **********Index**********: The index parameter that is provided by `ListView.UnbindItem` . This is the index of the item that is being unbound by the `ListView`.
 
-   ![Untitled](README/Untitled%2025.png)
+   ![UsingTheListViewEventBusBridge08i](Images/UsingTheListViewEventBusBridge08i.png)
 
 
 # UI Document Event Bus Bridge
@@ -218,7 +218,7 @@ The `UIDocumentEventBusBridge` is a tool that listens to events on a `UIDocument
 
 An example for the `UIDocumentEventBusBridge` can be found at **Examples**→**VisualScriptingExample**→**Scene**.**VisualScriptingExample**
 
-![Untitled](README/Untitled%2026.png)
+![UIDocumentEventBusBridgeLocationExample](Images/UIDocumentEventBusBridgeExample.png)
 
 There are several key components to the example.
 
@@ -234,21 +234,21 @@ There are several key components to the example.
 
    In the given example, the `UIDocument.VisualScriptingExample` contains various UI elements such as sliders, buttons, text fields, and toggles, which demonstrate the versatility of events that can be triggered by a variety of controls.
 
-   ![Untitled](README/Untitled%2027.png)
+   ![UsingTheUIDocumentEventBusBridgeVisualElement00](Images/UsingTheUIDocumentEventBusBridgeVisualElement00.png)
 
 2. In a scene, create an empty game object with a `UIDocument` and `UIDocumentEventBusBridge` .
 
-   ![Untitled](README/Untitled%2028.png)
+   ![UsingTheUIDocumentEventBusBridgeVisualElement01](Images/UsingTheUIDocumentEventBusBridgeVisualElement01.png)
 
 3. Attach PanelSettings and the `UIDocument` .
 
-   ![Untitled](README/Untitled%2029.png)
+   ![UsingTheUIDocumentEventBusBridgeVisualElement02](Images/UsingTheUIDocumentEventBusBridgeVisualElement02.png)
 
    Great! This is everything you need to begin listening to events from the `UIDocument` within UVS (Unity Visual Scripting).
 
 4. Create a `ScriptMachine` (or a `StateMachine`) and add it to a game object in the scene.
 
-   ![Untitled](README/Untitled%2030.png)
+   ![UsingTheUIDocumentEventBusBridgeVisualElement03](Images/UsingTheUIDocumentEventBusBridgeVisualElement03.png)
 
 5. Now that we have a `ScriptMachine` , we can listen to two crucial events for a `VisualElement`, `ClickEvent` and `ChangeEvent` within UVS (Unity Visual Scripting).
 
@@ -258,21 +258,21 @@ There are several key components to the example.
 
    There are four variations of the `OnVisualElementChangeEvent` event node to support a variety of different visual elements: `bool`, `int`, `float`, and `string`.
 
-   ![Untitled](README/Untitled%2031.png)
+   ![UsingTheUIDocumentEventBusBridgeVisualElement04a](Images/UsingTheUIDocumentEventBusBridgeVisualElement04a.png)
 
-   ![Untitled](README/Untitled%2032.png)
+   ![UsingTheUIDocumentEventBusBridgeVisualElement04b](Images/UsingTheUIDocumentEventBusBridgeVisualElement04b.png)
 
    For ease of understanding, only the `OnVisualElementChangeEventFloat` will be demonstrated in the examples. However, the usage is the same across all variations of the `OnVisualElementChangeEvent` event node.
 
-   ![Untitled](README/Untitled%2033.png)
+   ![UsingTheUIDocumentEventBusBridgeVisualElement04c](Images/UsingTheUIDocumentEventBusBridgeVisualElement04c.png)
 
    In order to determine whether the flow should execute for the `OnVisualElementChangeEventFloat` event node, it is necessary to evaluate whether the `VisualElement` name, class, and type properties match with the `MatchRule`. This event node can occur with all `ChangeEvent` events that are registered through a `UIDocumentEventBusBridge`. The `MatchRule` is used to specify the criteria for determining whether the flow should execute.
 
-   ![Untitled](README/Untitled%2034.png)
+   ![UsingTheUIDocumentEventBusBridgeVisualElement04d](Images/UsingTheUIDocumentEventBusBridgeVisualElement04d.png)
 
    In the example, the `OnVisualElementChangeEventFloat` event node will trigger if the ****************************Slider 1 Name**************************** matches the “exact” name of the `VisualElement` that triggered the event via the `UIDocumentEventBusBridge` .
 
-   ![Untitled](README/Untitled%2035.png)
+   ![UsingTheUIDocumentEventBusBridgeVisualElement04e](Images/UsingTheUIDocumentEventBusBridgeVisualElement04e.png)
 
    If the flow is executed, the `UIDocumentEventBusBridge` event node will return three properties.
 
@@ -282,24 +282,24 @@ There are several key components to the example.
 
    **********New Value**********: The new value of the `VisualElement` .
 
-   ![Untitled](README/Untitled%2036.png)
+   ![OnVisualElementChangeNodeOutputExample](Images/UsingTheUIDocumentEventBusBridgeVisualElement04f.png)
 
    ### OnVisualElementClickEvent
 
    The `UIDocumentEventBusBridge` registers the `ClickEvent` on a `VisualElement` and forwards it through the `EventBus`. The `OnVisualElementClickEvent` event node listens for the event on the `EventBus`.
 
-   ![Untitled](README/Untitled%2037.png)
+   ![UsingTheUIDocumentEventBusBridgeVisualElement04g](Images/UsingTheUIDocumentEventBusBridgeVisualElement04g.png)
 
-   ![Untitled](README/Untitled%2038.png)
+   ![UsingTheUIDocumentEventBusBridgeVisualElement04h](Images/UsingTheUIDocumentEventBusBridgeVisualElement04h.png)
 
    The `OnVisualElementClickEvent` event node functions similarly to the `OnVisualElementChangeEvent` node in terms of evaluating whether the flow should execute. It uses the `MatchRule` criteria and input to determine this.
 
-   ![Untitled](README/Untitled%2039.png)
+   ![UsingTheUIDocumentEventBusBridgeVisualElement04i](Images/UsingTheUIDocumentEventBusBridgeVisualElement04i.png)
 
    In the example, the `OnVisualElementClickEvent` event node will trigger if the `VisualElement` that triggered the event via the `UIDocumentEventBusBridge` has the class provided by ************************Button Class************************.
 
-   ![Untitled](README/Untitled%2040.png)
+   ![UsingTheUIDocumentEventBusBridgeVisualElement04j](Images/UsingTheUIDocumentEventBusBridgeVisualElement04j.png)
 
    If the flow is executed, the `UIDocumentEventBusBridge` event node will return the `VisualElement` that triggered the event
 
-   ![Untitled](README/Untitled%2041.png)
+   ![UsingTheUIDocumentEventBusBridgeVisualElement04k](Images/UsingTheUIDocumentEventBusBridgeVisualElement04k.png)
