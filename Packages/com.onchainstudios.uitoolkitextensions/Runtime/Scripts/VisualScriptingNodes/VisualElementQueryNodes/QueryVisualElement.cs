@@ -13,7 +13,7 @@ namespace OnChainStudios.UIToolkitExtensions
     /// Queries the visual element, similar to <see cref="UQueryExtensions.Query"/>
     /// </summary>
     [UnitCategory("OnChain Studios\\UIToolkit")]
-    public class QueryNode : Unit
+    public class QueryVisualElement : Unit
     {
         /// <summary>
         /// The ControlInput port variable
