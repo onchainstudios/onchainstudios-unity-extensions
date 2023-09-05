@@ -1,6 +1,8 @@
 # UI Toolkit Extensions (com.onchainstudios.uitoolkitextensions)
 
 # Table of Contents
+- [UI Toolkit Extensions (com.onchainstudios.uitoolkitextensions)](#ui-toolkit-extensions-comonchainstudiosuitoolkitextensions)
+- [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Required Software](#required-software)
 - [Installation](#installation)
@@ -17,6 +19,9 @@
   - [Using the `UIDocumentEventBusBridge` Visual Element](#using-the-uidocumenteventbusbridge-visual-element)
     - [OnVisualElementChangeEvent](#onvisualelementchangeevent)
     - [OnVisualElementClickEvent](#onvisualelementclickevent)
+- [Query Visual Element](#query-visual-element)
+  - [Example](#example-3)
+  - [Using the `QueryVisualElement`](#using-the-queryvisualelement)
 
 # Overview
 
@@ -322,51 +327,51 @@ There are several key components to the example.
 
    ![UsingTheUIDocumentEventBusBridgeVisualElement04k](Images/UsingTheUIDocumentEventBusBridgeVisualElement04k.png)
 
-# Query Node
+# Query Visual Element 
 
-The `QueryNode` is a custom node that functions similar to [`UQueryExtensions.Query`](https://docs.unity3d.com/2020.1/Documentation/ScriptReference/UIElements.UQueryExtensions.Query.html), but returns a list of Visual Elements within Unity Visual Scripting.
+The `QueryVisualElement` is a custom node that functions similar to [`UQueryExtensions.Query`](https://docs.unity3d.com/2020.1/Documentation/ScriptReference/UIElements.UQueryExtensions.Query.html), but returns a list of Visual Elements within Unity Visual Scripting.
 
 ## Example
 
-An example for the `QueryNode` can be found at **Examples**→**QueryExample**→**Scene**.**QueryExample**
+An example for the `QueryVisualElement` can be found at **Examples**→**QueryExample**→**Scene**.**QueryExample**
 
-![QueryNodeExample](Images/QueryNodeExample.png)
+![QueryVisualElementExample](Images/QueryVisualElementExample.png)
 
 There are several key components to the example.
 
 **Scene.QueryExample:** A scene that contains a `UIDocument` and `ScriptGraph` to demonstrate a `GradientView`.
 
-**UIDocument.QueryExample:** A `UIDocument` that demonstrates the `QueryNode` custom `VisualElement`.
+**UIDocument.QueryExample:** A `UIDocument` that demonstrates the `QueryVisualElement` custom `VisualElement`.
 
-**Behaviour.QueryExample:** A behaviour `ScriptMachine` that demonstrates basic interactions with the `QueryNode` within the `UIDocument`.
+**Behaviour.QueryExample:** A behaviour `ScriptMachine` that demonstrates basic interactions with the `QueryVisualElement` within the `UIDocument`.
 
-## Using the `QueryNode`
+## Using the `QueryVisualElement`
 
 1. Create a `UIDocument` with a set visual elements that will be returned for the query. In the image below, we are have a parent container with three children elements. 
    Each of the children elements will have a class called **example-child** and a unique name. 
 
-   ![UsingTheQueryNode00a](Images/UsingTheQueryNode00a.png)
-   ![UsingTheQueryNode00b](Images/UsingTheQueryNode00b.png)
+   ![UsingTheQueryVisualElement00a](Images/UsingTheQueryVisualElement00a.png)
+   ![UsingTheQueryVisualElement00b](Images/UsingTheQueryVisualElement00b.png)
 
 2. In a scene, create an empty game object with a `UIDocument`.
    
-   ![UsingTheQueryNode01](Images/UsingTheQueryNode01.png)
+   ![UsingTheQueryVisualElement01](Images/UsingTheQueryVisualElement01.png)
 
 3. Attach PanelSettings and the `UIDocument`.
 
-   ![UsingTheQueryNode02a](Images/UsingTheQueryNode02a.png)
-   ![UsingTheQueryNode02b](Images/UsingTheQueryNode02b.png)
+   ![UsingTheQueryVisualElement02a](Images/UsingTheQueryVisualElement02a.png)
+   ![UsingTheQueryVisualElement02b](Images/UsingTheQueryVisualElement02b.png)
 
 4. Create a `ScriptMachine` (or a `StateMachine`) and add it to a game object in the scene.
 
-   ![UsingTheQueryNode03](Images/UsingTheQueryNode03.png)
+   ![UsingTheQueryVisualElement03](Images/UsingTheQueryVisualElement03.png)
 
-5. In the `ScriptMachine`, add a `QueryNode` with the `VisualElement` to query and the `className` or `name` for the query parameters.
+5. In the `ScriptMachine`, add a `QueryVisualElement` with the `VisualElement` to query and the `className` or `name` for the query parameters.
    The node will query for all children within the `VisualElement` provided and return a list of visual elements that match the `className` or `name`. 
    In the `UIDocument`, there was a parent container with three children visual elements. Those children had a unique name with a class `example-child`. 
 
-   ![UsingTheQueryNode04a](Images/UsingTheQueryNode04a.png)
+   ![UsingTheQueryVisualElement04a](Images/UsingTheQueryVisualElement04a.png)
 
    The output for this node should be as shown.
 
-   ![UsingTheQueryNode04b](Images/UsingTheQueryNode04b.png)
+   ![UsingTheQueryVisualElement04b](Images/UsingTheQueryVisualElement04b.png)

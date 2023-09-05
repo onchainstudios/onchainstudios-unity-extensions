@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.3.1] - 2023-09-05
+
+* Renamed `QueryNode` to `QueryVisualElement`. 
+
 ## [2.3.0] - 2023-09-05
 
 ### Added
