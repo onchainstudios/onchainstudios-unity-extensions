@@ -321,3 +321,52 @@ There are several key components to the example.
    If the flow is executed, the `UIDocumentEventBusBridge` event node will return the `VisualElement` that triggered the event
 
    ![UsingTheUIDocumentEventBusBridgeVisualElement04k](Images/UsingTheUIDocumentEventBusBridgeVisualElement04k.png)
+
+# Query Node
+
+The `QueryNode` is a custom node that functions similar to [`UQueryExtensions.Query`](https://docs.unity3d.com/2020.1/Documentation/ScriptReference/UIElements.UQueryExtensions.Query.html), but returns a list of Visual Elements within Unity Visual Scripting.
+
+## Example
+
+An example for the `QueryNode` can be found at **Examples**→**QueryExample**→**Scene**.**QueryExample**
+
+![QueryNodeExample](QueryNodeExample.png)
+
+There are several key components to the example.
+
+**Scene.QueryExample:** A scene that contains a `UIDocument` and `ScriptGraph` to demonstrate a `GradientView`.
+
+**UIDocument.QueryExample:** A `UIDocument` that demonstrates the `QueryNode` custom `VisualElement`.
+
+**Behaviour.QueryExample:** A behaviour `ScriptMachine` that demonstrates basic interactions with the `QueryNode` within the `UIDocument`.
+
+## Using the `QueryNode`
+
+1. Create a `UIDocument` with a set visual elements that will be returned for the query. In the image below, we are have a parent container with three children elements. 
+   Each of the children elements will have a class called **example-child** and a unique name. 
+
+   ![UsingTheQueryNode00a](UsingTheQueryNode00a.png)
+   ![UsingTheQueryNode00b](UsingTheQueryNode00b.png)
+
+2. In a scene, create an empty game object with a `UIDocument`.
+   
+   ![UsingTheQueryNode01](UsingTheQueryNode01.png)
+
+3. Attach PanelSettings and the `UIDocument`.
+
+   ![UsingTheQueryNode02a](UsingTheQueryNode02a.png)
+   ![UsingTheQueryNode02b](UsingTheQueryNode02b.png)
+
+4. Create a `ScriptMachine` (or a `StateMachine`) and add it to a game object in the scene.
+
+   ![UsingTheQueryNode03](UsingTheQueryNode03.png)
+
+5. In the `ScriptMachine`, add a `QueryNode` with the `VisualElement` to query and the `className` or `name` for the query parameters.
+   The node will query for all children within the `VisualElement` provided and return a list of visual elements that match the `className` or `name`. 
+   In the `UIDocument`, there was a parent container with three children visual elements. Those children had a unique name with a class `example-child`. 
+
+   ![UsingTheQueryNode04a](UsingTheQueryNode04a.png)
+
+   The output for this node should be as shown.
+
+   ![UsingTheQueryNode04b](UsingTheQueryNode04b.png)
