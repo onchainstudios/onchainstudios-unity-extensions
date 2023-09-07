@@ -55,7 +55,7 @@ The `GradientView` is a custom visual element that creates a gradient with up to
 
 An example for the `GradientView` can be found at **Examples**→**GradientView**→**Scene**.**GradientViewExample**
 
-![GradientViewExample](Images/GradientViewExample.png)
+![GradientViewExample.png](Images/GradientViewExample.png)
 
 There are several key components to the example.
 
@@ -194,7 +194,7 @@ There are several key parts to the example.
 
    ![UsingTheListViewEventBusBridge08c](Images/UsingTheListViewEventBusBridge08c.png)
 
-   In the example, the `OnListViewBindItem` event node will trigger if the ****************************List View Name**************************** matches the “exact” ************name of the `ListView` that triggered the event via the `ListViewEventBusBridge` .
+   In the example, the `OnListViewBindItem` event node will trigger if the ****************************List View Name**************************** matches the “exact” name of the `ListView` that triggered the event via the `ListViewEventBusBridge` .
 
    ![UsingTheListViewEventBusBridge08d](Images/UsingTheListViewEventBusBridge08d.png)
 
