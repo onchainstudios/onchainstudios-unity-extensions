@@ -14,12 +14,6 @@ namespace OnChainStudios.UIToolkitExtensions
     public abstract class OnListViewEventBase : OnVisualElementEventBase<ListViewEventArgsBase>
     {
         /// <summary>
-        /// The event output data for the <see cref="ListView"/>
-        /// </summary>
-        [DoNotSerialize]
-        public ValueOutput ListView { get; private set; }
-        
-        /// <summary>
         /// The event output data for the <see cref="Item"/> in the <see cref="ListView"/>
         /// </summary>
         [DoNotSerialize]
@@ -37,7 +31,6 @@ namespace OnChainStudios.UIToolkitExtensions
             base.Definition();
             
             // Adding value outputs.
-            ListView = ValueOutput<VisualElement>(nameof(ListView));
             Item = ValueOutput<VisualElement>(nameof(Item));
             Index = ValueOutput<int>(nameof(Index));
         }
@@ -45,7 +38,7 @@ namespace OnChainStudios.UIToolkitExtensions
         /// <inheritdoc/>
         protected override void AssignArguments(Flow flow, ListViewEventArgsBase data)
         {
-            flow.SetValue(ListView, data.VisualElement as ListView);
+            flow.SetValue(VisualElement, data.VisualElement as ListView);
             flow.SetValue(Item, data.Item);
             flow.SetValue(Index, data.Index);
         }
