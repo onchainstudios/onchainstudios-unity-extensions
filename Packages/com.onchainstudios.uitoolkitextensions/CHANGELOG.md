@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file.
 * Fixed style sheet attached to example panel settings to reference style sheets in the examples.
 
 ### Added
-* Method visual script for Fading a Visual Element Background.
+* Method visual script for lerping the alpha of a Visual Element Background.
 * Method visual script for getting the background color of a visual element.
 * Method visual script for setting the background color of a visual element.
 * Method visual script for setting the background color alpha of a visual element.

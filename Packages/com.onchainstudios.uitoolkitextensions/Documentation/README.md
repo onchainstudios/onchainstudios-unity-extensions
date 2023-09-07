@@ -22,6 +22,15 @@
 - [Query Visual Element](#query-visual-element)
   - [Example](#example-3)
   - [Using the `QueryVisualElement`](#using-the-queryvisualelement)
+- [Helper Methods](#helper-methods)
+   - [Get Visual Element Background Color](#get-visual-element-background-color)
+     - [Usage](#usage)
+   - [Lerp Visual Element Background Color Alpha](#lerp-visual-element-background-color-alpha)
+     - [Usage](#usage-1)
+   - [Set Visual Element Background Color](#set-visual-element-background-color)
+      - [Usage](#usage-2)
+   - [Set Visual Element Background Color Alpha](#set-visual-element-background-color-alpha)
+      - [Usage](#usage-3)
 
 # Overview
 
@@ -375,3 +384,82 @@ There are several key components to the example.
    The output for this node should be as shown.
 
    ![UsingTheQueryVisualElement04b](Images/UsingTheQueryVisualElement04b.png)
+
+# Helper Methods
+
+## Get Visual Element Background Color
+
+`Method.GetVisualElementBackgroundColor` can used to get the background color of a visual element.
+
+   ![GetVisualElementBackgroundColorLocation.png](Images/GetVisualElementBackgroundColorLocation.png)
+
+### Usage
+
+An example can be found in the `Behaviour.VisualScriptingExample`.
+
+**Data Inputs**
+
+* Visual Element: The visual element you want to get the background color from.
+
+**Data Outputs**
+
+* Color: The background color of the visual element.
+
+![GetVisualElementBackgroundColorExample.png](Images/GetVisualElementBackgroundColorExample.png)
+
+## Lerp Visual Element Background Color Alpha
+
+`Method.LerpVisualElementBackgroundColorAlpha` can be used to set the alpha of a visual element background over time using an `AnimationCurve`.
+
+![LerpVisualElementBackgroundColorAlphaLocation.png](Images/LerpVisualElementBackgroundColorAlphaLocation.png)
+
+### Usage
+
+An example can be found in the `Behaviour.VisualScriptingExample`.
+
+**Data Inputs**
+
+* Visual Element: The visual element you want to lerp the alpha on.
+* Step Duration: The duration between steps while lerping the alpha. Use smaller values for smoother fades Use larger values for chunkier fades.
+* Lerp Animation: The animation curve to use to lerp the value. x = time, y = alpha value.
+
+**Trigger Outputs**
+
+* Started: Trigger flow for when the lerp animation starts.
+* Complete: Trigger flow for when the lerp animation completes.
+
+![LerpVisualElementBackgroundColorAlphaExample.png](Images/LerpVisualElementBackgroundColorAlphaExample.png)
+
+## Set Visual Element Background Color
+
+`Method.SetVisualElementBackgroundColor` can used to set the background color of a visual element.
+
+![SetVisualElementBackgroundColorLocation.png](Images/SetVisualElementBackgroundColorLocation.png)
+
+### Usage
+
+An example can be found in the `Behaviour.VisualScriptingExample`.
+
+**Data Inputs**
+
+* Visual Element: The visual element you want to set the background color on.
+* Color: The background color you want to set.
+
+![SetVisualElementBackgroundColorExample.png](Images/SetVisualElementBackgroundColorExample.png)
+
+## Set Visual Element Background Color Alpha
+
+`Method.SetVisualElementBackgroundColorAlpha` can be used to set the background alpha of a visual element.
+
+![SetVisualElementBackgroundColorAlphaLocation.png](Images/SetVisualElementBackgroundColorAlphaLocation.png)
+
+### Usage
+
+An example can be found in the `Behaviour.VisualScriptingExample`.
+
+**Data Inputs**
+
+* Visual Element: The visual element you want to set the background color on.
+* Alpha: The alpha value you want to set.
+
+![SetVisualElementBackgroundColorAlphaExample.png](Images/SetVisualElementBackgroundColorAlphaExample.png)
