@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.3.2] - 2023-09-05
+
+### Fixes
+* Fixed coding standard violation for visual scripts for the **GradietViewExample**.
+* Removed the duplicate output **ListView** from the `OnListViewItemBind` and `OnListViewItemUnbind` node. The nodes already return the output **VisualElement** which is the `ListView`.
+
 ## [2.3.1] - 2023-09-05
 
 * Renamed `QueryNode` to `QueryVisualElement`. 
