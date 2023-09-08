@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: Method.VisualScriptingExample.GetSlider1
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[{"key":"Enter","label":null,"summary":null,"hideLabel":true}],"controlOutputDefinitions":[{"key":"Exit","label":null,"summary":null,"hideLabel":true}],"valueInputDefinitions":[],"valueOutputDefinitions":[{"_type":"UnityEngine.UIElements.VisualElement","key":"VisualElement","label":null,"summary":null,"hideLabel":false}],"title":null,"summary":null,"pan":{"x":224.4346,"y":243.7516},"zoom":1.0,"elements":[{"defaultValues":{},"position":{"x":-804.0,"y":-111.0},"guid":"294f90fe-6689-4025-aff3-bb8fddd6ae3a","$version":"A","$type":"Unity.VisualScripting.GraphInput","$id":"12"},{"defaultValues":{},"position":{"x":545.0,"y":-115.0},"guid":"3341630d-7e9e-4a26-b42c-05867671ac50","$version":"A","$type":"Unity.VisualScripting.GraphOutput","$id":"14"},{"defaultValues":{"Name":{"$content":"","$type":"System.String"},"ClassName":{"$content":"","$type":"System.String"}},"position":{"x":-188.0,"y":-116.0},"guid":"e2e3e42f-e9db-4ea4-8cb9-cc2d4d6d4a02","$version":"A","$type":"OnChainStudios.UIToolkitExtensions.QueryVisualElement","$id":"16"},{"defaultValues":{},"position":{"x":162.0,"y":-22.0},"guid":"952fdb8e-9fb5-4c62-b69a-a535e8f1f633","$version":"A","$type":"Unity.VisualScripting.FirstItem","$id":"18"},{"nest":{"source":"Macro","macro":0,"embed":null},"defaultValues":{},"position":{"x":-655.0,"y":9.0},"guid":"702916d8-6965-4422-b31a-3a6d17e55d12","$version":"A","$type":"Unity.VisualScripting.SubgraphUnit","$id":"20"},{"sourceUnit":{"$ref":"12"},"sourceKey":"Enter","destinationUnit":{"$ref":"16"},"destinationKey":"InputTrigger","guid":"7ca65f7b-27d7-4262-b161-938b5e253ff7","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"16"},"sourceKey":"OutputTrigger","destinationUnit":{"$ref":"14"},"destinationKey":"Exit","guid":"83680add-037d-40b0-aff1-42da6c8eef3c","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"16"},"sourceKey":"VisualElement","destinationUnit":{"$ref":"18"},"destinationKey":"collection","guid":"2a9232ab-b249-4143-8961-65ac882b0d64","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"18"},"sourceKey":"firstItem","destinationUnit":{"$ref":"14"},"destinationKey":"VisualElement","guid":"2542b228-1cb5-4cd4-84af-09d477dcd948","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"20"},"sourceKey":"UIDocumentRoot","destinationUnit":{"$ref":"16"},"destinationKey":"VisualElement","guid":"f2e85b89-8925-45ef-8cb0-99ee542f462b","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"20"},"sourceKey":"Slider1Name","destinationUnit":{"$ref":"16"},"destinationKey":"Name","guid":"db0082c0-b805-4b69-bfda-4c52e4cda807","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: 6f6a66b2ef8b040d680bb5d67fdb00db, type: 2}

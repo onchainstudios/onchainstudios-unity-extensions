@@ -4,7 +4,21 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.3.2] - 2023-09-05
+## [2.5.0] - 2023-09-07
+
+### Fixes
+* Fixed issue with serialization of match rules in event nodes.
+* Removed duplicate script machine in visual scripting example scene.
+* Fixed style sheet attached to example panel settings to reference style sheets in the examples.
+
+### Added
+* Method visual script for lerping the alpha of a Visual Element Background.
+* Method visual script for getting the background color of a visual element.
+* Method visual script for setting the background color of a visual element.
+* Method visual script for setting the background color alpha of a visual element.
+* Examples for the new methods.
+
+## [2.4.0] - 2023-09-05
 
 ### Fixes
 * Fixed coding standard violation for visual scripts for the **GradietViewExample**.
