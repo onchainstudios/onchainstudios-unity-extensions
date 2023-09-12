@@ -69,11 +69,13 @@ namespace OnChainStudios.UIToolkitExtensions
 
             listView.bindItem = (item, index) =>
             {
+                VisualElementCallbackManager.RegisterCallbacks(item);
                 EventBus.Trigger(BindItemEvent, new ListViewBindItemEventArgsBase(listView, item, index));
             };
             
             listView.unbindItem = (item, index) =>
             {
+                VisualElementCallbackManager.UnregisterCallbacks(item);
                 EventBus.Trigger(UnbindItemEvent, new ListViewUnbindItemEventArgsBase(listView, item, index));
             };
         }

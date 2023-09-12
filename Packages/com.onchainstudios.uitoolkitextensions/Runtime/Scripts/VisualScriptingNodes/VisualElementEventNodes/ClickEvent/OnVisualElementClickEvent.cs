@@ -16,7 +16,7 @@ namespace OnChainStudios.UIToolkitExtensions
         /// <inheritdoc/>
         public override EventHook GetHook(GraphReference reference)
         {
-            return new EventHook(UIDocumentEventBusBridge.ClickEvent);
+            return new EventHook(VisualElementCallbackManager.ClickEvent);
         }
     }
 }
