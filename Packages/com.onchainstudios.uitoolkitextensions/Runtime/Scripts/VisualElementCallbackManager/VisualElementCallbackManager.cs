@@ -59,12 +59,6 @@ namespace OnChainStudios.UIToolkitExtensions
                 UnregisterCallbacks(childVisualElement);
             }
         }
-        
-        public static void ReregisterCallbacks(VisualElement visualElement)
-        {
-            UnregisterCallbacks(visualElement);
-            RegisterCallbacks(visualElement);
-        }
 
         /// <summary>
         /// Event handler for when a VisualElement is clicked.
