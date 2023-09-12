@@ -3,11 +3,11 @@
 // Copyright: OnChain Studios, 2023
 //*****************************************************************************
 
-using Unity.VisualScripting;
-using UnityEngine.UIElements;
-
 namespace OnChainStudios.UIToolkitExtensions
 {
+    using Unity.VisualScripting;
+    using UnityEngine.UIElements;
+    
     /// <summary>
     /// Manages registering and unregistering callbacks for <see cref="VisualElement"/>
     /// </summary>
