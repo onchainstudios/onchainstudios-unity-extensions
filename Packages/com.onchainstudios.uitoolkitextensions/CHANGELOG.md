@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.5.1] - 2023-09-12
+
+### Added
+* Added a `VisualElementCallbackManager` that registers callbacks for the children of a `VisualElement`, this functionality was originally within the `UIDocumentEventBusBridge`.
+* The `UIDocumentEventBusBridge` utilizes the `VisualElementCallbackManager` to register and unregister callbacks for the `UIDocument`.
+* The `ListViewEventBus` registers and unregister callbacks on all items via the `VisualElementCallbackManager` during bind and unbind. 
+
 ## [2.5.0] - 2023-09-07
 
 ### Fixes
