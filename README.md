@@ -4,12 +4,12 @@ Welcome to the OnChain Studios Unity Extensions repository! This collection of c
 
 ## Contents
 
-1. [Package Descriptions](#package-descriptions)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [Documentation](#documentation)
-5. [Contributing](#contributing)
-6. [License](#license)
+* [Package Descriptions](#package-descriptions)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Documentation](#documentation)
+* [Contributing](#contributing)
+* [License](#license)
 
 ## Package Descriptions
 
