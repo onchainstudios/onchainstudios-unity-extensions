@@ -41,7 +41,7 @@ To start using the features of any package:
 
 ## Documentation
 
-For detailed documentation on each package, its functionalities, and examples are provided in the package's respective README.
+Detailed documentation on each package, its functionalities, and examples are provided in the package's respective README.
 
 ## Contributing
 
