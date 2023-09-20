@@ -4,16 +4,14 @@ Welcome to the OnChain Studios Unity Extensions repository! This collection of c
 
 ## Contents
 
-- [onchainstudios-unity-extensions](#onchainstudios-unity-extensions)
-  - [Contents](#contents)
-  - [Package Descriptionsd](#package-descriptionsd)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Documentation](#documentation)
-  - [Contributing](#contributing)
-  - [License](#license)
+* [Package Descriptions](#package-descriptions)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Documentation](#documentation)
+* [Contributing](#contributing)
+* [License](#license)
 
-## Package Descriptionsd
+## Package Descriptions
 
 Below are brief overviews of the packages included in this repository:
 
