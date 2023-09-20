@@ -1,6 +1,6 @@
 {
   "name": "com.onchainstudios.filetemplates",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "displayName": "FileTemplates",
   "description": "Custom file templates to help with consistency across c# and visual scripting.",
   "unity": "2021.3",

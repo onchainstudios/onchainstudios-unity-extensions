@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.5.2] - 2023-09-20
+
+### Fixed
+
+- Fixed urls for installation instructions now that the repo is public.
+
 ## [2.5.1] - 2023-09-12
 
 ### Added
