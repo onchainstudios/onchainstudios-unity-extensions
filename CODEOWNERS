@@ -1,4 +1,4 @@
 # These owners will be the default owners for everything in
 # the repo. Unless a later match takes precedence, 
 # the specified users will be requested for review when someone opens a pull request.
-*       @Arthur-OnChainStudios
+*       @Arthur-OnChainStudios @rie-kumar-onchain
