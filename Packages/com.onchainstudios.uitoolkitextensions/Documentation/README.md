@@ -45,13 +45,13 @@ Unity: Supported versions include 2022.3
 1. Add the package to your unity project using the Unity Package Manager
 
     ```html
-    git+ssh://git@github.com/onchainstudios/onchainstudios-unity-extensions.git?path=/Packages/com.onchainstudios.uitoolkitextensions
+    https://github.com/onchainstudios/onchainstudios-unity-extensions.git?path=/Packages/com.onchainstudios.uitoolkitextensions
     ```
 
 2. To pull the versioned package based on a tag, append the tag to the end of the URL like this
 
     ```html
-    git+ssh://git@github.com/onchainstudios/onchainstudios-unity-extensions.git?path=/Packages/com.onchainstudios.uitoolkitextensions#v0.7.0-preview.5
+    https://github.com/onchainstudios/onchainstudios-unity-extensions.git?path=/Packages/com.onchainstudios.uitoolkitextensions#v0.7.0-preview.13
     ```
 
 # Gradient View
