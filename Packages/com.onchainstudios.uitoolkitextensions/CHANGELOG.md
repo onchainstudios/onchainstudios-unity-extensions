@@ -7,7 +7,6 @@ All notable changes to this project will be documented in this file.
 ## [2.6.0] - 2023-09-21
 
 * Fixed a critical event leak in the `VisualElementCallbackManager` by using a callback methods, instead of a lambda.
-* The callback manager now passes the `ClickEvent` and `ChangeEvent<T>` to the event nodes. 
 
 ## [2.5.2] - 2023-09-20
 
