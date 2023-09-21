@@ -3,8 +3,6 @@
 // Copyright: OnChain Studios, 2023
 //*****************************************************************************
 
-using UnityEngine.UIElements;
-
 namespace OnChainStudios.UIToolkitExtensions
 {
     using Unity.VisualScripting;
