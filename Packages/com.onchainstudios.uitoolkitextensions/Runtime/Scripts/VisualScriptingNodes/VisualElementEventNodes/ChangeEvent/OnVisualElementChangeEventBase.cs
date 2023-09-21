@@ -11,7 +11,7 @@ namespace OnChainStudios.UIToolkitExtensions
     /// <summary>
     /// Event node for when the <see cref="UIDocumentEventBusBridge.ChangeEvent{T}"/> is posted to the <see cref="EventBus"/>.
     /// </summary>
-    public abstract class OnVisualElementChangeEventBase<T> : OnVisualElementEventBase<VisualElementChangeEventArgs>
+    public abstract class OnVisualElementChangeEventBase<T> : OnVisualElementEventBase<VisualElementChangeEventArgs<T>>
     {
         /// <summary>
         /// The previous value before the event was triggered.
@@ -36,12 +36,11 @@ namespace OnChainStudios.UIToolkitExtensions
         }
 
         /// <inheritdoc/>
-        protected override void AssignArguments(Flow flow, VisualElementChangeEventArgs data)
+        protected override void AssignArguments(Flow flow, VisualElementChangeEventArgs<T> data)
         {
             base.AssignArguments(flow, data);
-            var changeEvent = data.VisualElement.userData as ChangeEvent<T>;
-            flow.SetValue(PreviousValue, changeEvent.previousValue);
-            flow.SetValue(NewValue, changeEvent.newValue);
+            flow.SetValue(PreviousValue, data.ChangeEvent.previousValue);
+            flow.SetValue(NewValue, data.ChangeEvent.newValue);
         }
     }
 }

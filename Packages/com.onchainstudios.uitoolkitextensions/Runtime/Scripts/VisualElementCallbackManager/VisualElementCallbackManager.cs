@@ -34,16 +34,34 @@ namespace OnChainStudios.UIToolkitExtensions
         {
             foreach (var childVisualElement in visualElement.Children())
             {
-                childVisualElement.RegisterCallback<ClickEvent>(clickEvent => OnClickEvent(childVisualElement, clickEvent));
-                childVisualElement.RegisterCallback<ChangeEvent<bool>>(changeEvent => OnChangeEvent(childVisualElement, changeEvent));
-                childVisualElement.RegisterCallback<ChangeEvent<int>>(changeEvent => OnChangeEvent(childVisualElement, changeEvent));
-                childVisualElement.RegisterCallback<ChangeEvent<float>>(changeEvent => OnChangeEvent(childVisualElement, changeEvent));
-                childVisualElement.RegisterCallback<ChangeEvent<string>>(changeEvent => OnChangeEvent(childVisualElement, changeEvent));
+                childVisualElement.RegisterCallback<ClickEvent>(ClickEventCallback);
+                childVisualElement.RegisterCallback<ChangeEvent<bool>>(ChangeEventCallback);
+                childVisualElement.RegisterCallback<ChangeEvent<int>>(ChangeEventCallback);
+                childVisualElement.RegisterCallback<ChangeEvent<float>>(ChangeEventCallback);
+                childVisualElement.RegisterCallback<ChangeEvent<string>>(ChangeEventCallback);
                 RegisterCallbacks(childVisualElement);
             }
         }
 
-        /// <summary>
+         /// <summary>
+         /// Event handler for when a VisualElement is clicked.
+         /// </summary>
+         /// <param name="evt">The click event data.</param>
+         private static void ClickEventCallback(ClickEvent evt)
+         {
+             EventBus.Trigger(ClickEvent, new VisualElementClickEventArgs(evt));
+         }
+         
+         /// <summary>
+         /// Event handler for when a VisualElement value is changed.
+         /// </summary>
+         /// <param name="evt">The <see cref="ChangeEvent{T}"/> data.</param>
+         private static void ChangeEventCallback<T>(ChangeEvent<T> evt)
+         {
+             EventBus.Trigger(ChangeEvent<T>(), new VisualElementChangeEventArgs<T>(evt));
+         }
+
+         /// <summary>
         /// Unregisters callbacks on the <paramref name="visualElement"/>.
         /// </summary>
         /// <param name="visualElement">The handle to the <see cref="VisualElement"/> you want to unregister the events from.</param>
@@ -51,36 +69,13 @@ namespace OnChainStudios.UIToolkitExtensions
         {
             foreach (var childVisualElement in visualElement.Children())
             {
-                childVisualElement.UnregisterCallback<ClickEvent>(clickEvent => OnClickEvent(childVisualElement, clickEvent));
-                childVisualElement.UnregisterCallback<ChangeEvent<bool>>(changeEvent => OnChangeEvent(childVisualElement, changeEvent));
-                childVisualElement.UnregisterCallback<ChangeEvent<int>>(changeEvent => OnChangeEvent(childVisualElement, changeEvent));
-                childVisualElement.UnregisterCallback<ChangeEvent<float>>(changeEvent => OnChangeEvent(childVisualElement, changeEvent));
-                childVisualElement.UnregisterCallback<ChangeEvent<string>>(changeEvent => OnChangeEvent(childVisualElement, changeEvent));
+                childVisualElement.UnregisterCallback<ClickEvent>(ClickEventCallback);
+                childVisualElement.UnregisterCallback<ChangeEvent<bool>>(ChangeEventCallback);
+                childVisualElement.UnregisterCallback<ChangeEvent<int>>(ChangeEventCallback);
+                childVisualElement.UnregisterCallback<ChangeEvent<float>>(ChangeEventCallback);
+                childVisualElement.UnregisterCallback<ChangeEvent<string>>(ChangeEventCallback);
                 UnregisterCallbacks(childVisualElement);
             }
-        }
-
-        /// <summary>
-        /// Event handler for when a VisualElement is clicked.
-        /// </summary>
-        /// <param name="visualElement">The <see cref="VisualElement"/> that the value was changed on.</param>
-        /// <param name="clickEvent">The click event data.</param>
-        protected static void OnClickEvent(VisualElement visualElement, ClickEvent clickEvent)
-        {
-            visualElement.userData = clickEvent;
-            
-            EventBus.Trigger(ClickEvent, new VisualElementClickEventArgs(visualElement));
-        }
-        
-        /// <summary>
-        /// Event handler for when a VisualElement value is changed.
-        /// </summary>
-        /// <param name="visualElement">The <see cref="VisualElement"/> that the value was changed on.</param>
-        /// <param name="changeEvent">The <see cref="ChangeEvent{T}"/> data.</param>
-        protected static void OnChangeEvent<T>(VisualElement visualElement, ChangeEvent<T> changeEvent)
-        {
-            visualElement.userData = changeEvent;
-            EventBus.Trigger(ChangeEvent<T>(), new VisualElementChangeEventArgs(visualElement));
         }
     }
 }

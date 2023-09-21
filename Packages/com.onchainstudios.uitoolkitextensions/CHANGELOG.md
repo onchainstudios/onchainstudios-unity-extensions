@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.6.0] - 2023-09-21
+
+* Fixed a critical event leak in the `VisualElementCallbackManager` by using a callback methods, instead of a lambda.
+
 ## [2.5.2] - 2023-09-20
 
 ### Fixed
