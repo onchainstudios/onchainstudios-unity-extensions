@@ -18,9 +18,9 @@ namespace OnChainStudios.UIToolkitExtensions
         public VisualElement VisualElement { get; set; }
         
         /// <summary>
-        /// Creates a <see cref="ListViewEventArgsBase"/>
+        /// Creates a <see cref="VisualElementEventArgsBase"/>
         /// </summary>
-        /// <param name="listview">The <see cref="ListView"/>.</param>
+        /// <param name="visualElement">The <see cref="VisualElement"/>.</param>
         public VisualElementEventArgsBase(VisualElement visualElement)
         {
             VisualElement = visualElement;

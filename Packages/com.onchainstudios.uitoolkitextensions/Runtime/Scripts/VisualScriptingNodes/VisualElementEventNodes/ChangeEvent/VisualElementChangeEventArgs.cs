@@ -18,9 +18,8 @@ namespace OnChainStudios.UIToolkitExtensions
         public ChangeEvent<T> ChangeEvent { get; set; }
         
         /// <summary>
-        /// Creates a <see cref="VisualElementChangeEventArgs"/>
+        /// Creates a <see cref="VisualElementChangeEventArgs{T}"/>
         /// </summary>
-        /// <param name="visualElement">The <see cref="VisualElement"/>.</param>
         public VisualElementChangeEventArgs(ChangeEvent<T> changeEvent) : base(changeEvent.currentTarget as VisualElement)
         {
             ChangeEvent = changeEvent;

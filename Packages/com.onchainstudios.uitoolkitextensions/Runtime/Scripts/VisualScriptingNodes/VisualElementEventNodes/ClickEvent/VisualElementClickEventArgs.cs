@@ -20,7 +20,6 @@ namespace OnChainStudios.UIToolkitExtensions
         /// <summary>
         /// Creates a <see cref="VisualElementClickEventArgs"/>
         /// </summary>
-        /// <param name="visualElement">The <see cref="VisualElement"/>.</param>
         public VisualElementClickEventArgs(ClickEvent clickEvent) : base(clickEvent.currentTarget as VisualElement)
         {
             ClickEvent = clickEvent;
