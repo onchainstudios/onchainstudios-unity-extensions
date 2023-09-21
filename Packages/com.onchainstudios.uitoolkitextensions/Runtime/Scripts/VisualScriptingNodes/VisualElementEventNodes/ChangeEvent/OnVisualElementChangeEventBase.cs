@@ -17,12 +17,6 @@ namespace OnChainStudios.UIToolkitExtensions
         /// The previous value before the event was triggered.
         /// </summary>
         [DoNotSerialize]
-        public ValueOutput ChangeEvent { get; private set; }
-        
-        /// <summary>
-        /// The previous value before the event was triggered.
-        /// </summary>
-        [DoNotSerialize]
         public ValueOutput PreviousValue { get; private set; }
         
         /// <summary>
@@ -37,7 +31,6 @@ namespace OnChainStudios.UIToolkitExtensions
             base.Definition();
             
             // Adding value outputs.
-            ChangeEvent = ValueOutput<ChangeEvent<T>>(nameof(ChangeEvent));
             PreviousValue = ValueOutput<T>(nameof(PreviousValue));
             NewValue = ValueOutput<T>(nameof(NewValue));
         }
@@ -46,8 +39,6 @@ namespace OnChainStudios.UIToolkitExtensions
         protected override void AssignArguments(Flow flow, VisualElementChangeEventArgs<T> data)
         {
             base.AssignArguments(flow, data);
-            flow.SetValue(ChangeEvent, data.ChangeEvent);
-            flow.SetValue(PreviousValue, data.ChangeEvent.previousValue);
             flow.SetValue(PreviousValue, data.ChangeEvent.previousValue);
             flow.SetValue(NewValue, data.ChangeEvent.newValue);
         }
