@@ -485,7 +485,7 @@ An example can be found in the `Behaviour.VisualScriptingExample`.
 **Data Inputs**
 
 * Root Visual Element: The `VisualElement` that contains the `Label`. 
-* Name: The name of the `Label`.
+* Label Name: The name of the `Label`.
 * Text: The text value to set for the `Label`.
   
 ![SetLabelByNameExample.png](Images/SetLabelByNameExample.png)
