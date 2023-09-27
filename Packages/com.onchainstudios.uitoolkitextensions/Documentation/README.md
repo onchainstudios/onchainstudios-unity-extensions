@@ -23,14 +23,22 @@
   - [Example](#example-3)
   - [Using the `QueryVisualElement`](#using-the-queryvisualelement)
 - [Helper Methods](#helper-methods)
-   - [Get Visual Element Background Color](#get-visual-element-background-color)
-     - [Usage](#usage)
-   - [Lerp Visual Element Background Color Alpha](#lerp-visual-element-background-color-alpha)
-     - [Usage](#usage-1)
-   - [Set Visual Element Background Color](#set-visual-element-background-color)
-      - [Usage](#usage-2)
-   - [Set Visual Element Background Color Alpha](#set-visual-element-background-color-alpha)
-      - [Usage](#usage-3)
+  - [Get Visual Element Background Color](#get-visual-element-background-color)
+    - [Usage](#usage)
+  - [Lerp Visual Element Background Color Alpha](#lerp-visual-element-background-color-alpha)
+    - [Usage](#usage-1)
+  - [Set Visual Element Background Color](#set-visual-element-background-color)
+    - [Usage](#usage-2)
+  - [Set Visual Element Background Color Alpha](#set-visual-element-background-color-alpha)
+    - [Usage](#usage-3)
+  - [Set Label By Name](#set-label-by-name)
+    - [Usage](#usage-4)
+  - [Set Label By Name And Args](#set-label-by-name-and-args)
+    - [Usage](#usage-5)
+  - [Set Nested Label By Name](#set-nested-label-by-name)
+    - [Usage](#usage-6)
+  - [Set Nested Label By Name And Args](#set-nested-label-by-name-and-args)
+    - [Usage](#usage-7)
 
 # Overview
 
@@ -463,3 +471,77 @@ An example can be found in the `Behaviour.VisualScriptingExample`.
 * Alpha: The alpha value you want to set.
 
 ![SetVisualElementBackgroundColorAlphaExample.png](Images/SetVisualElementBackgroundColorAlphaExample.png)
+
+## Set Label By Name
+
+`Method.SetLabelByName` can be used to set the text of a `Label` `UIElement`.
+
+![SetLabelByNameLocation.png](Images/SetLabelByNameLocation.png)
+
+### Usage
+
+An example can be found in the `Behaviour.VisualScriptingExample`.
+
+**Data Inputs**
+
+* Root Visual Element: The `VisualElement` that contains the `Label`. 
+* Name: The name of the `Label`.
+* Text: The text value to set for the `Label`.
+  
+![SetLabelByNameExample.png](Images/SetLabelByNameExample.png)
+
+## Set Label By Name And Args
+
+`Method.SetLabelByNameAndArgs` can be used to set the text of a `Label` `UIElement` with arguments.
+
+![SetLabelByNameAndArgsLocation.png](Images/SetLabelByNameAndArgsLocation.png)
+### Usage
+
+An example can be found in the `Behaviour.VisualScriptingExample`.
+
+**Data Inputs**
+
+* Root Visual Element: The `VisualElement` that contains the `Label`. 
+* Label Name: The name of the `Label`.
+* Format: The format of the text value to set for the `Label`.
+* Args: The list of arguments to be used by the **Format**.
+  
+![SetLabelByNameAndArgsExample.png](Images/SetLabelByNameAndArgsExample.png)
+
+## Set Nested Label By Name
+
+`Method.SetNestedLabelByName` can be used to set the text of a `Label` `UIElement`.
+
+![SetNestedLabelByNameLocation.png](Images/SetNestedLabelByNameLocation.png)
+
+### Usage
+
+An example can be found in the `Behaviour.VisualScriptingExample`.
+
+**Data Inputs**
+
+* Root Visual Element: The `VisualElement` that contains the `Label`. 
+* Container Name: The name of the `VisualElement` within the **RootVisualElement** that contains the `Label`.
+* Label Name: The name of the `Label`.
+* Text: The text value to set for the `Label`.
+  
+![SetNestedLabelByNameExample.png](Images/SetNestedLabelByNameExample.png)
+
+## Set Nested Label By Name And Args
+
+`Method.SetNestedLabelByNameAndArgs` can be used to set the text of a `Label` `UIElement` with arguments.
+
+![SetNestedLabelByNameAndArgsLocation.png](Images/SetNestedLabelByNameAndArgsLocation.png)
+### Usage
+
+An example can be found in the `Behaviour.VisualScriptingExample`.
+
+**Data Inputs**
+
+* Root Visual Element: The `VisualElement` that contains the `Label`. 
+* Container Name: The name of the `VisualElement` within the **RootVisualElement** that contains the `Label`.
+* Label Name: The name of the `Label`.
+* Format: The format of the text value to set for the `Label`.
+* Args: The list of arguments to be used by the **Format**.
+  
+![SetNestedLabelByNameAndArgsExample.png](Images/SetNestedLabelByNameAndArgsExample.png)
