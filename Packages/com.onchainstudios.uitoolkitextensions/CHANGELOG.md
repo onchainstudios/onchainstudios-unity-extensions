@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.7.0] - 2023-09-27
+
+### Added
+* LabelByName method visual script for setting a label's text value by name.
+* LabelByNameAndArgs method visual script for setting a label's text value by name using a list of arguments and a string format.
+* NestedLabelByName method visual script for setting a nested label's text value by name.
+* NestedLabelByNameAndArgs method visual script for setting a nested label's text value by name using a list of arguments and a string format.
+
 ## [2.6.0] - 2023-09-21
 
 * Fixed a critical event leak in the `VisualElementCallbackManager` by using a callback methods, instead of a lambda.
