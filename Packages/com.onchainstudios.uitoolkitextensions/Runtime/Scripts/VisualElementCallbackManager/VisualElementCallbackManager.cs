@@ -19,6 +19,14 @@ namespace OnChainStudios.UIToolkitExtensions
         public static string ClickEvent => $"{typeof(VisualElementCallbackManager).FullName}.{nameof(ClickEvent)}";
 
         /// <summary>
+        /// Name of the event posted to the <see cref="EventBus"/> when a <see cref="PointerEventBase{T}"/> is triggered.
+        /// </summary>
+        public static string PointerEvent<T>()
+        {
+            return $"{typeof(VisualElementCallbackManager).FullName}.{nameof(PointerEvent)}{typeof(T)}";
+        }
+
+        /// <summary>
         /// Name of the event posted to the <see cref="EventBus"/> when a <see cref="ChangeEvent{T}"/> is triggered.
         /// </summary>
         public static string ChangeEvent<T>()
@@ -35,6 +43,10 @@ namespace OnChainStudios.UIToolkitExtensions
             foreach (var childVisualElement in visualElement.Children())
             {
                 childVisualElement.RegisterCallback<ClickEvent>(ClickEventCallback);
+                childVisualElement.RegisterCallback<PointerDownEvent>(PointerEventCallback, TrickleDown.TrickleDown);
+                childVisualElement.RegisterCallback<PointerUpEvent>(PointerEventCallback, TrickleDown.TrickleDown);
+                childVisualElement.RegisterCallback<PointerOutEvent>(PointerEventCallback, TrickleDown.TrickleDown);
+                childVisualElement.RegisterCallback<PointerMoveEvent>(PointerEventCallback, TrickleDown.TrickleDown);
                 childVisualElement.RegisterCallback<ChangeEvent<bool>>(ChangeEventCallback);
                 childVisualElement.RegisterCallback<ChangeEvent<int>>(ChangeEventCallback);
                 childVisualElement.RegisterCallback<ChangeEvent<float>>(ChangeEventCallback);
@@ -50,6 +62,11 @@ namespace OnChainStudios.UIToolkitExtensions
          private static void ClickEventCallback(ClickEvent evt)
          {
              EventBus.Trigger(ClickEvent, new VisualElementClickEventArgs(evt));
+         }
+
+         private static void PointerEventCallback<T>(PointerEventBase<T> evt) where T : PointerEventBase<T>, new()
+         {
+             EventBus.Trigger(PointerEvent<T>(), new VisualElementPointerEventArgs<T>(evt));
          }
          
          /// <summary>
@@ -70,6 +87,10 @@ namespace OnChainStudios.UIToolkitExtensions
             foreach (var childVisualElement in visualElement.Children())
             {
                 childVisualElement.UnregisterCallback<ClickEvent>(ClickEventCallback);
+                childVisualElement.UnregisterCallback<PointerDownEvent>(PointerEventCallback);
+                childVisualElement.UnregisterCallback<PointerUpEvent>(PointerEventCallback);
+                childVisualElement.UnregisterCallback<PointerOutEvent>(PointerEventCallback);
+                childVisualElement.UnregisterCallback<PointerMoveEvent>(PointerEventCallback);
                 childVisualElement.UnregisterCallback<ChangeEvent<bool>>(ChangeEventCallback);
                 childVisualElement.UnregisterCallback<ChangeEvent<int>>(ChangeEventCallback);
                 childVisualElement.UnregisterCallback<ChangeEvent<float>>(ChangeEventCallback);
