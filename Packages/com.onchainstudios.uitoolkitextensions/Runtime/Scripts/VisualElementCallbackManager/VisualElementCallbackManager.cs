@@ -46,6 +46,7 @@ namespace OnChainStudios.UIToolkitExtensions
                 childVisualElement.RegisterCallback<PointerDownEvent>(PointerEventCallback, TrickleDown.TrickleDown);
                 childVisualElement.RegisterCallback<PointerUpEvent>(PointerEventCallback, TrickleDown.TrickleDown);
                 childVisualElement.RegisterCallback<PointerOutEvent>(PointerEventCallback, TrickleDown.TrickleDown);
+                childVisualElement.RegisterCallback<PointerEnterEvent>(PointerEventCallback, TrickleDown.TrickleDown);
                 childVisualElement.RegisterCallback<PointerMoveEvent>(PointerEventCallback, TrickleDown.TrickleDown);
                 childVisualElement.RegisterCallback<ChangeEvent<bool>>(ChangeEventCallback);
                 childVisualElement.RegisterCallback<ChangeEvent<int>>(ChangeEventCallback);
@@ -90,6 +91,7 @@ namespace OnChainStudios.UIToolkitExtensions
                 childVisualElement.UnregisterCallback<PointerDownEvent>(PointerEventCallback);
                 childVisualElement.UnregisterCallback<PointerUpEvent>(PointerEventCallback);
                 childVisualElement.UnregisterCallback<PointerOutEvent>(PointerEventCallback);
+                childVisualElement.UnregisterCallback<PointerEnterEvent>(PointerEventCallback);
                 childVisualElement.UnregisterCallback<PointerMoveEvent>(PointerEventCallback);
                 childVisualElement.UnregisterCallback<ChangeEvent<bool>>(ChangeEventCallback);
                 childVisualElement.UnregisterCallback<ChangeEvent<int>>(ChangeEventCallback);
