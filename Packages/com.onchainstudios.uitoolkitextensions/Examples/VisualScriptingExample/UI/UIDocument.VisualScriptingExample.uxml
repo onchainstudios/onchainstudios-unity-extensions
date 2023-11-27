@@ -14,5 +14,11 @@
         <ui:Toggle label="EpicToggle2" name="EpicToggle2" />
         <ui:Toggle label="LegendaryToggle1" class="legendary" />
         <ui:Toggle label="LegendaryToggle2" class="legendary" />
+        <ui:Label tabindex="-1" text="Example Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExampleLabel" />
+        <ui:Label tabindex="-1" text="Example Label With Args" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExampleLabelWithArgs" />
+        <ui:VisualElement name="NestedLabelContainer" style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="Nested Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NestedLabel" />
+            <ui:Label tabindex="-1" text="NestedLabelWithArgs" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NestedLabelWithArgs" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

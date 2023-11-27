@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: Configuration.VisualScriptingExample.ExampleLabel
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[{"_type":"System.String","key":"DefaultText","label":null,"summary":null,"hideLabel":false},{"_type":"System.String","key":"NestedLabelDefaultText","label":null,"summary":null,"hideLabel":false},{"_type":"System.String","key":"ExampleLabelWithArgsFormat","label":null,"summary":null,"hideLabel":false}],"title":null,"summary":null,"pan":{"x":122.0,"y":-94.0},"zoom":1.0,"elements":[{"type":"System.String","value":{"$content":"Hello
+      World","$type":"System.String"},"defaultValues":{},"position":{"x":-91.0,"y":-180.0},"guid":"ae6d6023-ec17-4806-acae-447a3103f8ab","$version":"A","$type":"Unity.VisualScripting.Literal","$id":"12"},{"defaultValues":{},"position":{"x":226.0,"y":-179.0},"guid":"191cb3af-e24f-4da7-b9e2-be19cc757c8d","$version":"A","$type":"Unity.VisualScripting.GraphOutput","$id":"14"},{"type":"System.String","value":{"$content":"{0}
+      - Example With Args","$type":"System.String"},"defaultValues":{},"position":{"x":-154.0,"y":34.0},"guid":"26379f8c-a550-4d3d-b4f5-db9d6fac9826","$version":"A","$type":"Unity.VisualScripting.Literal","$id":"16"},{"type":"System.String","value":{"$content":"Nested
+      Hello World","$type":"System.String"},"defaultValues":{},"position":{"x":-136.0,"y":-76.0},"guid":"74d9d206-41f2-4ff0-891a-91b24ea01193","$version":"A","$type":"Unity.VisualScripting.Literal","$id":"18"},{"sourceUnit":{"$ref":"12"},"sourceKey":"output","destinationUnit":{"$ref":"14"},"destinationKey":"DefaultText","guid":"e28d5496-eec3-4d30-940e-68679ed287cf","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"16"},"sourceKey":"output","destinationUnit":{"$ref":"14"},"destinationKey":"ExampleLabelWithArgsFormat","guid":"bcf7e9f4-a384-41d2-a6cc-ad19787d3f83","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"18"},"sourceKey":"output","destinationUnit":{"$ref":"14"},"destinationKey":"NestedLabelDefaultText","guid":"275a9b63-6e2a-41ef-a208-dcab343227b2","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}'
+    _objectReferences: []
