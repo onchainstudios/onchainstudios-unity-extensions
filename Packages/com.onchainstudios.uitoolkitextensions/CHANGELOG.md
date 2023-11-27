@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.8.0] - 2023-11-27
+
+* Added a `RadialProgress` visual element that create a radial progress bar.
+
 ## [2.7.0] - 2023-09-27
 
 ### Added
