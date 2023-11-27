@@ -23,11 +23,11 @@ namespace OnChainStudios.UIToolkitExtensions
         /// </summary>
         public float Progress
         {
-            get => m_Progress;
+            get => progress;
             set
             {
                 // Update the progress property and request a repaint.
-                m_Progress = value;
+                progress = value;
                 MarkDirtyRepaint();
             }
         }
@@ -37,11 +37,11 @@ namespace OnChainStudios.UIToolkitExtensions
         /// </summary>
         public float LineWidth
         {
-            get => m_LineWidth;
+            get => lineWidth;
             set
             {
                 // Update the line width property and request a repaint.
-                m_LineWidth = value;
+                lineWidth = value;
                 MarkDirtyRepaint();
             }
         }
@@ -51,11 +51,11 @@ namespace OnChainStudios.UIToolkitExtensions
         /// </summary>
         public Color TrackColor
         {
-            get => m_TrackColor;
+            get => trackColor;
             set
             {
                 // Update the track color property and request a repaint.
-                m_TrackColor = value;
+                trackColor = value;
                 MarkDirtyRepaint();
             }
         }
@@ -65,11 +65,11 @@ namespace OnChainStudios.UIToolkitExtensions
         /// </summary>
         public Color ProgressColor
         {
-            get => m_ProgressColor;
+            get => progressColor;
             set
             {
                 // Update the progress color property and request a repaint.
-                m_ProgressColor = value;
+                progressColor = value;
                 MarkDirtyRepaint();
             }
         }
@@ -77,32 +77,32 @@ namespace OnChainStudios.UIToolkitExtensions
         /// <summary>
         /// Custom style properties for USS.
         /// </summary>
-        private static CustomStyleProperty<Color> s_TrackColor = new("--track-color");
+        private static CustomStyleProperty<Color> trackColorStyleProperty = new("--track-color");
         
         /// <summary>
         /// Custom style properties for USS.
         /// </summary>
-        private static CustomStyleProperty<Color> s_ProgressColor = new("--progress-color");
+        private static CustomStyleProperty<Color> progressColorStyleProperty = new("--progress-color");
 
         /// <summary>
         /// The track color.
         /// </summary>
-        private Color m_TrackColor;
+        private Color trackColor;
         
         /// <summary>
         /// The progress color.
         /// </summary>
-        private Color m_ProgressColor;
+        private Color progressColor;
         
         /// <summary>
         /// The progress value.
         /// </summary>
-        private float m_Progress;
+        private float progress;
         
         /// <summary>
         /// The line width value.
         /// </summary>
-        private float m_LineWidth;
+        private float lineWidth;
 
         /// <summary>
         /// UXML traits for the RadialProgress element.
@@ -112,7 +112,7 @@ namespace OnChainStudios.UIToolkitExtensions
             /// <summary>
             /// The progress value.
             /// </summary>
-            private readonly UxmlFloatAttributeDescription m_ProgressAttribute = new()
+            private readonly UxmlFloatAttributeDescription progressAttribute = new()
             {
                 name = "progress",
                 defaultValue = 15f
@@ -121,7 +121,7 @@ namespace OnChainStudios.UIToolkitExtensions
             /// <summary>
             /// the track color.
             /// </summary>
-            private readonly UxmlColorAttributeDescription m_TrackColorAttribute = new()
+            private readonly UxmlColorAttributeDescription trackColorAttribute = new()
             {
                 name = "track-color",
                 defaultValue = new (0f, 0f, 0f, 1f)
@@ -130,7 +130,7 @@ namespace OnChainStudios.UIToolkitExtensions
             /// <summary>
             /// The progress color.
             /// </summary>
-            private readonly UxmlColorAttributeDescription m_ProgressColorAttribute = new()
+            private readonly UxmlColorAttributeDescription progressColorAttribute = new()
             {
                 name = "progress-color",
                 defaultValue = new (1f, 1f, 1f, 1f)
@@ -139,7 +139,7 @@ namespace OnChainStudios.UIToolkitExtensions
             /// <summary>
             /// The progress line width.
             /// </summary>
-            private readonly UxmlFloatAttributeDescription m_LineWidthAttribute = new()
+            private readonly UxmlFloatAttributeDescription lineWidthAttribute = new()
             {
                 name = "line-width",
                 defaultValue = 15f
@@ -151,10 +151,10 @@ namespace OnChainStudios.UIToolkitExtensions
                 base.Init(ve, bag, cc);
 
                 // Assign values from UXML attributes to corresponding properties.
-                (ve as RadialProgress).Progress = m_ProgressAttribute.GetValueFromBag(bag, cc);
-                (ve as RadialProgress).LineWidth = m_LineWidthAttribute.GetValueFromBag(bag, cc);
-                (ve as RadialProgress).TrackColor = m_TrackColorAttribute.GetValueFromBag(bag, cc);
-                (ve as RadialProgress).ProgressColor = m_ProgressColorAttribute.GetValueFromBag(bag, cc);
+                (ve as RadialProgress).Progress = progressAttribute.GetValueFromBag(bag, cc);
+                (ve as RadialProgress).LineWidth = lineWidthAttribute.GetValueFromBag(bag, cc);
+                (ve as RadialProgress).TrackColor = trackColorAttribute.GetValueFromBag(bag, cc);
+                (ve as RadialProgress).ProgressColor = progressColorAttribute.GetValueFromBag(bag, cc);
             }
         }
 
@@ -196,10 +196,10 @@ namespace OnChainStudios.UIToolkitExtensions
         private void UpdateCustomStyles()
         {
             bool repaint = false;
-            if (customStyle.TryGetValue(s_ProgressColor, out m_ProgressColor))
+            if (customStyle.TryGetValue(progressColorStyleProperty, out progressColor))
                 repaint = true;
 
-            if (customStyle.TryGetValue(s_TrackColor, out m_TrackColor))
+            if (customStyle.TryGetValue(trackColorStyleProperty, out trackColor))
                 repaint = true;
 
             if (repaint)
@@ -216,19 +216,19 @@ namespace OnChainStudios.UIToolkitExtensions
             float height = contentRect.height;
 
             var painter = context.painter2D;
-            painter.lineWidth = m_LineWidth;
+            painter.lineWidth = lineWidth;
             painter.lineCap = LineCap.Butt;
 
             // Draw the track
-            painter.strokeColor = m_TrackColor;
+            painter.strokeColor = trackColor;
             painter.BeginPath();
-            painter.Arc(new Vector2(width * 0.5f, height * 0.5f), (width - m_LineWidth) * 0.5f, 0.0f, 360.0f);
+            painter.Arc(new Vector2(width * 0.5f, height * 0.5f), (width - lineWidth) * 0.5f, 0.0f, 360.0f);
             painter.Stroke();
 
             // Draw the progress
-            painter.strokeColor = m_ProgressColor;
+            painter.strokeColor = progressColor;
             painter.BeginPath();
-            painter.Arc(new Vector2(width * 0.5f, height * 0.5f), (width - m_LineWidth) * 0.5f, -90.0f, 360.0f * (m_Progress / 100.0f) - 90.0f);
+            painter.Arc(new Vector2(width * 0.5f, height * 0.5f), (width - lineWidth) * 0.5f, -90.0f, 360.0f * (progress / 100.0f) - 90.0f);
             painter.Stroke();
         }
     }
