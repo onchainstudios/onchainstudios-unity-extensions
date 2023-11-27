@@ -39,6 +39,9 @@
     - [Usage](#usage-6)
   - [Set Nested Label By Name And Args](#set-nested-label-by-name-and-args)
     - [Usage](#usage-7)
+- [Radial Progress](#radial-progress)
+   - [Example](#example-4)
+   - [Using the `RadialProgress` VisualElemnt](#using-the-radialprogress-visual-element)
 
 # Overview
 
@@ -545,3 +548,65 @@ An example can be found in the `Behaviour.VisualScriptingExample`.
 * Args: The list of arguments to be used by the **Format**.
   
 ![SetNestedLabelByNameAndArgsExample.png](Images/SetNestedLabelByNameAndArgsExample.png)
+
+# Radial Progress
+
+The `RadialProgress` is a custom visual element that create a radial progress bar.
+
+![RadialProgress](Images/RadialProgress.png)
+
+## Example
+
+An example for the `RadialProgress` can be found at **Examples**→**RadialProgress**→**Scene**.**RadialProgressExample**
+
+![RadialProgressExample.png](Images/RadialProgressExample.png)
+
+There are several key components to the example.
+
+**Scene.RadialProgressExample:** A scene that contains a `UIDocument` and `ScriptGraph` to demonstrate a `RadialProgress`.
+
+**UIDocument.RadialProgressExample**: A `UIDocument` that demonstrates the `RadialProgress` custom `VisualElement`.
+
+**Behaviour.RadialProgressExample:** A behaviour `ScriptMachine` that demonstrates basic interactions with the `RadialProgress` within the `UIDocument`.
+
+## Using the `RadialProgress` Visual Element
+
+1. Create a `UIDocument`.
+
+   ![UsingTheRadialProgressVisualElement00](Images/UsingTheRadialProgressVisualElement00.png)
+
+2. Under **Library**, click the **Project** tab.
+
+   ![UsingTheRadialProgressVisualElement01](Images/UsingTheRadialProgressVisualElement01.png)
+
+   Now a section for **Custom Controls** will exist.
+
+3. Navigate to **OnChainStudios****→****UIToolkitExtensions**→**RadialProgress**
+
+   ![UsingTheRadialProgressVisualElement02](Images/UsingTheRadialProgressVisualElement02.png)
+
+   The `RadilProgress` is the custom visual element and behaves like any other `VIsualElement`.
+
+4. Drag the `RadialProgress` into the ********************UI Builder******************** ******************Hierarchy******************.
+
+   ![UsingTheRadialProgressVisualElement03](Images/UsingTheRadialProgressVisualElement03.png)
+
+5. Adjust the `RadialProgress` within the ******************Hierarchy****************** to the preferred size. In the example below, ******Grow****** is set to **1**, so that it takes the entire space.
+
+   ![UsingTheRadialProgressVisualElement04](Images/UsingTheRadialProgressVisualElement04.png)
+
+6. Understand the properties of the `RadialProgress`.
+
+   ![UsingTheRadialProgressVisualElement05](Images/UsingTheRadialProgressVisualElement05.png)
+
+   The RadialProgress has four properties.
+
+   **Progress:** the progress value for the RadialProgress element. The progress represents a value between 0 and 100, indicating the completion percentage. Use this property to dynamically update and visualize the progress within the radial element.
+
+   **TrackColor:** the color of the track (unfilled portion) in the RadialProgress element. Customize this property to change the color of the unfilled portion of the radial progress element.
+
+   **ProgressColor:** the color of the progress (filled portion) in the RadialProgress element. Customize this property to change the color of the filled portion of the radial progress element, indicating the completed progress.
+
+   **LineWidth:** the line width used to draw the track and progress arcs within the RadialProgress element. Adjust this property to control the thickness of the lines representing the track and progress arcs.
+
+   ![UsingTheRadialProgressVisualElement06](Images/UsingTheRadialProgressVisualElement06.png)
