@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: Configuration.RadialProgressExample.RadialProgressUIDocument
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[{"_type":"UnityEngine.UIElements.VisualElement","key":"RootElement","label":null,"summary":null,"hideLabel":false},{"_type":"System.String","key":"RadialProgress","label":null,"summary":null,"hideLabel":false}],"title":null,"summary":null,"pan":{"x":-117.0,"y":1.0},"zoom":1.0,"elements":[{"defaultValues":{},"position":{"x":120.0,"y":-240.0},"guid":"58d866ee-b07f-445f-bd26-91928ad26c7e","$version":"A","$type":"Unity.VisualScripting.GraphOutput","$id":"11"},{"nest":{"source":"Macro","macro":0,"embed":null},"defaultValues":{},"position":{"x":-756.0,"y":-120.0},"guid":"fd446d8c-ccdf-40f4-84e6-4bbaf9d5c124","$version":"A","$type":"Unity.VisualScripting.SubgraphUnit","$id":"13"},{"type":"System.String","value":{"$content":"RadialProgress","$type":"System.String"},"defaultValues":{},"position":{"x":-137.0,"y":-12.0},"guid":"e490e105-db44-4d84-9e24-3d356934a70b","$version":"A","$type":"Unity.VisualScripting.Literal","$id":"16"},{"member":{"name":"rootVisualElement","parameterTypes":null,"targetType":"UnityEngine.UIElements.UIDocument","targetTypeName":"UnityEngine.UIElements.UIDocument","$version":"A"},"defaultValues":{"target":null},"position":{"x":-192.0,"y":-120.0},"guid":"6509e87d-68c0-48f6-bc9d-ef83a79964de","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"18"},{"sourceUnit":{"$ref":"13"},"sourceKey":"Value","destinationUnit":{"$ref":"18"},"destinationKey":"target","guid":"a62137c8-91b2-4a10-9b88-5e9ebc42c960","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"16"},"sourceKey":"output","destinationUnit":{"$ref":"11"},"destinationKey":"RadialProgress","guid":"c14c3103-9a1b-4d76-9107-a37cdae2f34e","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"18"},"sourceKey":"value","destinationUnit":{"$ref":"11"},"destinationKey":"RootElement","guid":"d741b8dd-cbfb-4e79-98e0-5628ca29bb51","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: 78ca65d9c64d04fb283826b6ffef00f9, type: 2}
