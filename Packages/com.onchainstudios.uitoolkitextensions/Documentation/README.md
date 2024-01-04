@@ -19,6 +19,7 @@
   - [Using the `UIDocumentEventBusBridge` Visual Element](#using-the-uidocumenteventbusbridge-visual-element)
     - [OnVisualElementChangeEvent](#onvisualelementchangeevent)
     - [OnVisualElementClickEvent](#onvisualelementclickevent)
+    - [OnVisualElementPointerEvent Nodes](#onvisualelementpointerevent-nodes)
 - [Query Visual Element](#query-visual-element)
   - [Example](#example-3)
   - [Using the `QueryVisualElement`](#using-the-queryvisualelement)
@@ -346,6 +347,32 @@ There are several key components to the example.
    If the flow is executed, the `UIDocumentEventBusBridge` event node will return the `VisualElement` that triggered the event
 
    ![UsingTheUIDocumentEventBusBridgeVisualElement04k](Images/UsingTheUIDocumentEventBusBridgeVisualElement04k.png)
+
+### OnVisualElementPointerEvent Nodes
+
+   The `UIDocumentEventBusBridge` registers the `PointerEvent` on a `VisualElement` and forwards it through the `EventBus`. There are several event nodes that listen for the event on the `EventBus`.
+
+   * `OnVisualElementPointerDownEvent`
+   * `OnVisualElementPointerUpEvent`
+   * `OnVisualElementPointerEnterEvent`
+   * `OnVisualElementPointerOutEvent`
+   * `OnVisualElementPointerMoveEvent`
+
+   ![UsingTheUIDocumentEventBusBridgeVisualElement04l](Images/UsingTheUIDocumentEventBusBridgeVisualElement04l.png)
+
+   For ease of understanding, only the `OnVisualElementPointerDownEvent` will be demonstrated in the examples. However, the usage is the similar as the other pointer event nodes with the difference being the `PointerEvent<T>` is casted to the appropriate event.
+
+   ![UsingTheUIDocumentEventBusBridgeVisualElement04m](Images/UsingTheUIDocumentEventBusBridgeVisualElement04m.png)
+
+   The `OnVisualElementPointerDownEvent` event node functions similarly to the `OnVisualElementChangeEvent` node in terms of evaluating whether the flow should execute. It uses the `MatchRule` criteria and input to determine this.
+
+   In the example, the `OnVisualElementPointerDownEvent` event node will trigger if the **Example Label Name** matches the “exact” name of the `VisualElement` that triggered the event via the `UIDocumentEventBusBridge` .
+
+   If the flow is executed, the `UIDocumentEventBusBridge` event node will return three properties.
+
+   ****************Visual Element****************: The `VisualElement` that triggered the event.
+
+   **********Pointer Event**********: The `PointerEvent<T>` event data. Please see Unity Documentation for [PointerDownEvent](https://docs.unity3d.com/ScriptReference/UIElements.PointerDownEvent.html) for more details.
 
 # Query Visual Element 
 
