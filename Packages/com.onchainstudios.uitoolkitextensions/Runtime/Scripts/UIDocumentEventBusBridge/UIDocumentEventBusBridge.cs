@@ -41,5 +41,17 @@ namespace OnChainStudios.UIToolkitExtensions
                 VisualElementCallbackManager.UnregisterCallbacks(UIDocument.rootVisualElement);
             }
         }
+
+        /// <summary>
+        /// Registers callbacks, clearing previously registred callbacks
+        /// </summary>
+        public void RegisterCallbacks()
+        {
+            if (UIDocument != null && UIDocument.rootVisualElement != null)
+            {
+                VisualElementCallbackManager.UnregisterCallbacks(UIDocument.rootVisualElement);
+                VisualElementCallbackManager.RegisterCallbacks(UIDocument.rootVisualElement);
+            }
+        }
     }
 }
