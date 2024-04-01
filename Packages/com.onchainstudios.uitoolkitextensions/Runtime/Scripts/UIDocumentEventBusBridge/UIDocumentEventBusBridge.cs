@@ -17,6 +17,11 @@ namespace OnChainStudios.UIToolkitExtensions
         /// Handle to the <see cref="UIDocument"/>.
         /// </summary>
         protected UIDocument UIDocument;
+
+        /// <summary>
+        /// Returns true if both the UIDocument and its root visual element are not null
+        /// </summary>
+        protected bool IsRootVisualElementValid => UIDocument != null && UIDocument.rootVisualElement != null;
         
         /// <inheritdoc/>
         protected virtual void Awake()
@@ -27,31 +32,44 @@ namespace OnChainStudios.UIToolkitExtensions
         /// <inheritdoc/>
         protected virtual void OnEnable()
         {
-            if (UIDocument != null && UIDocument.rootVisualElement != null)
-            {
-                VisualElementCallbackManager.RegisterCallbacks(UIDocument.rootVisualElement);
-            }
+            RegisterCallbacks();
         }
 
         /// <inheritdoc/>
         protected virtual void OnDisable()
         {
-            if (UIDocument != null && UIDocument.rootVisualElement != null)
+            UnregisterCallbacks();
+        }
+
+        /// <summary>
+        /// Registers callbacks on the UIDocument's root visual element
+        /// </summary>
+        protected void RegisterCallbacks()
+        {
+            if (IsRootVisualElementValid)
+            {
+                VisualElementCallbackManager.RegisterCallbacks(UIDocument.rootVisualElement);
+            }
+        }
+
+        /// <summary>
+        /// Unregisters callbacks on the UIDocument's root visual element
+        /// </summary>
+        protected void UnregisterCallbacks()
+        {
+            if (IsRootVisualElementValid)
             {
                 VisualElementCallbackManager.UnregisterCallbacks(UIDocument.rootVisualElement);
             }
         }
 
         /// <summary>
-        /// Registers callbacks, clearing previously registred callbacks
+        /// Clears previously registered callbacks and registers again
         /// </summary>
-        public void RegisterCallbacks()
+        public void ReregisterCallbacks()
         {
-            if (UIDocument != null && UIDocument.rootVisualElement != null)
-            {
-                VisualElementCallbackManager.UnregisterCallbacks(UIDocument.rootVisualElement);
-                VisualElementCallbackManager.RegisterCallbacks(UIDocument.rootVisualElement);
-            }
+            UnregisterCallbacks();
+            RegisterCallbacks();
         }
     }
 }
