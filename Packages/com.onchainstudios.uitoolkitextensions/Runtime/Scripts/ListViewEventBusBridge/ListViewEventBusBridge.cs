@@ -23,6 +23,11 @@ namespace OnChainStudios.UIToolkitExtensions
         /// Name of the event posted to the <see cref="EventBus"/> when a <see cref="UnbindItemEvent"/> is triggered.
         /// </summary>
         public static string UnbindItemEvent => $"{typeof(ListViewEventBusBridge).FullName}.{nameof(UnbindItemEvent)}";
+
+        /// <summary>
+        /// Name of the event posted to the <see cref="EventBus"/> when a <see cref="ScrolledToBottomEvent"/> is triggered.
+        /// </summary>
+        public static string ScrolledToBottomEvent => $"{typeof(ListViewEventBusBridge).FullName}.{nameof(ScrolledToBottomEvent)}";
         
         /// <summary>
         /// Name of the <see cref="ListView"/>
@@ -38,6 +43,16 @@ namespace OnChainStudios.UIToolkitExtensions
         /// Handle to the <see cref="UIDocument"/>.
         /// </summary>
         protected UIDocument UIDocument;
+
+        /// <summary>
+        /// Reference to the queried ListView component
+        /// </summary>
+        private ListView listView = null;
+
+        /// <summary>
+        /// Reference to the queried ListView's ScrollView component
+        /// </summary>
+        private ScrollView scrollView = null;
         
         /// <inheritdoc/>
         protected virtual void Awake()
@@ -48,36 +63,91 @@ namespace OnChainStudios.UIToolkitExtensions
         /// <inheritdoc/>
         protected virtual void OnEnable()
         {
-            if (UIDocument != null && UIDocument.rootVisualElement != null)
-            {
-                var listView = UIDocument.rootVisualElement.Q<ListView>(VisualElementName);
-                
-                RegisterCallbacks(listView);
-            }
+            RegisterCallbacks();
+        }
+
+        /// <inheritdoc/>
+        protected virtual void OnDisable()
+        {
+            UnregisterCallbacks();
         }
 
         /// <summary>
         /// Registers callbacks on the <paramref name="visualElement"/>.
         /// </summary>
-        /// <param name="visualElement">The handle to the <see cref="VisualElement"/> you want to register the events for.</param>
-        protected virtual void RegisterCallbacks(ListView listView)
+        protected virtual void RegisterCallbacks()
         {
-            listView.makeItem = () =>
+            if (UIDocument != null && UIDocument.rootVisualElement != null)
             {
-                return VisualTreeAsset.Instantiate();
-            };
+                var listView = UIDocument.rootVisualElement.Q<ListView>(VisualElementName);
+                
+                if(listView != null)
+                {
+                    this.listView = listView;
 
-            listView.bindItem = (item, index) =>
+                    listView.makeItem = () =>
+                    {
+                        return VisualTreeAsset.Instantiate();
+                    };
+
+                    listView.bindItem = (item, index) =>
+                    {
+                        VisualElementCallbackManager.RegisterCallbacks(item);
+                        EventBus.Trigger(BindItemEvent, new ListViewBindItemEventArgsBase(listView, item, index));
+                    };
+                    
+                    listView.unbindItem = (item, index) =>
+                    {
+                        VisualElementCallbackManager.UnregisterCallbacks(item);
+                        EventBus.Trigger(UnbindItemEvent, new ListViewUnbindItemEventArgsBase(listView, item, index));
+                    };
+                }
+
+                var scrollView = UIDocument.rootVisualElement.Q<ScrollView>();
+
+                if(scrollView != null)
+                {
+                    scrollView.verticalScroller.valueChanged += OnScrollValueChanged;
+                    this.scrollView = scrollView;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Unregisters callbacks on the <paramref name="visualElement"/>.
+        /// </summary>
+        protected virtual void UnregisterCallbacks()
+        {
+            if (UIDocument != null && UIDocument.rootVisualElement != null)
             {
-                VisualElementCallbackManager.RegisterCallbacks(item);
-                EventBus.Trigger(BindItemEvent, new ListViewBindItemEventArgsBase(listView, item, index));
-            };
-            
-            listView.unbindItem = (item, index) =>
+                if(scrollView != null)
+                {
+                    scrollView.verticalScroller.valueChanged -= OnScrollValueChanged;
+                    scrollView = null;
+                }
+
+                listView = null;
+            }
+        }
+
+        /// <summary>
+        /// Unregisters and then registers callbacks on the <paramref name="visualElement"/>.
+        /// </summary>
+        public void ReregisterCallbacks()
+        {
+            UnregisterCallbacks();
+            RegisterCallbacks();
+        }
+
+        /// <summary>
+        /// Triggers when the scroll value of the targeted ListView has changed
+        /// </summary>
+        private void OnScrollValueChanged(float newValue)
+        {
+            if(listView != null && scrollView != null && scrollView.verticalScroller.highValue == newValue)
             {
-                VisualElementCallbackManager.UnregisterCallbacks(item);
-                EventBus.Trigger(UnbindItemEvent, new ListViewUnbindItemEventArgsBase(listView, item, index));
-            };
+                EventBus.Trigger(ScrolledToBottomEvent, new ListViewScrollEventArgsBase(listView));
+            }
         }
     }
 }
