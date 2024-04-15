@@ -45,12 +45,12 @@ namespace OnChainStudios.UIToolkitExtensions
         protected UIDocument UIDocument;
 
         /// <summary>
-        /// Reference to the queried ListView component
+        /// Reference to the ListView to populate
         /// </summary>
         private ListView listView = null;
 
         /// <summary>
-        /// Reference to the queried ListView's ScrollView component
+        /// Reference to the found ListView's ScrollView
         /// </summary>
         private ScrollView scrollView = null;
         
@@ -79,12 +79,10 @@ namespace OnChainStudios.UIToolkitExtensions
         {
             if (UIDocument != null && UIDocument.rootVisualElement != null)
             {
-                var listView = UIDocument.rootVisualElement.Q<ListView>(VisualElementName);
+                listView = UIDocument.rootVisualElement.Q<ListView>(VisualElementName);
                 
                 if(listView != null)
                 {
-                    this.listView = listView;
-
                     listView.makeItem = () =>
                     {
                         return VisualTreeAsset.Instantiate();
@@ -103,12 +101,11 @@ namespace OnChainStudios.UIToolkitExtensions
                     };
                 }
 
-                var scrollView = UIDocument.rootVisualElement.Q<ScrollView>();
+                scrollView = UIDocument.rootVisualElement.Q<ScrollView>();
 
                 if(scrollView != null)
                 {
-                    scrollView.verticalScroller.valueChanged += OnScrollValueChanged;
-                    this.scrollView = scrollView;
+                    scrollView.RegisterCallback<ChangeEvent<float>>(OnScrollToBottom);
                 }
             }
         }
@@ -122,11 +119,8 @@ namespace OnChainStudios.UIToolkitExtensions
             {
                 if(scrollView != null)
                 {
-                    scrollView.verticalScroller.valueChanged -= OnScrollValueChanged;
-                    scrollView = null;
+                    scrollView.UnregisterCallback<ChangeEvent<float>>(OnScrollToBottom);
                 }
-
-                listView = null;
             }
         }
 
@@ -140,14 +134,17 @@ namespace OnChainStudios.UIToolkitExtensions
         }
 
         /// <summary>
-        /// Triggers when the scroll value of the targeted ListView has changed
+        /// Verifies if ScrollView has reached bottom, triggers event if positive
         /// </summary>
-        private void OnScrollValueChanged(float newValue)
+        private void OnScrollToBottom(ChangeEvent<float> changeEvent)
         {
-            if(listView != null && scrollView != null && scrollView.verticalScroller.highValue == newValue)
+            if(changeEvent.newValue == (changeEvent.currentTarget as ScrollView).verticalScroller.highValue)
             {
-                EventBus.Trigger(ScrolledToBottomEvent, new ListViewScrollEventArgsBase(listView));
+                if(changeEvent.previousValue < changeEvent.newValue)
+                {
+                    EventBus.Trigger(ScrolledToBottomEvent, new ListViewScrollEventArgsBase(listView));
+                }
             }
-        }
+        } 
     }
 }
