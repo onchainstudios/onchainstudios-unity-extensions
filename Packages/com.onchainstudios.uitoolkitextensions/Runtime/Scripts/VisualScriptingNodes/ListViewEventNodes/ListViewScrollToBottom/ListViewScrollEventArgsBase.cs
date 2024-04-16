@@ -13,8 +13,16 @@ namespace OnChainStudios.UIToolkitExtensions
     public class ListViewScrollEventArgsBase : VisualElementEventArgsBase
     {
         /// <summary>
+        /// Scroll position at the moment of reaching the bottom
+        /// </summary>
+        public float ScrollPosition { get; set; }
+
+        /// <summary>
         /// Class constructor
         /// </summary>
-        public ListViewScrollEventArgsBase(VisualElement listView) : base(listView){}
+        public ListViewScrollEventArgsBase(VisualElement listView, float scrollPosition) : base(listView)
+        {
+            ScrollPosition = scrollPosition;
+        }
     }
 }

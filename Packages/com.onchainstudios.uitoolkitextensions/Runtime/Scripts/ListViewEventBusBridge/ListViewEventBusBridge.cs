@@ -142,7 +142,7 @@ namespace OnChainStudios.UIToolkitExtensions
             {
                 if(changeEvent.previousValue < changeEvent.newValue)
                 {
-                    EventBus.Trigger(ScrolledToBottomEvent, new ListViewScrollEventArgsBase(listView));
+                    EventBus.Trigger(ScrolledToBottomEvent, new ListViewScrollEventArgsBase(listView, changeEvent.previousValue));
                 }
             }
         } 

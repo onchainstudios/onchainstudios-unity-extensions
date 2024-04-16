@@ -12,12 +12,24 @@ namespace OnChainStudios.UIToolkitExtensions
     /// Event node for when the <see cref="ListViewEventBusBridge.ScrolledToBottomEvent"/> is posted to the <see cref="EventBus"/>.
     /// </summary>
     [UnitCategory("Events\\UIToolkit")]
-    public class OnListViewScrollToBottom : OnVisualElementEventBase<VisualElementEventArgsBase>
+    public class OnListViewScrollToBottom : OnVisualElementEventBase<ListViewScrollEventArgsBase>
     {
+        [DoNotSerialize]
+        public ValueOutput ScrollPosition { get; private set; }
+
         /// <inheritdoc/>
-        protected override void AssignArguments(Flow flow, VisualElementEventArgsBase data)
+        protected override void Definition()
+        {
+            base.Definition();
+            
+            ScrollPosition = ValueOutput<float>(nameof(ScrollPosition));
+        }
+
+        /// <inheritdoc/>
+        protected override void AssignArguments(Flow flow, ListViewScrollEventArgsBase data)
         {
             flow.SetValue(VisualElement, data.VisualElement as ListView);
+            flow.SetValue(ScrollPosition, data.ScrollPosition);
         }
 
         /// <inheritdoc/>
