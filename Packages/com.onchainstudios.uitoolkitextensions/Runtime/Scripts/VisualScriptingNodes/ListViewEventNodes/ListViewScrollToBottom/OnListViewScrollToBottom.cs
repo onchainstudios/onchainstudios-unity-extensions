@@ -14,6 +14,9 @@ namespace OnChainStudios.UIToolkitExtensions
     [UnitCategory("Events\\UIToolkit")]
     public class OnListViewScrollToBottom : OnVisualElementEventBase<ListViewScrollEventArgsBase>
     {
+        /// <summary>
+        /// The scroll position for the targeted ListView
+        /// </summary>
         [DoNotSerialize]
         public ValueOutput ScrollPosition { get; private set; }
 

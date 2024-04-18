@@ -8,6 +8,9 @@ namespace OnChainStudios.UIToolkitExtensions
     using UnityEngine;    
     using UnityEngine.UIElements;
 
+    /// <summary>
+    /// Base class for extending EventBusBridge classes
+    /// </summary>
     public abstract class EventBusBridgeBase : MonoBehaviour
     {
         /// <summary>
