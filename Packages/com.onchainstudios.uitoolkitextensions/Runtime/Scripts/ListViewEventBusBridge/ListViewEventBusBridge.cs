@@ -7,12 +7,11 @@ namespace OnChainStudios.UIToolkitExtensions
 {
     using Unity.VisualScripting;
     using UnityEngine.UIElements;
-    using UnityEngine;
 
     /// <summary>
     /// Listens to events on a ListView and forwards them the event bus. 
     /// </summary>
-    public class ListViewEventBusBridge : MonoBehaviour
+    public class ListViewEventBusBridge : EventBusBridgeBase
     {
         /// <summary>
         /// Name of the event posted to the <see cref="EventBus"/> when a <see cref="BindItemEvent"/> is triggered.
@@ -40,11 +39,6 @@ namespace OnChainStudios.UIToolkitExtensions
         public VisualTreeAsset VisualTreeAsset;
 
         /// <summary>
-        /// Handle to the <see cref="UIDocument"/>.
-        /// </summary>
-        protected UIDocument UIDocument;
-
-        /// <summary>
         /// Reference to the ListView to populate
         /// </summary>
         private ListView listView = null;
@@ -54,83 +48,50 @@ namespace OnChainStudios.UIToolkitExtensions
         /// </summary>
         private ScrollView scrollView = null;
         
-        /// <inheritdoc/>
-        protected virtual void Awake()
-        {
-            UIDocument = GetComponent<UIDocument>();
-        }
-        
-        /// <inheritdoc/>
-        protected virtual void OnEnable()
-        {
-            RegisterCallbacks();
-        }
-
-        /// <inheritdoc/>
-        protected virtual void OnDisable()
-        {
-            UnregisterCallbacks();
-        }
-
         /// <summary>
         /// Registers callbacks on the <paramref name="visualElement"/>.
         /// </summary>
-        protected virtual void RegisterCallbacks()
+        protected override void RegisterCallbacks()
         {
-            if (UIDocument != null && UIDocument.rootVisualElement != null)
+            listView = UIDocument.rootVisualElement.Q<ListView>(VisualElementName);
+            
+            if(listView != null)
             {
-                listView = UIDocument.rootVisualElement.Q<ListView>(VisualElementName);
+                listView.makeItem = () =>
+                {
+                    return VisualTreeAsset.Instantiate();
+                };
+
+                listView.bindItem = (item, index) =>
+                {
+                    VisualElementCallbackManager.RegisterCallbacks(item);
+                    EventBus.Trigger(BindItemEvent, new ListViewBindItemEventArgsBase(listView, item, index));
+                };
                 
-                if(listView != null)
+                listView.unbindItem = (item, index) =>
                 {
-                    listView.makeItem = () =>
-                    {
-                        return VisualTreeAsset.Instantiate();
-                    };
+                    VisualElementCallbackManager.UnregisterCallbacks(item);
+                    EventBus.Trigger(UnbindItemEvent, new ListViewUnbindItemEventArgsBase(listView, item, index));
+                };
+            }
 
-                    listView.bindItem = (item, index) =>
-                    {
-                        VisualElementCallbackManager.RegisterCallbacks(item);
-                        EventBus.Trigger(BindItemEvent, new ListViewBindItemEventArgsBase(listView, item, index));
-                    };
-                    
-                    listView.unbindItem = (item, index) =>
-                    {
-                        VisualElementCallbackManager.UnregisterCallbacks(item);
-                        EventBus.Trigger(UnbindItemEvent, new ListViewUnbindItemEventArgsBase(listView, item, index));
-                    };
-                }
+            scrollView = UIDocument.rootVisualElement.Q<ScrollView>();
 
-                scrollView = UIDocument.rootVisualElement.Q<ScrollView>();
-
-                if(scrollView != null)
-                {
-                    scrollView.RegisterCallback<ChangeEvent<float>>(OnScrollToBottom);
-                }
+            if(scrollView != null)
+            {
+                scrollView.RegisterCallback<ChangeEvent<float>>(OnScrollToBottom);
             }
         }
 
         /// <summary>
         /// Unregisters callbacks on the <paramref name="visualElement"/>.
         /// </summary>
-        protected virtual void UnregisterCallbacks()
+        protected override void UnregisterCallbacks()
         {
-            if (UIDocument != null && UIDocument.rootVisualElement != null)
+            if(scrollView != null)
             {
-                if(scrollView != null)
-                {
-                    scrollView.UnregisterCallback<ChangeEvent<float>>(OnScrollToBottom);
-                }
+                scrollView.UnregisterCallback<ChangeEvent<float>>(OnScrollToBottom);
             }
-        }
-
-        /// <summary>
-        /// Unregisters and then registers callbacks on the <paramref name="visualElement"/>.
-        /// </summary>
-        public void ReregisterCallbacks()
-        {
-            UnregisterCallbacks();
-            RegisterCallbacks();
         }
 
         /// <summary>
