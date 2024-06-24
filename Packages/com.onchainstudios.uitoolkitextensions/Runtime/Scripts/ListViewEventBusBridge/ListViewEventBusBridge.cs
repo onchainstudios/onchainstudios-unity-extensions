@@ -73,13 +73,13 @@ namespace OnChainStudios.UIToolkitExtensions
                     VisualElementCallbackManager.UnregisterCallbacks(item);
                     EventBus.Trigger(UnbindItemEvent, new ListViewUnbindItemEventArgsBase(listView, item, index));
                 };
-            }
 
-            scrollView = UIDocument.rootVisualElement.Q<ScrollView>();
+                scrollView = listView.Q<ScrollView>();
 
-            if(scrollView != null)
-            {
-                scrollView.RegisterCallback<ChangeEvent<float>>(OnScrollToBottom);
+                if(scrollView != null)
+                {
+                    scrollView.RegisterCallback<ChangeEvent<float>>(OnScrollToBottom);
+                }
             }
         }
 
